@@ -1,0 +1,110 @@
+
+/* ==========================================
+   SDFL HOMEPAGE - SECTION SPACING
+   ========================================== */
+
+/* HERO SECTION */
+
+.hero-section {
+  padding-top: 55px;
+  padding-bottom: 55px;
+}
+
+/* ADVERTISEMENT SECTION */
+
+.advertisement-section {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+/* SERVICES SECTION */
+
+.services-section {
+  padding-top: 20px;
+  padding-bottom: 25px;
+}
+
+/* Services Heading */
+
+.services-heading {
+  margin-bottom: 25px;
+}
+
+/* Services Grid */
+
+.services-grid {
+  padding-top: 5px;
+  padding-bottom: 15px;
+}
+
+/* WHY SDFL SECTION */
+
+.why-sdfl-section {
+  padding-top: 15px;
+  padding-bottom: 35px;
+}
+
+/* ==========================================
+   TABLET
+   ========================================== */
+
+@media (max-width: 900px) {
+  .hero-section {
+    padding-top: 45px;
+    padding-bottom: 45px;
+  }
+
+  .advertisement-section {
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+
+  .services-section {
+    padding-top: 20px;
+    padding-bottom: 25px;
+  }
+
+  .services-heading {
+    margin-bottom: 25px;
+  }
+
+  .why-sdfl-section {
+    padding-top: 15px;
+    padding-bottom: 30px;
+  }
+}
+
+/* ==========================================
+   MOBILE
+   ========================================== */
+
+@media (max-width: 600px) {
+  .hero-section {
+    padding-top: 15px;
+    padding-bottom: 20px;
+  }
+
+  .advertisement-section {
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+
+  .services-section {
+    padding-top: 20px;
+    padding-bottom: 25px;
+  }
+
+  .services-heading {
+    margin-bottom: 22px;
+  }
+
+  .services-grid {
+    padding-top: 5px;
+    padding-bottom: 12px;
+  }
+
+  .why-sdfl-section {
+    padding-top: 12px;
+    padding-bottom: 25px;
+  }
+}

@@ -1,0 +1,283 @@
+
+/* ==========================================
+   SDFL WEBSITE - NAVIGATION BAR
+========================================== */
+
+.navbar {
+  width: 100%;
+  background-color: #ffffff;
+  position: relative;
+  z-index: 100;
+
+  border: none;
+  box-shadow: none;
+}
+
+/* ==========================================
+   NAVBAR CONTAINER
+========================================== */
+
+.navbar-container {
+  width: 100%;
+  max-width: 1600px;
+  min-height: 125px;
+  margin: 0 auto;
+  padding: 12px 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+/* ==========================================
+   LOGO - SLIGHTLY BIGGER
+========================================== */
+
+.navbar-logos {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  margin-top: -17px;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  margin-left: -15px;
+}
+
+.navbar-logos a {
+  display: flex;
+  align-items: center;
+
+  background: transparent;
+  border: none;
+  outline: none;
+  box-shadow: none;
+
+  text-decoration: none;
+}
+
+.combined-logo {
+  display: block;
+
+  /* Increased from 320px to 370px */
+  width: 370px;
+  max-width: 100%;
+  height: auto;
+
+  object-fit: contain;
+
+  background: transparent;
+  border: none;
+  outline: none;
+  box-shadow: none;
+
+  border-radius: 0;
+}
+
+/* ==========================================
+   NAVIGATION LINKS
+========================================== */
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.nav-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 13px 18px;
+
+  color: #252525;
+  font-family: Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+
+  text-decoration: none;
+  white-space: nowrap;
+  border-radius: 25px;
+
+  transition:
+    color 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.nav-links a:hover {
+  color: #183c83;
+  background-color: #f0f4fb;
+}
+
+/* ==========================================
+   ACTIVE NAVIGATION BUTTON
+========================================== */
+
+.nav-links a.active {
+  background-color: #233f86;
+  color: #ffffff;
+
+  padding: 13px 30px;
+  border-radius: 30px;
+}
+
+.nav-links a.active:hover {
+  background-color: #17346e;
+  color: #ffffff;
+}
+
+/* ==========================================
+   MOBILE MENU BUTTON
+========================================== */
+
+.menu-toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+
+  background: transparent;
+  border: none;
+  color: #183c83;
+
+  font-size: 28px;
+  padding: 8px;
+  cursor: pointer;
+}
+
+/* ==========================================
+   MEDIUM DESKTOP
+========================================== */
+
+@media (max-width: 1350px) {
+  .navbar-container {
+    padding: 12px 28px;
+    gap: 15px;
+  }
+
+  .combined-logo {
+    width: 310px;
+    margin-left: 5px;
+    margin-top: 5px;
+  }
+
+  .nav-links {
+    gap: 8px;
+  }
+
+  .nav-links a {
+    font-size: 14px;
+    padding: 12px 15px;
+  }
+
+  .nav-links a.active {
+    padding: 12px 24px;
+  }
+}
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media (max-width: 1050px) {
+  .navbar-container {
+    min-height: 95px;
+    padding: 10px 24px;
+  }
+
+  .combined-logo {
+    width: 280px;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+
+    width: 100%;
+    background-color: #ffffff;
+
+    flex-direction: column;
+    align-items: stretch;
+    gap: 5px;
+
+    padding: 18px 24px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.08);
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-links a {
+    display: flex;
+    justify-content: flex-start;
+
+    padding: 15px 20px;
+    font-size: 15px;
+    border-radius: 8px;
+  }
+
+  .nav-links a.active {
+    padding: 15px 20px;
+    border-radius: 8px;
+  }
+}
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 600px) {
+  .navbar-container {
+    min-height: 80px;
+    padding: 10px 16px;
+  }
+
+  .combined-logo {
+    width: 235px;
+  }
+
+  .menu-toggle {
+    font-size: 26px;
+  }
+
+  .nav-links {
+    padding: 12px 16px;
+  }
+
+  .nav-links a {
+    font-size: 14px;
+    padding: 13px 16px;
+  }
+
+  .nav-links a.active {
+    padding: 13px 16px;
+  }
+}
+
+/* ==========================================
+   SMALL MOBILE
+========================================== */
+
+@media (max-width: 400px) {
+  .navbar-container {
+    min-height: 75px;
+    padding: 8px 12px;
+  }
+
+  .combined-logo {
+    width: min(205px, calc(100vw - 95px));
+  }
+
+  .menu-toggle {
+    font-size: 24px;
+  }
+}

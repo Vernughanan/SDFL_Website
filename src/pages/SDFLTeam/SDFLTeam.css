@@ -1,0 +1,1061 @@
+
+/* ==========================================
+   SDFL TEAM - GLOBAL
+========================================== */
+
+.team-page {
+  width: 100%;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  background: #0c1831;
+}
+
+.team-page *,
+.team-page *::before,
+.team-page *::after {
+  box-sizing: border-box;
+}
+
+/* ==========================================
+   TEAM BANNER
+========================================== */
+
+.team-banner {
+  min-height: 190px;
+  padding: 35px max(5%, calc((100% - 1200px) / 2));
+  background: linear-gradient(
+    110deg,
+    #102347 0%,
+    #1c376c 65%,
+    #254b86 100%
+  );
+  display: flex;
+  align-items: center;
+}
+
+.team-banner-content {
+  max-width: 720px;
+}
+
+.team-eyebrow {
+  color: #f5aa40;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.team-banner h1 {
+  color: #f5aa40;
+  font-size: clamp(30px, 3.5vw, 43px);
+  margin: 10px 0;
+}
+
+.team-banner p {
+  color: #e4ebf7;
+  font-size: 14px;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* ==========================================
+   SECONDARY NAVIGATION
+========================================== */
+
+.team-subnav {
+  width: 100%;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 25px;
+  padding: 22px 20px;
+  border-bottom: 1px solid #e3e8f0;
+}
+
+.team-tab {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: #142a52;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 13px 30px;
+  border-radius: 35px;
+  transition: background 0.25s ease, color 0.25s ease;
+}
+
+.team-tab:hover {
+  background: #edf2ff;
+}
+
+.team-tab.active {
+  background: #30438b;
+  color: #ffffff;
+}
+
+/* ==========================================
+   TEAM LISTING BACKGROUND
+========================================== */
+
+.team-listing-background {
+  min-height: 550px;
+  background:
+    radial-gradient(
+      ellipse at 52% 60%,
+      rgba(42, 76, 135, 0.45) 0%,
+      transparent 55%
+    ),
+    linear-gradient(
+      125deg,
+      #0b1730 0%,
+      #172b52 52%,
+      #0b1730 100%
+    );
+  padding: 45px 0 50px;
+}
+
+.team-page-content {
+  width: min(1400px, calc(100% - 80px));
+  margin: 0 auto;
+}
+
+/* ==========================================
+   LISTING HEADINGS
+========================================== */
+
+.team-listing-heading {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.team-listing-heading span {
+  color: #f4ac43;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+
+.team-listing-heading h2 {
+  color: #ffffff;
+  font-size: clamp(27px, 3vw, 38px);
+  font-weight: 800;
+  margin: 12px 0;
+}
+
+.team-listing-heading p {
+  color: #cbd8ec;
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 0 auto;
+  max-width: 650px;
+}
+
+/* ==========================================
+   BOARD MEMBER GRID
+========================================== */
+
+.board-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 30px;
+  align-items: stretch;
+}
+
+/* ==========================================
+   BOARD MEMBER CARDS
+========================================== */
+
+.board-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  height: 100%;
+  background: #ffffff;
+  border: 1px solid #e2eaf7;
+  border-radius: 20px;
+  overflow: hidden;
+
+  box-shadow:
+    10px 10px 0 rgba(255, 255, 255, 0.13),
+    0 10px 24px rgba(0, 0, 0, 0.12);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.board-card:hover {
+  transform: translateY(-5px);
+
+  box-shadow:
+    10px 10px 0 rgba(255, 255, 255, 0.18),
+    0 16px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* ==========================================
+   BOARD MEMBER PHOTO FRAME
+
+   All images have exactly the same frame.
+   object-fit: contain preserves full photos.
+========================================== */
+
+.board-photo-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  height: 330px;
+  min-height: 330px;
+
+  overflow: hidden;
+  flex-shrink: 0;
+
+  background: #e8eef9;
+  text-decoration: none;
+}
+
+.board-photo {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+  object-position: center center;
+
+  background: #e8eef9;
+
+  transition: transform 0.3s ease;
+}
+
+.board-card:hover .board-photo {
+  transform: scale(1.025);
+}
+
+/* ==========================================
+   BOARD PHOTO PLACEHOLDER
+========================================== */
+
+.board-photo-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  height: 100%;
+  min-height: 330px;
+
+  background: linear-gradient(
+    135deg,
+    #edf3ff 0%,
+    #dfe9fa 100%
+  );
+
+  color: #74839b;
+  font-size: 14px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.board-photo-placeholder span {
+  color: #74839b;
+  text-decoration: none;
+}
+
+/* ==========================================
+   BOARD MEMBER CARD INFORMATION
+========================================== */
+
+.board-card-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  flex: 1;
+  min-width: 0;
+
+  padding: 22px 16px 24px;
+  text-align: center;
+
+  background: #ffffff;
+}
+
+.board-card-info h3 {
+  color: #142a52;
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.45;
+  margin: 0 0 9px;
+}
+
+.board-card-info p {
+  color: #64748b;
+  font-size: 13px;
+  line-height: 1.6;
+  margin: 0 0 18px;
+}
+
+.board-profile-arrow {
+  width: 40px;
+  height: 40px;
+
+  background: #edf2ff;
+  color: #30438b;
+
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-decoration: none;
+  font-size: 23px;
+  margin: auto auto 0;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease;
+}
+
+.board-profile-arrow:hover {
+  background: #30438b;
+  color: #ffffff;
+}
+
+/* ==========================================
+   BOARD MEMBER PROFILE
+========================================== */
+
+.board-profile-page {
+  width: 100%;
+}
+
+.board-back-container {
+  width: 100%;
+  margin-bottom: 24px;
+}
+
+.board-back-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 12px 20px;
+
+  background: #ffffff;
+  color: #1b376c;
+
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 700;
+
+  border-radius: 10px;
+  border: 1px solid #dce5f5;
+
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease;
+}
+
+.board-back-button:hover {
+  background: #eaf0ff;
+  transform: translateX(-4px);
+}
+
+.board-profile-card {
+  display: grid;
+  grid-template-columns: 340px minmax(0, 1fr);
+  gap: 45px;
+
+  padding: 35px;
+
+  background: #ffffff;
+  border-radius: 20px;
+
+  align-items: start;
+
+  box-shadow: 10px 10px 0 rgba(255, 255, 255, 0.12);
+}
+
+.board-profile-photo-area {
+  width: 100%;
+}
+
+.board-profile-photo,
+.board-profile-placeholder {
+  display: block;
+  width: 100%;
+  height: 380px;
+
+  border-radius: 13px;
+  background: #e8eef9;
+}
+
+.board-profile-photo {
+  object-fit: contain;
+  object-position: center;
+}
+
+.board-profile-placeholder {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+
+  background: #e9edf4;
+  color: #7b8ba3;
+  font-size: 13px;
+}
+
+.board-profile-details {
+  padding-top: 15px;
+  min-width: 0;
+}
+
+.profile-label {
+  color: #e69a35;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.board-profile-details h1 {
+  color: #142a52;
+  font-size: clamp(25px, 3vw, 38px);
+  margin: 15px 0 10px;
+}
+
+.board-profile-role {
+  color: #3158c9;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.board-profile-divider {
+  height: 1px;
+  background: #e1e7f0;
+  margin: 25px 0;
+}
+
+.board-profile-details h2 {
+  color: #142a52;
+  font-size: 22px;
+  margin: 0 0 15px;
+}
+
+.board-profile-about {
+  color: #46546a;
+  font-size: 15px;
+  line-height: 1.9;
+  text-align: justify;
+}
+
+.profile-not-found {
+  padding: 45px;
+  background: #ffffff;
+  border-radius: 14px;
+  text-align: center;
+}
+
+.profile-not-found h2 {
+  color: #142a52;
+}
+
+.profile-not-found p {
+  color: #64748b;
+}
+
+/* ==========================================
+   STAFF GRID
+========================================== */
+
+.staff-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 30px;
+  align-items: stretch;
+}
+
+/* ==========================================
+   STAFF CARDS
+========================================== */
+
+.staff-card {
+  display: flex;
+  flex-direction: column;
+
+  min-width: 0;
+  height: 100%;
+
+  background: #ffffff;
+  border: 1px solid #e2eaf7;
+  border-radius: 20px;
+  overflow: hidden;
+
+  box-shadow:
+    10px 10px 0 rgba(255, 255, 255, 0.13),
+    0 10px 24px rgba(0, 0, 0, 0.12);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.staff-card:hover {
+  transform: translateY(-5px);
+
+  box-shadow:
+    10px 10px 0 rgba(255, 255, 255, 0.18),
+    0 16px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* ==========================================
+   STAFF PHOTO FRAME
+========================================== */
+
+.staff-image-wrapper {
+  position: relative;
+
+  width: 100%;
+  height: 310px;
+
+  flex-shrink: 0;
+  overflow: hidden;
+
+  background: linear-gradient(
+    135deg,
+    #edf3fd 0%,
+    #dce7f7 100%
+  );
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.staff-image-wrapper img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+  object-position: center center;
+
+  transition: transform 0.35s ease;
+}
+
+.staff-card:hover .staff-image-wrapper img {
+  transform: scale(1.025);
+}
+
+/* Individual photo positioning options */
+
+.staff-image-wrapper img.photo-top {
+  object-position: center top;
+}
+
+.staff-image-wrapper img.photo-center {
+  object-position: center center;
+}
+
+.staff-image-wrapper img.photo-upper {
+  object-position: center 12%;
+}
+
+/* ==========================================
+   STAFF IMAGE PLACEHOLDER
+========================================== */
+
+.staff-image-placeholder {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #8798b2;
+
+  background: linear-gradient(
+    135deg,
+    #f1f6ff 0%,
+    #e4edfc 50%,
+    #d8e5f8 100%
+  );
+}
+
+.staff-image-placeholder svg {
+  width: 60px;
+  height: 60px;
+  opacity: 0.8;
+}
+
+/* ==========================================
+   STAFF CARD CONTENT
+========================================== */
+
+.staff-card-content {
+  display: flex;
+  flex-direction: column;
+
+  flex: 1;
+  min-width: 0;
+
+  padding: 20px 18px 22px;
+}
+
+.staff-card-content h3 {
+  color: #142a52;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.45;
+  margin: 0 0 8px;
+}
+
+.staff-role {
+  color: #3158c9;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.55;
+  margin: 0 0 17px;
+}
+
+.staff-contact-details {
+  margin-top: auto;
+  border-top: 1px solid #e8edf5;
+  padding-top: 12px;
+}
+
+.staff-contact-details p {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+
+  color: #64748b;
+  font-size: 12px;
+  line-height: 1.6;
+
+  margin: 7px 0;
+  overflow-wrap: anywhere;
+}
+
+.staff-contact-details span {
+  color: #3158c9;
+  font-size: 16px;
+  flex-shrink: 0;
+}
+
+.staff-contact-details a {
+  color: inherit;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+  transition: color 0.2s ease;
+}
+
+.staff-contact-details a:hover {
+  color: #3158c9;
+  text-decoration: underline;
+}
+
+/* ==========================================
+   RESOURCE POOL SEARCH
+========================================== */
+
+.resource-search-container {
+  width: 100%;
+  max-width: 650px;
+  margin: 0 auto 35px;
+}
+
+.resource-search-box {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  background: #ffffff;
+  padding: 5px 20px;
+
+  border-radius: 14px;
+  border: 2px solid transparent;
+
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  transition: border-color 0.25s ease;
+}
+
+.resource-search-box:focus-within {
+  border-color: #f4ad45;
+}
+
+.resource-search-box svg {
+  flex-shrink: 0;
+  color: #3158c9;
+}
+
+.resource-search-box input {
+  flex: 1;
+  min-width: 0;
+  height: 50px;
+
+  background: transparent;
+  border: none;
+  outline: none;
+
+  color: #142a52;
+  font-size: 15px;
+  font-family: inherit;
+}
+
+.resource-search-box input::placeholder {
+  color: #8793a7;
+}
+
+.resource-search-clear {
+  flex-shrink: 0;
+
+  width: 28px;
+  height: 28px;
+
+  background: #edf1fa;
+  color: #3158c9;
+
+  border: none;
+  border-radius: 50%;
+
+  font-size: 20px;
+  line-height: 1;
+
+  cursor: pointer;
+}
+
+.resource-search-clear:hover {
+  background: #dce5fc;
+}
+
+.resource-search-count {
+  color: #cbd8ec;
+  text-align: center;
+  font-size: 13px;
+  margin: 13px 0 0;
+}
+
+/* ==========================================
+   RESOURCE POOL GRID
+========================================== */
+
+.team-listing .resource-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 22px;
+
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+.team-listing .resource-grid .resource-card {
+  display: flex;
+  align-items: center;
+
+  width: 100%;
+  min-width: 0;
+  min-height: 155px;
+
+  padding: 24px;
+
+  background: #ffffff;
+  border: 1px solid #e4e9f2;
+  border-radius: 16px;
+
+  box-shadow:
+    10px 10px 0 rgba(255, 255, 255, 0.13),
+    0 10px 24px rgba(0, 0, 0, 0.12);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.team-listing .resource-grid .resource-card:hover {
+  transform: translateY(-5px);
+  box-shadow:
+    10px 10px 0 rgba(255, 255, 255, 0.18),
+    0 16px 30px rgba(0, 0, 0, 0.2);
+}
+
+.team-listing .resource-card-content {
+  width: 100%;
+  min-width: 0;
+}
+
+.team-listing .resource-card-content h3 {
+  color: #142b54;
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0 0 14px;
+  overflow-wrap: anywhere;
+}
+
+.team-listing .resource-card-content p {
+  color: #71819c;
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+/* ==========================================
+   NO SEARCH RESULTS
+========================================== */
+
+.resource-no-results {
+  max-width: 500px;
+  margin: 35px auto;
+  padding: 35px 20px;
+
+  text-align: center;
+
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 16px;
+}
+
+.resource-no-results h3 {
+  color: #ffffff;
+  margin: 0 0 10px;
+}
+
+.resource-no-results p {
+  color: #cbd8ec;
+  font-size: 14px;
+}
+
+.resource-no-results button {
+  background: #f4ad45;
+  color: #102347;
+
+  border: none;
+  border-radius: 8px;
+
+  padding: 12px 22px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 12px;
+}
+
+.resource-no-results button:hover {
+  background: #ffd080;
+}
+
+/* ==========================================
+   BOTTOM SLOGAN
+========================================== */
+
+.team-bottom-slogan {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+  margin: 55px auto 0;
+
+  color: #dbe6fa;
+  font-size: 14px;
+  font-style: italic;
+  letter-spacing: 1px;
+}
+
+.team-bottom-slogan::before,
+.team-bottom-slogan::after {
+  content: "";
+  width: 65px;
+  height: 1px;
+
+  background: rgba(219, 230, 250, 0.35);
+  margin: 0 20px;
+}
+
+/* ==========================================
+   RESPONSIVE - MEDIUM SCREENS
+========================================== */
+
+@media (max-width: 1100px) {
+  .team-page-content {
+    width: min(1000px, calc(100% - 50px));
+  }
+
+  .board-grid,
+  .staff-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .team-listing .resource-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* ==========================================
+   RESPONSIVE - TABLET
+========================================== */
+
+@media (max-width: 850px) {
+  .board-grid,
+  .staff-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .board-profile-card {
+    grid-template-columns: 280px minmax(0, 1fr);
+    gap: 25px;
+  }
+
+  .board-photo-link,
+  .board-photo-placeholder {
+    height: 310px;
+    min-height: 310px;
+  }
+
+  .staff-image-wrapper {
+    height: 310px;
+  }
+}
+
+/* ==========================================
+   RESPONSIVE - MOBILE
+========================================== */
+
+@media (max-width: 600px) {
+  .team-banner {
+    padding: 30px 20px;
+  }
+
+  .team-subnav {
+    gap: 6px;
+    padding: 14px 8px;
+  }
+
+  .team-tab {
+    padding: 10px 12px;
+    font-size: 12px;
+  }
+
+  .team-listing-background {
+    padding: 30px 0 45px;
+  }
+
+  .team-page-content {
+    width: calc(100% - 32px);
+  }
+
+  .board-grid,
+  .staff-grid,
+  .team-listing .resource-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .board-card,
+  .staff-card,
+  .team-listing .resource-grid .resource-card {
+    max-width: 420px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .board-photo-link,
+  .board-photo-placeholder {
+    height: 330px;
+    min-height: 330px;
+  }
+
+  .staff-image-wrapper {
+    height: 330px;
+  }
+
+  .staff-card-content {
+    padding: 20px;
+  }
+
+  .board-profile-card {
+    grid-template-columns: 1fr;
+    padding: 20px;
+    gap: 20px;
+  }
+
+  .board-profile-photo,
+  .board-profile-placeholder {
+    height: 300px;
+  }
+
+  .board-profile-details {
+    padding-top: 0;
+  }
+
+  .board-back-button {
+    padding: 11px 15px;
+    font-size: 13px;
+  }
+
+  .resource-search-box {
+    padding: 4px 14px;
+  }
+
+  .resource-search-box input {
+    font-size: 13px;
+  }
+
+  .team-listing .resource-grid .resource-card {
+    min-height: 125px;
+    padding: 20px;
+  }
+
+  .team-listing .resource-card-content h3 {
+    font-size: 16px;
+  }
+
+  .team-listing .resource-card-content p {
+    font-size: 13px;
+  }
+
+  .team-bottom-slogan {
+    font-size: 12px;
+  }
+
+  .team-bottom-slogan::before,
+  .team-bottom-slogan::after {
+    width: 25px;
+    margin: 0 10px;
+  }
+}
+
+/* ==========================================
+   REDUCED MOTION
+========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .board-card,
+  .board-photo,
+  .staff-card,
+  .staff-image-wrapper img,
+  .resource-card,
+  .team-tab,
+  .board-back-button {
+    transition: none;
+  }
+
+  .board-card:hover,
+  .staff-card:hover,
+  .team-listing .resource-card:hover,
+  .board-back-button:hover {
+    transform: none;
+  }
+
+  .board-card:hover .board-photo,
+  .staff-card:hover .staff-image-wrapper img {
+    transform: none;
+  }
+}

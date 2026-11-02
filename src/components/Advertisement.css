@@ -1,0 +1,102 @@
+
+/* ========================================
+   SDFL — TWO ADVERTISEMENT LAYOUT
+   ======================================== */
+
+.advertisement-section {
+  width: 100%;
+  padding: 35px 35px;
+  background: linear-gradient(
+    135deg,
+    #1b2b50 0%,
+    #2a477f 100%
+  );
+}
+
+/* Two advertisements side by side */
+.advertisement-container {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: center;
+  gap: 24px;
+  width: 100%;
+  max-width: 1700px;
+  margin: 0 auto;
+}
+
+/* Each advertisement */
+.advertisement-card {
+  position: relative;
+  width: 100%;
+  min-width: 0;
+  padding: 7px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 20px;
+  box-shadow: 0 12px 35px rgba(0, 15, 45, 0.2);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.advertisement-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 45px rgba(0, 15, 45, 0.3);
+}
+
+/* Advertisement image */
+.advertisement-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 1;
+  object-fit: cover;
+  border-radius: 13px;
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+  .advertisement-section {
+    padding: 30px 20px;
+  }
+
+  .advertisement-container {
+    gap: 15px;
+  }
+
+  .advertisement-card {
+    padding: 5px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 650px) {
+  .advertisement-section {
+    padding: 25px 15px;
+  }
+
+  .advertisement-container {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .advertisement-card {
+    border-radius: 20px;
+  }
+
+  .advertisement-image {
+    border-radius: 13px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .advertisement-card {
+    transition: none;
+  }
+
+  .advertisement-card:hover {
+    transform: none;
+  }
+}

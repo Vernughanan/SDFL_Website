@@ -1,0 +1,200 @@
+
+/* =========================================
+   SDFL ABOUT PAGE — TWO ADVERTISEMENTS
+   Light Blue Background + Golden Lines
+   ========================================= */
+
+.about-ad-section {
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  padding: 55px 32px;
+  overflow: hidden;
+
+  background-color: #eaf2ff;
+  background-image:
+    radial-gradient(
+      circle at 0% 0%,
+      transparent 0 160px,
+      rgba(215, 163, 67, 0.42) 161px,
+      transparent 163px,
+      transparent 195px,
+      rgba(215, 163, 67, 0.22) 196px,
+      transparent 198px
+    ),
+    radial-gradient(
+      circle at 100% 100%,
+      transparent 0 190px,
+      rgba(215, 163, 67, 0.38) 191px,
+      transparent 193px,
+      transparent 225px,
+      rgba(215, 163, 67, 0.2) 226px,
+      transparent 228px
+    ),
+    radial-gradient(
+      ellipse at 85% 12%,
+      rgba(132, 170, 240, 0.2),
+      transparent 42%
+    ),
+    linear-gradient(
+      135deg,
+      #f5f9ff 0%,
+      #eaf2ff 48%,
+      #dce9ff 100%
+    );
+}
+
+/* Subtle golden separator */
+
+.about-ad-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: min(65%, 850px);
+  height: 2px;
+  transform: translateX(-50%);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(215, 163, 67, 0.8),
+    transparent
+  );
+}
+
+/* TWO-COLUMN CONTAINER */
+
+.about-ad-container {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: center;
+  gap: 24px;
+
+  width: 100%;
+  max-width: 1700px;
+  margin: 0 auto;
+  padding: 0;
+
+  perspective: none;
+}
+
+/* INDIVIDUAL ADVERTISEMENT */
+
+.about-ad-card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  width: 100%;
+  padding: 7px;
+
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid rgba(196, 213, 242, 0.95);
+  border-radius: 20px;
+  overflow: hidden;
+
+  box-shadow:
+    0 16px 38px rgba(26, 65, 132, 0.12),
+    0 4px 12px rgba(26, 65, 132, 0.04);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+/* Thin gold accent on each card */
+
+.about-ad-card::before {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 50%;
+  width: 32%;
+  height: 3px;
+  transform: translateX(-50%);
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #e4b25b,
+    transparent
+  );
+}
+
+/* Advertisement image */
+
+.about-ad-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 2.3 / 1;
+  object-fit: contain;
+
+  border: none;
+  border-radius: 13px;
+  background: #ffffff;
+  box-shadow: none;
+}
+
+/* HOVER */
+
+.about-ad-card:hover {
+  transform: translateY(-5px);
+  box-shadow:
+    0 24px 48px rgba(26, 65, 132, 0.18);
+}
+
+/* TABLET */
+
+@media (max-width: 900px) {
+  .about-ad-section {
+    padding: 40px 20px;
+  }
+
+  .about-ad-container {
+    gap: 16px;
+  }
+
+  .about-ad-card {
+    padding: 5px;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 650px) {
+  .about-ad-section {
+    padding: 30px 14px;
+  }
+
+  .about-ad-container {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .about-ad-card {
+    border-radius: 20px;
+  }
+
+  .about-ad-image {
+    aspect-ratio: auto;
+    height: auto;
+    border-radius: 13px;
+  }
+}
+
+/* ACCESSIBILITY */
+
+@media (prefers-reduced-motion: reduce) {
+  .about-ad-card {
+    transition: none;
+  }
+
+  .about-ad-card:hover {
+    transform: none;
+  }
+}

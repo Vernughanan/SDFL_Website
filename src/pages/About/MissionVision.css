@@ -1,0 +1,704 @@
+
+/* ========================================
+   SDFL FUTURISTIC MISSION & VISION
+======================================== */
+
+.future-section {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  isolation: isolate;
+
+  padding: 75px 30px 65px;
+
+  background:
+    radial-gradient(
+      ellipse at 50% 60%,
+      #173b70 0%,
+      #0a2043 50%,
+      #06142c 100%
+    );
+
+  font-family: Arial, sans-serif;
+  color: white;
+}
+
+.future-section *,
+.future-section *::before,
+.future-section *::after {
+  box-sizing: border-box;
+}
+
+/* ========================================
+   BACKGROUND GLOW
+======================================== */
+
+.future-orb {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(65px);
+  z-index: -1;
+}
+
+.orb-one {
+  width: 380px;
+  height: 380px;
+  top: -180px;
+  right: -100px;
+  background: rgba(45, 112, 230, 0.2);
+}
+
+.orb-two {
+  width: 300px;
+  height: 300px;
+  bottom: -160px;
+  left: -100px;
+  background: rgba(255, 169, 55, 0.12);
+}
+
+/* ========================================
+   CONTAINER
+======================================== */
+
+.future-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+/* ========================================
+   HEADING
+======================================== */
+
+.future-heading {
+  text-align: center;
+  margin-bottom: 55px;
+}
+
+.future-eyebrow {
+  display: inline-block;
+  color: #f6ad42;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  margin-bottom: 18px;
+}
+
+.future-heading h2 {
+  font-size: clamp(30px, 4vw, 52px);
+  font-weight: 800;
+  line-height: 1.15;
+  margin: 0 0 18px;
+  color: #ffffff;
+}
+
+.future-heading h2 span {
+  background: linear-gradient(
+    90deg,
+    #ffd07a,
+    #f5a02f
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.future-heading p {
+  color: #b5c8e5;
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ========================================
+   MAIN GRID
+======================================== */
+
+.future-layout {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1fr)
+    110px
+    minmax(0, 1fr);
+
+  align-items: center;
+  gap: 15px;
+}
+
+/* ========================================
+   GLASSMORPHISM CARDS
+======================================== */
+
+.future-card {
+  position: relative;
+  min-height: 310px;
+
+  padding: 34px;
+  border-radius: 24px;
+
+  background: linear-gradient(
+    145deg,
+    rgba(40, 76, 125, 0.65),
+    rgba(13, 36, 73, 0.85)
+  );
+
+  border: 1px solid rgba(147, 190, 255, 0.24);
+
+  box-shadow:
+    0 18px 45px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.12);
+
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  transform: translateY(0) rotateY(0);
+  transition:
+    transform 0.5s ease,
+    border-color 0.5s ease,
+    box-shadow 0.5s ease;
+}
+
+/* 3D CARD HOVER */
+
+.mission-card:hover {
+  transform:
+    perspective(1000px)
+    translateY(-12px)
+    rotateY(4deg);
+
+  border-color: rgba(255, 178, 67, 0.7);
+
+  box-shadow:
+    0 25px 55px rgba(0, 0, 0, 0.3),
+    0 0 28px rgba(255, 178, 67, 0.12);
+}
+
+.vision-card:hover {
+  transform:
+    perspective(1000px)
+    translateY(-12px)
+    rotateY(-4deg);
+
+  border-color: rgba(95, 157, 255, 0.7);
+
+  box-shadow:
+    0 25px 55px rgba(0, 0, 0, 0.3),
+    0 0 28px rgba(95, 157, 255, 0.14);
+}
+
+/* ========================================
+   CARD TOP
+======================================== */
+
+.future-card-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 28px;
+}
+
+.future-icon {
+  width: 62px;
+  height: 62px;
+  border-radius: 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: transform 0.4s ease;
+}
+
+.future-icon svg {
+  width: 32px;
+  height: 32px;
+}
+
+.future-card:hover .future-icon {
+  transform: translateY(-5px) scale(1.08);
+}
+
+.mission-color {
+  background: rgba(255, 178, 67, 0.14);
+  color: #ffb443;
+}
+
+.vision-color {
+  background: rgba(88, 151, 255, 0.17);
+  color: #77adff;
+}
+
+.future-number {
+  color: rgba(255, 255, 255, 0.45);
+  font-size: 32px;
+  font-weight: 800;
+}
+
+/* ========================================
+   CARD TEXT
+======================================== */
+
+.future-card-label {
+  color: #a9c0e2;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.future-card h3 {
+  color: #ffffff;
+  font-size: 30px;
+  font-weight: 800;
+  margin: 12px 0 18px;
+}
+
+.future-card p {
+  color: #d5e2f5;
+  font-size: 16px;
+  line-height: 1.8;
+  margin: 0;
+}
+
+/* ========================================
+   ACCENT LINE
+======================================== */
+
+.future-accent {
+  width: 65px;
+  height: 4px;
+  border-radius: 10px;
+  margin-top: 30px;
+  transition: width 0.4s ease;
+}
+
+.future-card:hover .future-accent {
+  width: 130px;
+}
+
+.mission-accent {
+  background: linear-gradient(
+    90deg,
+    #ffb443,
+    #ffda95
+  );
+}
+
+.vision-accent {
+  background: linear-gradient(
+    90deg,
+    #377bff,
+    #83b7ff
+  );
+}
+
+/* ========================================
+   CENTRAL CONNECTOR
+======================================== */
+
+.future-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 310px;
+}
+
+.future-center-line {
+  flex: 1;
+  width: 2px;
+
+  background: repeating-linear-gradient(
+    to bottom,
+    #4d79b3 0px,
+    #4d79b3 5px,
+    transparent 5px,
+    transparent 12px
+  );
+}
+
+.future-center-ring {
+  width: 100px;
+  height: 100px;
+
+  border-radius: 50%;
+  padding: 12px;
+
+  border: 2px solid #4d86d6;
+
+  background: rgba(21, 57, 105, 0.9);
+
+  box-shadow:
+    0 0 0 8px rgba(58, 111, 189, 0.1),
+    0 0 35px rgba(60, 125, 220, 0.3);
+
+  animation: futureFloat 4s ease-in-out infinite;
+}
+
+.future-center-core {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: linear-gradient(
+    135deg,
+    #204f96,
+    #102e5d
+  );
+}
+
+.future-center-core svg {
+  width: 50px;
+  height: 50px;
+}
+
+@keyframes futureFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-9px);
+  }
+}
+
+/* ========================================
+   FOOTER
+======================================== */
+
+.future-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+
+  margin-top: 55px;
+
+  color: #c3d6ef;
+  font-size: 13px;
+  font-style: italic;
+  letter-spacing: 1px;
+}
+
+.future-footer-line {
+  width: 65px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 900px) {
+  .future-section {
+    padding: 55px 25px;
+  }
+
+  .future-layout {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .future-center {
+    height: 90px;
+    flex-direction: row;
+  }
+
+  .future-center-line {
+    width: auto;
+    height: 2px;
+    background: #4d79b3;
+  }
+
+  .future-center-ring {
+    width: 80px;
+    height: 80px;
+    flex-shrink: 0;
+  }
+
+  .future-card {
+    min-height: auto;
+    padding: 30px;
+  }
+}
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 600px) {
+  .future-section {
+    padding: 45px 16px;
+  }
+
+  .future-heading {
+    margin-bottom: 35px;
+  }
+
+  .future-heading h2 {
+    font-size: 30px;
+  }
+
+  .future-heading p {
+    font-size: 14px;
+  }
+
+  .future-card {
+    padding: 25px;
+    border-radius: 18px;
+  }
+
+  .future-card h3 {
+    font-size: 25px;
+  }
+
+  .future-card p {
+    font-size: 14px;
+  }
+
+  .future-number {
+    font-size: 26px;
+  }
+
+  .future-footer-line {
+    width: 25px;
+  }
+
+  .future-footer {
+    gap: 10px;
+    font-size: 11px;
+  }
+}
+
+/* ========================================
+   ACCESSIBILITY
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .future-center-ring {
+    animation: none;
+  }
+
+  .future-card,
+  .future-icon,
+  .future-accent {
+    transition: none;
+  }
+
+  .mission-card:hover,
+  .vision-card:hover,
+  .future-card:hover .future-icon {
+    transform: none;
+  }
+}
+
+/* ==========================================
+   SDFL MISSION & VISION
+   COMPACT HEIGHT VERSION
+   ========================================== */
+
+/* REDUCE MAIN SECTION HEIGHT */
+
+.future-section {
+  padding: 35px 30px 25px;
+}
+
+/* REDUCE HEADING SPACING */
+
+.future-heading {
+  margin-bottom: 25px;
+}
+
+.future-eyebrow {
+  font-size: 10px;
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+}
+
+/* SMALLER MAIN HEADING */
+
+.future-heading h2 {
+  font-size: clamp(26px, 3vw, 38px);
+  line-height: 1.12;
+  margin-bottom: 10px;
+}
+
+.future-heading p {
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+/* REDUCE CARD SPACING */
+
+.future-layout {
+  grid-template-columns:
+    minmax(0, 1fr)
+    85px
+    minmax(0, 1fr);
+
+  gap: 12px;
+}
+
+/* SMALLER MISSION AND VISION CARDS */
+
+.future-card {
+  min-height: 215px;
+  padding: 22px 26px;
+  border-radius: 18px;
+}
+
+/* CARD TOP AREA */
+
+.future-card-top {
+  margin-bottom: 12px;
+}
+
+/* SMALLER ICONS */
+
+.future-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+}
+
+.future-icon svg {
+  width: 25px;
+  height: 25px;
+}
+
+/* SMALLER CARD NUMBERS */
+
+.future-number {
+  font-size: 24px;
+}
+
+/* CARD TEXT */
+
+.future-card-label {
+  font-size: 10px;
+  letter-spacing: 1.5px;
+}
+
+.future-card h3 {
+  font-size: 23px;
+  margin: 8px 0 10px;
+}
+
+.future-card p {
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+/* ACCENT LINES */
+
+.future-accent {
+  width: 50px;
+  height: 3px;
+  margin-top: 16px;
+}
+
+/* REDUCE CENTRAL CONNECTOR */
+
+.future-center {
+  height: 215px;
+}
+
+.future-center-ring {
+  width: 72px;
+  height: 72px;
+  padding: 9px;
+}
+
+.future-center-core svg {
+  width: 35px;
+  height: 35px;
+}
+
+/* REDUCE BOTTOM SPACING */
+
+.future-footer {
+  margin-top: 25px;
+  font-size: 12px;
+  gap: 15px;
+}
+
+.future-footer-line {
+  width: 50px;
+}
+
+/* ==========================================
+   TABLET RESPONSIVE
+   ========================================== */
+
+@media (max-width: 900px) {
+
+  .future-section {
+    padding: 35px 20px;
+  }
+
+  .future-layout {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .future-card {
+    min-height: auto;
+    padding: 22px;
+  }
+
+  .future-center {
+    height: 65px;
+  }
+
+  .future-center-ring {
+    width: 60px;
+    height: 60px;
+  }
+
+  .future-heading {
+    margin-bottom: 25px;
+  }
+}
+
+/* ==========================================
+   MOBILE RESPONSIVE
+   ========================================== */
+
+@media (max-width: 600px) {
+
+  .future-section {
+    padding: 28px 15px;
+  }
+
+  .future-heading h2 {
+    font-size: 27px;
+  }
+
+  .future-heading p {
+    font-size: 13px;
+  }
+
+  .future-card {
+    padding: 20px;
+  }
+
+  .future-card h3 {
+    font-size: 21px;
+  }
+
+  .future-card p {
+    font-size: 13px;
+  }
+
+  .future-footer {
+    margin-top: 20px;
+    font-size: 11px;
+  }
+}

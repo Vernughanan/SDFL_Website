@@ -1,0 +1,79 @@
+
+/* ==========================================
+   SDFL WEBSITE — GLOBAL STYLES
+   SOFT LIGHT BLUE + GOLD THEME
+========================================== */
+
+:root {
+  --sdfl-bg: #eaf3ff;
+  --sdfl-bg-light: #f4f9ff;
+  --sdfl-bg-deep: #dceaff;
+
+  --sdfl-navy: #142b55;
+  --sdfl-text: #475b78;
+  --sdfl-blue: #315cfa;
+  --sdfl-gold: #d9ad60;
+
+  --sdfl-white: #ffffff;
+  --sdfl-radius: 20px;
+}
+
+/* GLOBAL RESET */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+
+  font-family: Arial, sans-serif;
+  color: var(--sdfl-navy);
+
+  background-color: var(--sdfl-bg);
+}
+
+#root {
+  min-height: 100vh;
+}
+
+img {
+  max-width: 100%;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+/* ==========================================
+   SHARED LIGHT BLUE PAGE BACKGROUND
+========================================== */
+
+.about-page {
+  background-color: var(--sdfl-bg);
+}
+
+/* ==========================================
+   ACCESSIBILITY
+========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}

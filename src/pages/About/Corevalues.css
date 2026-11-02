@@ -1,0 +1,735 @@
+
+/* ==========================================
+   SDFL CORE VALUES SECTION
+   LIGHT BLUE + ELEGANT GOLD THEME
+========================================== */
+
+.core-values-section {
+  position: relative;
+  isolation: isolate;
+
+  width: 100%;
+  padding: 75px 30px 65px;
+
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+
+  background-color: #eaf3ff;
+
+  background-image:
+    radial-gradient(
+      circle at 0% 0%,
+      transparent 0 160px,
+      rgba(217, 173, 96, 0.45) 161px,
+      transparent 163px,
+      transparent 190px,
+      rgba(217, 173, 96, 0.25) 191px,
+      transparent 193px,
+      transparent 220px,
+      rgba(217, 173, 96, 0.15) 221px,
+      transparent 223px
+    ),
+    radial-gradient(
+      circle at 100% 100%,
+      transparent 0 175px,
+      rgba(217, 173, 96, 0.4) 176px,
+      transparent 178px,
+      transparent 205px,
+      rgba(217, 173, 96, 0.22) 206px,
+      transparent 208px,
+      transparent 235px,
+      rgba(217, 173, 96, 0.12) 236px,
+      transparent 238px
+    ),
+    radial-gradient(
+      ellipse at 85% 15%,
+      rgba(133, 176, 240, 0.2),
+      transparent 45%
+    ),
+    linear-gradient(
+      135deg,
+      #f4f9ff 0%,
+      #eaf3ff 48%,
+      #dceaff 100%
+    );
+}
+
+/* Ensure consistent box sizing */
+
+.core-values-section *,
+.core-values-section *::before,
+.core-values-section *::after {
+  box-sizing: border-box;
+}
+
+/* Thin golden separator at the top */
+
+.core-values-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+
+  width: min(70%, 900px);
+  height: 2px;
+
+  transform: translateX(-50%);
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(217, 173, 96, 0.85),
+    transparent
+  );
+
+  pointer-events: none;
+}
+
+/* Decorative golden line near the bottom */
+
+.core-values-section::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+
+  width: min(45%, 600px);
+  height: 1px;
+
+  transform: translateX(-50%);
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(217, 173, 96, 0.55),
+    transparent
+  );
+
+  pointer-events: none;
+}
+
+/* ==========================================
+   MAIN CONTAINER
+========================================== */
+
+.core-values-container {
+  position: relative;
+  z-index: 1;
+
+  width: 100%;
+  max-width: 1350px;
+  margin: 0 auto;
+}
+
+/* ==========================================
+   HEADING
+========================================== */
+
+.core-values-heading {
+  text-align: center;
+  margin-bottom: 45px;
+}
+
+.core-values-eyebrow {
+  display: inline-block;
+
+  margin-bottom: 14px;
+
+  color: #315cfa;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.core-values-heading h2 {
+  margin: 0 0 15px;
+
+  color: #142b55;
+  font-size: clamp(30px, 3.5vw, 48px);
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.core-values-heading h2 span {
+  color: #315cfa;
+}
+
+.core-values-heading p {
+  max-width: 750px;
+  margin: 0 auto;
+
+  color: #475b78;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+/* ==========================================
+   FIVE-CARD GRID
+========================================== */
+
+.core-values-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 20px;
+
+  perspective: 1200px;
+}
+
+/* ==========================================
+   WHITE 3D VALUE CARDS
+========================================== */
+
+.core-value-card {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  min-width: 0;
+  min-height: 295px;
+
+  padding: 30px 20px 25px;
+
+  text-align: center;
+
+  background: linear-gradient(
+    145deg,
+    #ffffff 0%,
+    #fbfdff 65%,
+    #f5f9ff 100%
+  );
+
+  border: 1px solid rgba(195, 211, 235, 0.85);
+  border-radius: 20px;
+
+  box-shadow:
+    0 12px 30px rgba(25, 60, 120, 0.1),
+    0 3px 8px rgba(25, 60, 120, 0.04);
+
+  overflow: hidden;
+
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease,
+    border-color 0.4s ease;
+}
+
+/* Thin golden accent at the top of each card */
+
+.core-value-card::before {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  left: 50%;
+
+  width: 38%;
+  height: 3px;
+
+  transform: translateX(-50%);
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #d9ad60,
+    transparent
+  );
+
+  pointer-events: none;
+}
+
+.core-value-card:hover {
+  transform:
+    translateY(-10px)
+    rotateX(3deg)
+    rotateY(-2deg);
+
+  border-color: rgba(217, 173, 96, 0.65);
+
+  box-shadow:
+    0 22px 42px rgba(25, 60, 120, 0.16),
+    0 6px 14px rgba(25, 60, 120, 0.06);
+}
+
+/* ==========================================
+   CARD NUMBER
+========================================== */
+
+.core-value-number {
+  position: absolute;
+  top: 15px;
+  right: 17px;
+
+  color: #b6c5db;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+/* ==========================================
+   ICONS
+========================================== */
+
+.core-value-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 72px;
+  height: 72px;
+
+  margin: 15px 0 24px;
+
+  border-radius: 22px;
+
+  transition: transform 0.4s ease;
+}
+
+.core-value-icon svg {
+  width: 37px;
+  height: 37px;
+}
+
+.core-value-card:hover .core-value-icon {
+  transform: scale(1.12) rotate(-5deg);
+}
+
+/* ==========================================
+   ICON COLORS
+   Original colors preserved
+========================================== */
+
+.core-value-card.blue .core-value-icon {
+  background: #eaf0ff;
+  color: #315cfa;
+}
+
+.core-value-card.orange .core-value-icon {
+  background: #fff0dc;
+  color: #e49a31;
+}
+
+.core-value-card.purple .core-value-icon {
+  background: #f1eaff;
+  color: #7c4db2;
+}
+
+.core-value-card.teal .core-value-icon {
+  background: #e2f5f0;
+  color: #298f78;
+}
+
+.core-value-card.green .core-value-icon {
+  background: #e8f5e8;
+  color: #438f52;
+}
+
+/* ==========================================
+   CARD CONTENT
+========================================== */
+
+.core-value-card h3 {
+  margin: 0 0 16px;
+
+  color: #142b55;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.core-value-card p {
+  flex-grow: 1;
+
+  margin: 0;
+
+  color: #536783;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+/* ==========================================
+   COLORED ACCENT LINES
+   Original colors preserved
+========================================== */
+
+.core-value-accent {
+  width: 45px;
+  height: 4px;
+
+  margin-top: 24px;
+
+  border-radius: 10px;
+
+  transition: width 0.4s ease;
+}
+
+.core-value-card:hover .core-value-accent {
+  width: 90px;
+}
+
+.core-value-card.blue .core-value-accent {
+  background: #315cfa;
+}
+
+.core-value-card.orange .core-value-accent {
+  background: #e49a31;
+}
+
+.core-value-card.purple .core-value-accent {
+  background: #7c4db2;
+}
+
+.core-value-card.teal .core-value-accent {
+  background: #298f78;
+}
+
+.core-value-card.green .core-value-accent {
+  background: #438f52;
+}
+
+/* ==========================================
+   BOTTOM TEXT
+========================================== */
+
+.core-values-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+
+  margin-top: 45px;
+}
+
+.core-values-bottom span {
+  width: 60px;
+  height: 1px;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #d9ad60,
+    transparent
+  );
+}
+
+.core-values-bottom p {
+  margin: 0;
+
+  color: #475b78;
+  font-size: 13px;
+  font-style: italic;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+/* ==========================================
+   MEDIUM DESKTOP
+========================================== */
+
+@media (max-width: 1100px) {
+  .core-values-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media (max-width: 768px) {
+  .core-values-section {
+    padding: 55px 20px;
+  }
+
+  .core-values-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+  }
+
+  .core-value-card {
+    min-height: 275px;
+  }
+
+  .core-values-heading {
+    margin-bottom: 35px;
+  }
+}
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 480px) {
+  .core-values-section {
+    padding: 45px 15px;
+  }
+
+  .core-values-heading {
+    margin-bottom: 30px;
+  }
+
+  .core-values-heading h2 {
+    font-size: 30px;
+  }
+
+  .core-values-heading p {
+    font-size: 14px;
+  }
+
+  .core-values-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .core-value-card {
+    min-height: 230px;
+    padding: 25px 22px;
+  }
+
+  .core-value-card:hover {
+    transform: none;
+  }
+
+  .core-values-bottom {
+    gap: 10px;
+  }
+
+  .core-values-bottom span {
+    width: 25px;
+  }
+
+  .core-values-bottom p {
+    font-size: 11px;
+    letter-spacing: 0.3px;
+  }
+}
+
+/* ==========================================
+   REDUCED MOTION
+========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .core-value-card,
+  .core-value-icon,
+  .core-value-accent {
+    transition: none;
+  }
+
+  .core-value-card:hover,
+  .core-value-card:hover .core-value-icon {
+    transform: none;
+  }
+}
+
+/* ==========================================
+   SDFL CORE VALUES
+   LIGHT BLUE BACKGROUND FIX
+========================================== */
+
+.about-page .core-values-section,
+.core-values-section {
+  position: relative;
+  isolation: isolate;
+
+  background-color: #eaf3ff !important;
+
+  background-image:
+    radial-gradient(
+      circle at 0% 0%,
+      transparent 0 160px,
+      rgba(217, 173, 96, 0.5) 161px,
+      transparent 163px,
+      transparent 195px,
+      rgba(217, 173, 96, 0.3) 196px,
+      transparent 198px
+    ),
+    radial-gradient(
+      circle at 100% 100%,
+      transparent 0 180px,
+      rgba(217, 173, 96, 0.45) 181px,
+      transparent 183px,
+      transparent 215px,
+      rgba(217, 173, 96, 0.25) 216px,
+      transparent 218px
+    ),
+    linear-gradient(
+      135deg,
+      #f4f9ff 0%,
+      #eaf3ff 50%,
+      #dceaff 100%
+    ) !important;
+}
+
+/* Keep the content above decorative effects */
+
+.core-values-container {
+  position: relative;
+  z-index: 1;
+}
+
+/* Golden separator */
+
+.core-values-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+
+  width: 70%;
+  max-width: 900px;
+  height: 2px;
+
+  transform: translateX(-50%);
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #d9ad60,
+    transparent
+  );
+
+  pointer-events: none;
+}
+
+/* ==========================================
+   CORE VALUES — FINAL BLUE & GOLD OVERRIDE
+========================================== */
+
+main.about-page section.core-values-section {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+
+  background-color: #eaf3ff !important;
+
+  background-image:
+    radial-gradient(
+      circle at left top,
+      transparent 0 150px,
+      rgba(217, 173, 96, 0.5) 151px,
+      transparent 153px,
+      transparent 180px,
+      rgba(217, 173, 96, 0.28) 181px,
+      transparent 183px
+    ),
+    radial-gradient(
+      circle at right bottom,
+      transparent 0 170px,
+      rgba(217, 173, 96, 0.45) 171px,
+      transparent 173px,
+      transparent 200px,
+      rgba(217, 173, 96, 0.25) 201px,
+      transparent 203px
+    ),
+    linear-gradient(
+      135deg,
+      #f4f9ff 0%,
+      #eaf3ff 50%,
+      #dceaff 100%
+    ) !important;
+}
+
+/* Ensure cards remain white */
+
+main.about-page .core-values-section .core-value-card {
+  background: linear-gradient(
+    145deg,
+    #ffffff,
+    #f7faff
+  );
+
+  border: 1px solid #d9e5f5;
+  border-radius: 20px;
+
+  box-shadow:
+    0 12px 30px rgba(25, 60, 120, 0.1),
+    0 3px 8px rgba(25, 60, 120, 0.04);
+}
+
+/* Keep hover effect */
+
+main.about-page .core-values-section .core-value-card:hover {
+  transform: translateY(-8px);
+
+  box-shadow:
+    0 20px 40px rgba(25, 60, 120, 0.15);
+}
+
+/* Gold line above each card */
+
+main.about-page .core-values-section .core-value-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+
+  width: 38%;
+  height: 3px;
+
+  transform: translateX(-50%);
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #d9ad60,
+    transparent
+  );
+}
+
+/* Keep content above decorative background */
+
+main.about-page .core-values-container {
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 480px) {
+  main.about-page .core-values-section .core-value-card:hover {
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  main.about-page .core-values-section .core-value-card:hover {
+    transform: none;
+  }
+}
+
+/* ==========================================
+   FINAL SDFL CORE VALUES BACKGROUND
+   SOFT LIGHT BLUE + GOLDEN CURVES
+========================================== */
+
+main.about-page section.core-values-section {
+  position: relative;
+  isolation: isolate;
+
+  background-color: #eaf3ff !important;
+
+  background-image:
+    radial-gradient(
+      circle at 0% 0%,
+      transparent 0 160px,
+      rgba(217, 173, 96, 0.48) 161px,
+      transparent 163px,
+      transparent 190px,
+      rgba(217, 173, 96, 0.25) 191px,
+      transparent 193px
+    ),
+    radial-gradient(
+      circle at 100% 100%,
+      transparent 0 180px,
+      rgba(217, 173, 96, 0.45) 181px,
+      transparent 183px,
+      transparent 210px,
+      rgba(217, 173, 96, 0.24) 211px,
+      transparent 213px
+    ),
+    linear-gradient(
+      135deg,
+      #f4f9ff 0%,
+      #eaf3ff 50%,
+      #dceaff 100%
+    ) !important;
+}

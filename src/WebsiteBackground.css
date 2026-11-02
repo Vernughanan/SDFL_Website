@@ -1,0 +1,152 @@
+
+/* ==========================================
+   SDFL GLOBAL WEBSITE BACKGROUND
+   Light Blue + Elegant Golden Lines
+   ========================================== */
+
+:root {
+  --sdfl-bg-light: #f4f8ff;
+  --sdfl-bg-blue: #eaf2ff;
+  --sdfl-bg-deep: #dce9ff;
+  --sdfl-gold-line: rgba(213, 161, 65, 0.42);
+  --sdfl-navy: #14264d;
+}
+
+/* Base background for the entire website */
+html {
+  min-height: 100%;
+  background: var(--sdfl-bg-light);
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--sdfl-bg-light);
+}
+
+/* The React application root */
+#root {
+  min-height: 100vh;
+  background: var(--sdfl-bg-light);
+}
+
+/* Shared background artwork */
+:where(
+  main,
+  .services-section,
+  .advertisement-section,
+  .why-sdfl-section,
+  .feedback-section,
+  .about-page,
+  .contact-page,
+  .gallery-page,
+  .sdfl-team-page,
+  .board-members-page,
+  .staff-page,
+  .rp-page
+) {
+  background-color: var(--sdfl-bg-blue);
+  background-image:
+    /* Fine gold curved lines, top left */
+    radial-gradient(
+      circle at 0% 0%,
+      transparent 0,
+      transparent 148px,
+      var(--sdfl-gold-line) 149px,
+      transparent 150px,
+      transparent 177px,
+      rgba(213, 161, 65, 0.2) 178px,
+      transparent 179px
+    ),
+
+    /* Fine gold curved lines, bottom right */
+    radial-gradient(
+      circle at 100% 100%,
+      transparent 0,
+      transparent 195px,
+      rgba(213, 161, 65, 0.3) 196px,
+      transparent 197px,
+      transparent 225px,
+      rgba(213, 161, 65, 0.17) 226px,
+      transparent 227px
+    ),
+
+    /* Soft blue lighting */
+    radial-gradient(
+      ellipse at 88% 12%,
+      rgba(130, 167, 237, 0.2),
+      transparent 45%
+    ),
+
+    linear-gradient(
+      135deg,
+      #f4f8ff 0%,
+      #eaf2ff 45%,
+      #dce9ff 100%
+    );
+
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Keep the global background visible
+   around the page content */
+:where(
+  .services-section,
+  .advertisement-section,
+  .why-sdfl-section,
+  .feedback-section
+) {
+  position: relative;
+}
+
+/* White content cards */
+:where(
+  .service-card,
+  .advertisement-card
+) {
+  border: 1px solid rgba(205, 220, 247, 0.85);
+  box-shadow: 0 14px 35px rgba(25, 64, 132, 0.09);
+}
+
+/* Maintain strong heading contrast */
+:where(
+  .services-section,
+  .about-page,
+  .contact-page,
+  .gallery-page
+) h2 {
+  color: var(--sdfl-navy);
+}
+
+/* Mobile-friendly background decoration */
+@media (max-width: 768px) {
+  :where(
+    main,
+    .services-section,
+    .advertisement-section,
+    .why-sdfl-section,
+    .feedback-section,
+    .about-page,
+    .contact-page,
+    .gallery-page,
+    .sdfl-team-page,
+    .board-members-page,
+    .staff-page,
+    .rp-page
+  ) {
+    background-image:
+      radial-gradient(
+        circle at 0% 0%,
+        transparent 0,
+        transparent 85px,
+        rgba(213, 161, 65, 0.3) 86px,
+        transparent 87px
+      ),
+      linear-gradient(
+        135deg,
+        #f4f8ff,
+        #e1edff
+      );
+  }
+}

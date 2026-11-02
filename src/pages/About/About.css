@@ -1,0 +1,452 @@
+
+/* ==========================================
+   SDFL ABOUT PAGE
+   Blue & Gold Theme
+   ========================================== */
+
+.about-page {
+  width: 100%;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  background: #eaf2ff;
+}
+
+.about-page *,
+.about-page *::before,
+.about-page *::after {
+  box-sizing: border-box;
+}
+
+/* ==========================================
+   ABOUT HERO
+   ========================================== */
+
+.about-hero {
+  position: relative;
+  width: 100%;
+  padding: 40px 35px;
+  overflow: hidden;
+
+  background: linear-gradient(
+    110deg,
+    #102750 0%,
+    #1b2e56 60%,
+    #102750 100%
+  );
+}
+
+.about-hero-container {
+  position: relative;
+  z-index: 1;
+
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1.25fr)
+    minmax(0, 0.85fr);
+
+  align-items: center;
+  gap: 35px;
+
+  width: 100%;
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
+/* ==========================================
+   LEFT SIDE - COMPANY HISTORY
+   ========================================== */
+
+.about-hero-content {
+  min-width: 0;
+  color: #ffffff;
+}
+
+.about-hero-content h1 {
+  margin: 0 0 25px;
+  color: #ffffff;
+
+  font-size: clamp(28px, 2.7vw, 43px);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.4px;
+  text-align: left;
+}
+
+.about-hero-content h1 span {
+  color: #e7b75d;
+}
+
+.about-hero-paragraphs {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.about-hero-paragraphs p {
+  margin: 0;
+  padding: 0;
+
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.8;
+
+  text-align: justify;
+  text-justify: inter-word;
+  overflow-wrap: break-word;
+}
+
+/* ==========================================
+   HERO ACTION BUTTONS
+   ========================================== */
+
+.about-hero-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin-top: 28px;
+}
+
+/* EXPLORE JOURNEY BUTTON */
+
+.about-hero-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+
+  min-height: 48px;
+  padding: 12px 28px;
+
+  border: 2px solid transparent;
+  border-radius: 9px;
+
+  background: linear-gradient(
+    135deg,
+    #53a56b,
+    #32834d
+  );
+
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.18);
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.about-hero-button:hover {
+  background: #287441;
+  color: #ffffff;
+  transform: translateY(-3px);
+
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.24);
+}
+
+.about-hero-button span {
+  font-size: 19px;
+  line-height: 1;
+}
+
+/* ANNUAL REPORTS BUTTON */
+
+.about-reports-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 11px;
+
+  min-height: 48px;
+  padding: 12px 28px;
+
+  background: #ffffff;
+  color: #142b55;
+
+  border: 2px solid #e7b75d;
+  border-radius: 9px;
+
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.18);
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.about-reports-button svg {
+  flex-shrink: 0;
+}
+
+.about-reports-button:hover {
+  background: #fff6e5;
+  color: #142b55;
+  transform: translateY(-3px);
+
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.24);
+}
+
+/* ==========================================
+   RIGHT SIDE - BUILDING IMAGE
+   ========================================== */
+
+.about-hero-image {
+  position: relative;
+  display: block;
+
+  width: 100%;
+  height: 650px;
+
+  border-radius: 18px;
+  overflow: hidden;
+
+  cursor: pointer;
+  text-decoration: none;
+  box-shadow: none;
+
+  transform: perspective(1200px)
+    rotateY(0deg)
+    rotateX(0deg);
+
+  transition: transform 0.4s ease;
+}
+
+.about-hero-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: center;
+
+  transition: transform 0.4s ease;
+}
+
+.about-hero-image:hover {
+  transform: perspective(1200px)
+    rotateY(-3deg)
+    rotateX(2deg)
+    translateY(-5px);
+}
+
+.about-hero-image:hover img {
+  transform: scale(1.04);
+}
+
+/* ==========================================
+   BUILDING LOCATION OVERLAY
+   ========================================== */
+
+.about-image-overlay {
+  position: absolute;
+  inset: 0;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+
+  padding: 25px;
+
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.65),
+    transparent 45%
+  );
+
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.about-hero-image:hover .about-image-overlay,
+.about-hero-image:focus-visible .about-image-overlay {
+  opacity: 1;
+}
+
+.about-location-label {
+  display: inline-block;
+  padding: 12px 22px;
+
+  background: #ffffff;
+  color: #18346c;
+
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+/* ==========================================
+   ACCESSIBILITY
+   ========================================== */
+
+.about-hero-image:focus-visible,
+.about-hero-button:focus-visible,
+.about-reports-button:focus-visible {
+  outline: 3px solid #e7b75d;
+  outline-offset: 4px;
+}
+
+/* ==========================================
+   MEDIUM DESKTOP
+   ========================================== */
+
+@media (max-width: 1200px) {
+  .about-hero {
+    padding: 35px 28px;
+  }
+
+  .about-hero-container {
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 25px;
+  }
+
+  .about-hero-content h1 {
+    font-size: 33px;
+  }
+
+  .about-hero-paragraphs {
+    gap: 20px;
+  }
+
+  .about-hero-paragraphs p {
+    font-size: 14px;
+    line-height: 1.75;
+  }
+
+  .about-hero-image {
+    height: 620px;
+  }
+}
+
+/* ==========================================
+   TABLET
+   ========================================== */
+
+@media (max-width: 900px) {
+  .about-hero-container {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .about-hero-content h1 {
+    font-size: 34px;
+  }
+
+  .about-hero-image {
+    height: 450px;
+  }
+}
+
+/* ==========================================
+   MOBILE
+   ========================================== */
+
+@media (max-width: 600px) {
+  .about-hero {
+    padding: 30px 20px;
+  }
+
+  .about-hero-container {
+    gap: 25px;
+  }
+
+  .about-hero-content h1 {
+    margin-bottom: 22px;
+    font-size: 28px;
+  }
+
+  .about-hero-paragraphs {
+    gap: 20px;
+  }
+
+  .about-hero-paragraphs p {
+    font-size: 14px;
+    line-height: 1.7;
+    text-align: left;
+  }
+
+  .about-hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    margin-top: 25px;
+  }
+
+  .about-hero-button,
+  .about-reports-button {
+    width: 100%;
+    padding: 12px 20px;
+    font-size: 13px;
+  }
+
+  .about-hero-image {
+    height: 350px;
+    border-radius: 15px;
+  }
+
+  .about-hero-image:hover {
+    transform: none;
+  }
+
+  .about-image-overlay {
+    opacity: 1;
+    padding: 15px;
+  }
+
+  .about-location-label {
+    padding: 10px 18px;
+    font-size: 12px;
+  }
+}
+
+/* ==========================================
+   SMALL MOBILE
+   ========================================== */
+
+@media (max-width: 400px) {
+  .about-hero {
+    padding: 25px 15px;
+  }
+
+  .about-hero-content h1 {
+    font-size: 25px;
+  }
+
+  .about-hero-paragraphs p {
+    font-size: 13px;
+  }
+
+  .about-hero-image {
+    height: 280px;
+  }
+}
+
+/* ==========================================
+   REDUCED MOTION
+   ========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .about-hero-image,
+  .about-hero-image img,
+  .about-image-overlay,
+  .about-hero-button,
+  .about-reports-button {
+    transition: none;
+  }
+
+  .about-hero-image:hover,
+  .about-hero-image:hover img,
+  .about-hero-button:hover,
+  .about-reports-button:hover {
+    transform: none;
+  }
+}

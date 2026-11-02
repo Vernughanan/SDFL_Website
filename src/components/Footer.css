@@ -1,0 +1,616 @@
+
+/* ==========================================
+   SDFL COMPACT FOOTER
+   ========================================== */
+
+.sdfl-footer {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+
+  background: linear-gradient(
+    110deg,
+    #071633 0%,
+    #102650 50%,
+    #071633 100%
+  );
+
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+}
+
+.sdfl-footer *,
+.sdfl-footer *::before,
+.sdfl-footer *::after {
+  box-sizing: border-box;
+}
+
+/* ==========================================
+   TOP WAVES - COMPACT
+   ========================================== */
+
+.sdfl-footer .footer-wave-decoration {
+  width: 100%;
+  height: 70px;
+  overflow: hidden;
+  background: #eaf2ff;
+}
+
+.sdfl-footer .footer-wave-decoration svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* ==========================================
+   MAIN FOOTER CONTENT
+   ========================================== */
+
+.sdfl-footer .footer-main-container {
+  width: 100%;
+  padding: 25px 35px 18px;
+
+  background: linear-gradient(
+    110deg,
+    #071633 0%,
+    #102650 50%,
+    #071633 100%
+  );
+}
+
+/* ==========================================
+   FOUR COLUMN LAYOUT
+   ========================================== */
+
+.sdfl-footer .footer-container {
+  width: 100%;
+  max-width: 1450px;
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1.3fr)
+    minmax(0, 0.85fr)
+    minmax(0, 1.2fr)
+    minmax(0, 1fr);
+
+  gap: 30px;
+  align-items: start;
+}
+
+/* ==========================================
+   GENERAL COLUMNS
+   ========================================== */
+
+.sdfl-footer .footer-column {
+  min-width: 0;
+}
+
+.sdfl-footer .footer-column h3 {
+  margin: 0 0 15px;
+
+  color: #ffffff;
+  font-size: 19px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+/* ==========================================
+   ABOUT SDFL
+   ========================================== */
+
+.sdfl-footer .footer-about {
+  padding-right: 22px;
+
+  border-right:
+    1px solid rgba(255, 255, 255, 0.25);
+}
+
+.sdfl-footer .footer-about-description {
+  max-width: 365px;
+  margin: 0;
+
+  color: #d5deee;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.7;
+}
+
+/* ==========================================
+   SOCIAL MEDIA
+   ========================================== */
+
+.sdfl-footer .footer-social-icons {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+
+  gap: 5px;
+  margin-top: 18px;
+}
+
+.sdfl-footer .footer-social-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+
+  width: 66px;
+  min-width: 0;
+
+  text-align: center;
+}
+
+/* ==========================================
+   SOCIAL BUTTONS
+   ========================================== */
+
+.sdfl-footer .social-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+
+  width: 40px;
+  height: 40px;
+
+  margin: 0 auto 6px;
+  padding: 0;
+
+  border: none;
+  border-radius: 50%;
+
+  background: #ffffff;
+  color: #102650;
+
+  font-family: inherit;
+  font-size: 17px;
+  line-height: 1;
+
+  cursor: pointer;
+  text-decoration: none;
+
+  box-shadow:
+    0 4px 10px rgba(0, 0, 0, 0.15);
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    color 0.25s ease;
+}
+
+.sdfl-footer .social-icon svg {
+  display: block;
+  width: 17px;
+  height: 17px;
+}
+
+.sdfl-footer .social-icon:hover {
+  background: #e7b65c;
+  color: #071633;
+
+  transform: translateY(-3px);
+}
+
+/* ==========================================
+   SOCIAL LABELS
+   ========================================== */
+
+.sdfl-footer .footer-social-name {
+  display: block;
+
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.sdfl-footer .footer-launching-label {
+  display: block;
+
+  margin-top: 3px;
+
+  color: #e7b65c;
+  font-size: 8px;
+  font-weight: 700;
+  line-height: 1.3;
+  white-space: nowrap;
+}
+
+/* ==========================================
+   QUICK LINKS AND SERVICES
+   ========================================== */
+
+.sdfl-footer .footer-column ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.sdfl-footer .footer-column li {
+  margin: 0;
+  padding: 0;
+}
+
+.sdfl-footer .footer-column li a {
+  display: inline-block;
+
+  color: #d5deee;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.5;
+
+  text-decoration: none;
+
+  transition:
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+/* GOLD ARROWS */
+
+.sdfl-footer .footer-quick-links li a::before,
+.sdfl-footer .footer-services li a::before {
+  content: "›";
+
+  display: inline-block;
+
+  margin-right: 8px;
+
+  color: #e7b65c;
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.sdfl-footer .footer-column li a:hover {
+  color: #e7b65c;
+  transform: translateX(4px);
+}
+
+/* ==========================================
+   VISIT US
+   ========================================== */
+
+.sdfl-footer .footer-visit {
+  padding-left: 20px;
+
+  border-left:
+    1px solid rgba(255, 255, 255, 0.25);
+}
+
+.sdfl-footer .footer-address {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.sdfl-footer .footer-location-icon {
+  flex-shrink: 0;
+
+  margin-top: 3px;
+
+  color: #e7b65c;
+  font-size: 19px;
+}
+
+.sdfl-footer .footer-address-text {
+  min-width: 0;
+}
+
+.sdfl-footer .footer-address p {
+  margin: 0 0 12px;
+
+  color: #d5deee;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.sdfl-footer .footer-map-link {
+  display: inline-block;
+
+  color: #e7b65c;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.5;
+
+  text-decoration: none;
+
+  transition: color 0.25s ease;
+}
+
+.sdfl-footer .footer-map-link:hover {
+  color: #ffffff;
+}
+
+/* ==========================================
+   COPYRIGHT
+   ========================================== */
+
+.sdfl-footer .footer-bottom {
+  width: 100%;
+  max-width: 1450px;
+
+  margin: 25px auto 0;
+  padding: 14px 0 0;
+
+  border-top:
+    1px solid rgba(255, 255, 255, 0.3);
+
+  text-align: center;
+}
+
+.sdfl-footer .footer-bottom p {
+  margin: 0;
+
+  color: #bfcbe0;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+/* ==========================================
+   LAUNCHING SOON POPUP
+   ========================================== */
+
+.sdfl-footer .footer-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 20px;
+
+  background: rgba(3, 13, 35, 0.76);
+  backdrop-filter: blur(5px);
+}
+
+.sdfl-footer .footer-modal {
+  position: relative;
+
+  width: 100%;
+  max-width: 400px;
+
+  padding: 35px 28px 30px;
+
+  background: #ffffff;
+  border-radius: 18px;
+
+  text-align: center;
+
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.25);
+}
+
+.sdfl-footer .footer-modal-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 32px;
+  height: 32px;
+
+  padding: 0;
+
+  border: none;
+  border-radius: 50%;
+
+  background: #edf3fc;
+  color: #102650;
+
+  cursor: pointer;
+}
+
+.sdfl-footer .footer-modal-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 65px;
+  height: 65px;
+
+  margin: 0 auto 18px;
+
+  border-radius: 50%;
+
+  background: #eaf2ff;
+  color: #2864c6;
+  font-size: 27px;
+}
+
+.sdfl-footer .footer-modal-eyebrow {
+  display: block;
+
+  margin-bottom: 10px;
+
+  color: #2864c6;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.sdfl-footer .footer-modal h2 {
+  margin: 0 0 12px;
+
+  color: #102650;
+  font-size: 26px;
+  font-weight: 800;
+}
+
+.sdfl-footer .footer-modal p {
+  margin: 0 auto 22px;
+
+  color: #5a6c85;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.sdfl-footer .footer-modal-button {
+  min-width: 130px;
+
+  padding: 11px 22px;
+
+  border: none;
+  border-radius: 8px;
+
+  background: #102650;
+  color: #ffffff;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+.sdfl-footer .footer-modal-button:hover {
+  background: #2864c6;
+}
+
+/* ==========================================
+   TABLET
+   ========================================== */
+
+@media (max-width: 1050px) {
+  .sdfl-footer .footer-wave-decoration {
+    height: 60px;
+  }
+
+  .sdfl-footer .footer-main-container {
+    padding: 25px 25px 18px;
+  }
+
+  .sdfl-footer .footer-container {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    gap: 28px;
+  }
+
+  .sdfl-footer .footer-about {
+    padding-right: 20px;
+  }
+
+  .sdfl-footer .footer-visit {
+    padding-left: 20px;
+  }
+
+  .sdfl-footer .footer-column h3 {
+    font-size: 18px;
+  }
+
+  .sdfl-footer .footer-bottom {
+    margin-top: 25px;
+  }
+}
+
+/* ==========================================
+   MOBILE
+   ========================================== */
+
+@media (max-width: 650px) {
+  .sdfl-footer .footer-wave-decoration {
+    height: 50px;
+  }
+
+  .sdfl-footer .footer-main-container {
+    padding: 22px 18px 18px;
+  }
+
+  .sdfl-footer .footer-container {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .sdfl-footer .footer-about {
+    padding: 0 0 22px;
+
+    border-right: none;
+    border-bottom:
+      1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .sdfl-footer .footer-visit {
+    padding: 0;
+    border-left: none;
+  }
+
+  .sdfl-footer .footer-services {
+    padding-bottom: 20px;
+
+    border-bottom:
+      1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .sdfl-footer .footer-column h3 {
+    margin-bottom: 12px;
+    font-size: 18px;
+  }
+
+  .sdfl-footer .footer-about-description {
+    max-width: 100%;
+    font-size: 13px;
+  }
+
+  .sdfl-footer .footer-social-icons {
+    margin-top: 16px;
+    gap: 5px;
+  }
+
+  .sdfl-footer .footer-social-item {
+    width: 65px;
+  }
+
+  .sdfl-footer .social-icon {
+    width: 39px;
+    height: 39px;
+  }
+
+  .sdfl-footer .footer-column ul {
+    gap: 9px;
+  }
+
+  .sdfl-footer .footer-column li a {
+    font-size: 13px;
+  }
+
+  .sdfl-footer .footer-bottom {
+    margin-top: 22px;
+    padding-top: 13px;
+  }
+
+  .sdfl-footer .footer-bottom p {
+    font-size: 11px;
+  }
+}
+
+/* ==========================================
+   ACCESSIBILITY
+   ========================================== */
+
+.sdfl-footer a:focus-visible,
+.sdfl-footer button:focus-visible {
+  outline: 2px solid #e7b65c;
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sdfl-footer *,
+  .sdfl-footer *::before,
+  .sdfl-footer *::after {
+    transition: none !important;
+    animation: none !important;
+  }
+}

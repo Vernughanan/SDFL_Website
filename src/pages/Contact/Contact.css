@@ -1,0 +1,856 @@
+
+/* ==========================================
+   SDFL CONTACT PAGE
+   LIGHT BLUE BACKGROUND
+   FAQ + MAP SIDE-BY-SIDE
+   FRAMES WITH X10 Y10 SHADOW
+========================================== */
+
+.sdfl-contact {
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+
+  color: #14213d;
+  font-family: Arial, sans-serif;
+
+  background: linear-gradient(
+    135deg,
+    #f4f9ff 0%,
+    #eaf3ff 50%,
+    #dfeaff 100%
+  );
+}
+
+.sdfl-contact *,
+.sdfl-contact *::before,
+.sdfl-contact *::after {
+  box-sizing: border-box;
+}
+
+.sdfl-contact::before,
+.sdfl-contact::after {
+  content: none;
+}
+
+/* ==========================================
+   PAGE CONTAINER
+========================================== */
+
+.sdfl-contact .contact-wrap {
+  width: min(1180px, calc(100% - 60px));
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ==========================================
+   CONTACT BANNER
+========================================== */
+
+.sdfl-contact .contact-banner {
+  position: relative;
+  overflow: hidden;
+  padding: 35px 0;
+
+  background: linear-gradient(
+    115deg,
+    #102750 0%,
+    #1b376a 55%,
+    #142a52 100%
+  );
+
+  color: #ffffff;
+}
+
+.sdfl-contact .contact-banner h1 {
+  margin: 0 0 10px;
+  color: #ffffff;
+  font-size: clamp(28px, 3vw, 42px);
+  font-weight: 800;
+}
+
+.sdfl-contact .contact-banner p {
+  max-width: 620px;
+  margin: 0;
+  color: #d6e1f3;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+/* ==========================================
+   TRANSPARENT PAGE SECTIONS
+========================================== */
+
+.sdfl-contact .contact-top,
+.sdfl-contact .contact-help-section {
+  position: relative;
+  background: transparent;
+  background-image: none;
+  border: none;
+}
+
+/* ==========================================
+   CONTACT INFORMATION + FORM LAYOUT
+========================================== */
+
+.sdfl-contact .contact-top.contact-wrap {
+  display: grid;
+  grid-template-columns: 340px minmax(0, 1fr);
+  align-items: start;
+  gap: 26px;
+
+  width: min(1180px, calc(100% - 60px));
+  max-width: 1180px;
+
+  margin-left: auto;
+  margin-right: auto;
+  padding: 30px 0 25px;
+}
+
+.sdfl-contact .contact-left {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ==========================================
+   WHITE CONTACT PANELS
+========================================== */
+
+.sdfl-contact .contact-details-panel,
+.sdfl-contact .contact-form-panel {
+  position: relative;
+  overflow: hidden;
+  padding: 26px;
+
+  background: #ffffff;
+  border: 1px solid #d8e3f3;
+  border-radius: 20px;
+
+  box-shadow: 0 10px 28px rgba(15, 35, 70, 0.08);
+}
+
+/* Subtle gold accent on cards only */
+
+.sdfl-contact .contact-details-panel::before,
+.sdfl-contact .contact-form-panel::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+
+  width: 42%;
+  height: 3px;
+  transform: translateX(-50%);
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #b88632,
+    #d9ad60,
+    #b88632,
+    transparent
+  );
+}
+
+.sdfl-contact .contact-details-panel h2,
+.sdfl-contact .contact-form-panel h2 {
+  margin: 0 0 9px;
+  color: #17294c;
+  font-size: 21px;
+  font-weight: 800;
+}
+
+.sdfl-contact .contact-muted {
+  margin: 0 0 25px;
+  color: #7b879a;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+/* ==========================================
+   CONTACT DETAILS
+========================================== */
+
+.sdfl-contact .contact-detail {
+  display: flex;
+  align-items: flex-start;
+  gap: 13px;
+  margin-bottom: 23px;
+}
+
+.sdfl-contact .contact-detail:last-child {
+  margin-bottom: 0;
+}
+
+.sdfl-contact .detail-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+
+  border-radius: 10px;
+  color: #ffffff;
+}
+
+.sdfl-contact .detail-icon.blue {
+  background: #3158c9;
+}
+
+.sdfl-contact .detail-icon.green {
+  background: #36b879;
+}
+
+.sdfl-contact .detail-icon.orange {
+  background: #b88632;
+}
+
+.sdfl-contact .detail-icon.navy {
+  background: #294784;
+}
+
+.sdfl-contact .contact-detail h3 {
+  margin: 2px 0 6px;
+  color: #152c53;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.sdfl-contact .contact-detail p,
+.sdfl-contact .contact-detail a {
+  margin: 0;
+  color: #64748b;
+  font-size: 12px;
+  line-height: 1.6;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+
+.sdfl-contact .contact-detail a:hover {
+  color: #3158c9;
+}
+
+/* ==========================================
+   BUILDING IMAGE
+========================================== */
+
+.sdfl-contact .contact-building-link {
+  position: relative;
+  display: block;
+  overflow: hidden;
+
+  background: #eaf3ff;
+  border: 1px solid #d8e3f3;
+  border-radius: 20px;
+
+  text-decoration: none;
+  transition: transform 0.35s ease;
+}
+
+.sdfl-contact .contact-building-link img {
+  display: block;
+  width: 100%;
+  height: 255px;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.sdfl-contact .contact-building-link:hover {
+  transform: translateY(-3px);
+}
+
+.sdfl-contact .contact-building-link:hover img {
+  transform: scale(1.04);
+}
+
+.sdfl-contact .contact-building-link span {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  padding: 28px 15px 14px;
+
+  background: linear-gradient(
+    transparent,
+    rgba(8, 22, 48, 0.85)
+  );
+
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+/* ==========================================
+   CONTACT FORM
+========================================== */
+
+.sdfl-contact .contact-form-panel {
+  padding: 30px;
+}
+
+.sdfl-contact .contact-fields-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 18px;
+}
+
+.sdfl-contact .contact-input-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 19px;
+}
+
+.sdfl-contact .contact-input-group label {
+  margin-bottom: 8px;
+  color: #243650;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.sdfl-contact .contact-input-group input,
+.sdfl-contact .contact-input-group select,
+.sdfl-contact .contact-input-group textarea {
+  width: 100%;
+  min-width: 0;
+  padding: 12px 13px;
+
+  background: #fbfdff;
+  border: 1px solid #d9e0e9;
+  border-radius: 10px;
+
+  color: #17294c;
+  font: inherit;
+  font-size: 13px;
+  outline: none;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.sdfl-contact .contact-input-group input:focus,
+.sdfl-contact .contact-input-group select:focus,
+.sdfl-contact .contact-input-group textarea:focus {
+  border-color: #3158c9;
+  box-shadow: 0 0 0 3px rgba(49, 88, 201, 0.12);
+}
+
+.sdfl-contact .contact-input-group textarea {
+  min-height: 165px;
+  resize: vertical;
+}
+
+/* ==========================================
+   CONSENT CHECKBOX
+========================================== */
+
+.sdfl-contact .contact-consent {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+
+  margin: 5px 0 20px;
+  color: #64748b;
+
+  font-size: 12px;
+  line-height: 1.5;
+  cursor: pointer;
+}
+
+.sdfl-contact .contact-consent input {
+  margin-top: 2px;
+  accent-color: #294784;
+}
+
+/* ==========================================
+   SEND MESSAGE BUTTON
+========================================== */
+
+.sdfl-contact .contact-send-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  width: 100%;
+  padding: 14px 20px;
+
+  background: #29458e;
+  border: none;
+  border-radius: 10px;
+
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease;
+}
+
+.sdfl-contact .contact-send-button:hover {
+  background: #18346e;
+  transform: translateY(-2px);
+}
+
+.sdfl-contact .contact-status {
+  margin: 15px 0 0;
+  padding: 13px;
+
+  background: #edf3ff;
+  border: 1px solid #cbdcf4;
+  border-radius: 10px;
+
+  color: #183b7a;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+/* ==========================================
+   FAQ + OFFICE MAP
+   MAIN SIDE-BY-SIDE SECTION
+========================================== */
+
+.sdfl-contact .contact-help-section {
+  width: 100%;
+  margin: 0;
+  padding: 25px 0 65px;
+
+  background: transparent;
+}
+
+.sdfl-contact .contact-help-grid {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 0.95fr)
+    minmax(0, 1.25fr);
+
+  align-items: stretch;
+  gap: 30px;
+}
+
+/* ==========================================
+   FRAMES AROUND EACH COMPLETE SECTION
+   SHADOW: X 10PX / Y 10PX
+========================================== */
+
+.sdfl-contact .contact-faq-section,
+.sdfl-contact .contact-office-section {
+  position: relative;
+  min-width: 0;
+
+  margin: 0;
+  padding: 28px 24px 30px;
+
+  background: #ffffff;
+  background-image: none;
+
+  border: 1px solid #d8e3f3;
+  border-radius: 22px;
+
+  box-shadow:
+    10px 10px 24px rgba(20, 43, 85, 0.18);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+/* Subtle hover elevation */
+
+.sdfl-contact .contact-faq-section:hover,
+.sdfl-contact .contact-office-section:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    10px 10px 30px rgba(20, 43, 85, 0.22);
+}
+
+/* Small golden accent along the top */
+
+.sdfl-contact .contact-faq-section::before,
+.sdfl-contact .contact-office-section::before {
+  content: "";
+  position: absolute;
+
+  top: 0;
+  left: 50%;
+
+  width: 38%;
+  height: 3px;
+
+  transform: translateX(-50%);
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #b88632,
+    #d9ad60,
+    transparent
+  );
+}
+
+/* ==========================================
+   SHARED SECTION HEADINGS
+========================================== */
+
+.sdfl-contact .contact-section-title {
+  margin: 0 0 22px;
+  text-align: center;
+}
+
+.sdfl-contact .contact-section-title h2 {
+  margin: 0 0 8px;
+
+  color: #17294c;
+  font-size: clamp(21px, 2.1vw, 28px);
+  font-weight: 800;
+  line-height: 1.3;
+}
+
+.sdfl-contact .contact-section-title p {
+  margin: 0;
+  color: #8490a2;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+/* ==========================================
+   FAQ COLUMN
+========================================== */
+
+.sdfl-contact .contact-faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  width: 100%;
+  max-width: none;
+  margin: 0;
+}
+
+/* Individual FAQ cards */
+
+.sdfl-contact .contact-faq-item {
+  position: relative;
+  overflow: hidden;
+
+  background: #f8fbff;
+
+  border: 1px solid #d8e3f3;
+  border-radius: 12px;
+
+  box-shadow: 0 3px 10px rgba(15, 35, 70, 0.04);
+}
+
+.sdfl-contact .contact-faq-item.opened {
+  border-color: rgba(184, 134, 50, 0.65);
+}
+
+.sdfl-contact .contact-faq-question {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+
+  width: 100%;
+  min-height: 58px;
+  padding: 15px 17px;
+
+  background: transparent;
+  border: none;
+
+  color: #1a2e51;
+  font-size: 13px;
+  font-weight: 700;
+  text-align: left;
+  line-height: 1.5;
+
+  cursor: pointer;
+}
+
+.sdfl-contact .contact-faq-question:hover {
+  background: #f0f6ff;
+}
+
+.sdfl-contact .faq-chevron {
+  display: flex;
+  flex-shrink: 0;
+
+  color: #b88632;
+  transition: transform 0.25s ease;
+}
+
+.sdfl-contact .contact-faq-item.opened .faq-chevron {
+  transform: rotate(180deg);
+}
+
+.sdfl-contact .contact-faq-answer {
+  padding: 0 17px 17px;
+
+  color: #64748b;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+/* ==========================================
+   VISIT OUR OFFICE COLUMN
+========================================== */
+
+.sdfl-contact .contact-office-section {
+  text-align: center;
+}
+
+/* ==========================================
+   GOOGLE MAP
+========================================== */
+
+.sdfl-contact .contact-office-map {
+  width: 100%;
+  height: 335px;
+  overflow: hidden;
+
+  background: #e5e7eb;
+
+  border: 1px solid rgba(184, 134, 50, 0.5);
+  border-radius: 16px;
+
+  box-shadow: 0 8px 18px rgba(15, 35, 70, 0.08);
+}
+
+.sdfl-contact .contact-office-map iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* ==========================================
+   GOOGLE MAP BUTTON
+========================================== */
+
+.sdfl-contact .contact-map-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+
+  margin-top: 16px;
+  padding: 13px 22px;
+
+  background: #29458e;
+  border-radius: 10px;
+
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease;
+}
+
+.sdfl-contact .contact-map-button:hover {
+  background: #18346e;
+  transform: translateY(-2px);
+}
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media (max-width: 1000px) {
+  .sdfl-contact .contact-top.contact-wrap {
+    grid-template-columns: 280px minmax(0, 1fr);
+    gap: 18px;
+  }
+
+  .sdfl-contact .contact-details-panel,
+  .sdfl-contact .contact-form-panel {
+    padding: 20px;
+  }
+
+  .sdfl-contact .contact-help-grid {
+    grid-template-columns:
+      minmax(0, 1fr)
+      minmax(0, 1fr);
+
+    gap: 20px;
+  }
+
+  .sdfl-contact .contact-faq-section,
+  .sdfl-contact .contact-office-section {
+    padding: 22px 18px 24px;
+  }
+
+  .sdfl-contact .contact-section-title h2 {
+    font-size: 23px;
+  }
+
+  .sdfl-contact .contact-office-map {
+    height: 320px;
+  }
+}
+
+/* ==========================================
+   SMALL TABLET
+========================================== */
+
+@media (max-width: 750px) {
+  .sdfl-contact .contact-top.contact-wrap {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .sdfl-contact .contact-fields-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sdfl-contact .contact-help-grid {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .sdfl-contact .contact-faq-section,
+  .sdfl-contact .contact-office-section {
+    width: 100%;
+  }
+
+  .sdfl-contact .contact-office-map {
+    height: 340px;
+  }
+}
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 650px) {
+  .sdfl-contact .contact-wrap {
+    width: calc(100% - 30px);
+  }
+
+  .sdfl-contact .contact-banner {
+    padding: 30px 0;
+  }
+
+  .sdfl-contact .contact-banner h1 {
+    font-size: 30px;
+  }
+
+  .sdfl-contact .contact-top.contact-wrap {
+    width: calc(100% - 30px);
+
+    grid-template-columns: 1fr;
+    gap: 22px;
+
+    padding: 25px 0 20px;
+  }
+
+  .sdfl-contact .contact-left {
+    gap: 15px;
+  }
+
+  .sdfl-contact .contact-building-link img {
+    height: 230px;
+  }
+
+  .sdfl-contact .contact-fields-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sdfl-contact .contact-help-section {
+    padding: 20px 0 45px;
+  }
+
+  .sdfl-contact .contact-help-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .sdfl-contact .contact-faq-section,
+  .sdfl-contact .contact-office-section {
+    padding: 22px 16px 25px;
+
+    border-radius: 18px;
+
+    box-shadow:
+      10px 10px 20px rgba(20, 43, 85, 0.15);
+  }
+
+  .sdfl-contact .contact-section-title {
+    margin-bottom: 20px;
+  }
+
+  .sdfl-contact .contact-section-title h2 {
+    font-size: 24px;
+  }
+
+  .sdfl-contact .contact-office-map {
+    height: 270px;
+  }
+
+  .sdfl-contact .contact-faq-question {
+    min-height: 55px;
+    padding: 14px 15px;
+    font-size: 12px;
+  }
+
+  .sdfl-contact .contact-map-button {
+    width: 100%;
+  }
+}
+
+/* ==========================================
+   SMALL MOBILE
+========================================== */
+
+@media (max-width: 400px) {
+  .sdfl-contact .contact-details-panel,
+  .sdfl-contact .contact-form-panel {
+    padding: 18px;
+  }
+
+  .sdfl-contact .contact-section-title h2 {
+    font-size: 21px;
+  }
+
+  .sdfl-contact .contact-office-map {
+    height: 240px;
+  }
+}
+
+/* ==========================================
+   ACCESSIBILITY
+========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .sdfl-contact .contact-building-link,
+  .sdfl-contact .contact-building-link img,
+  .sdfl-contact .contact-send-button,
+  .sdfl-contact .contact-map-button,
+  .sdfl-contact .faq-chevron,
+  .sdfl-contact .contact-faq-section,
+  .sdfl-contact .contact-office-section {
+    transition: none;
+  }
+
+  .sdfl-contact .contact-building-link:hover,
+  .sdfl-contact .contact-building-link:hover img,
+  .sdfl-contact .contact-send-button:hover,
+  .sdfl-contact .contact-map-button:hover,
+  .sdfl-contact .contact-faq-section:hover,
+  .sdfl-contact .contact-office-section:hover {
+    transform: none;
+  }
+}

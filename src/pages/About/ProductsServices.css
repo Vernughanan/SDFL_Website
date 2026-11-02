@@ -1,0 +1,383 @@
+
+/* ==========================================
+   SDFL ABOUT - PRODUCTS AND SERVICES
+   LIGHT BLUE + GOLDEN LINES THEME
+========================================== */
+
+.about-products-section {
+  position: relative;
+  isolation: isolate;
+
+  width: 100%;
+  padding: 55px 35px 65px;
+
+  font-family: Arial, sans-serif;
+  box-sizing: border-box;
+  overflow: hidden;
+
+  background-color: #eaf3ff;
+
+  background-image:
+    radial-gradient(
+      circle at 0% 100%,
+      transparent 0 150px,
+      rgba(217, 173, 96, 0.42) 151px,
+      transparent 153px,
+      transparent 180px,
+      rgba(217, 173, 96, 0.24) 181px,
+      transparent 183px,
+      transparent 210px,
+      rgba(217, 173, 96, 0.13) 211px,
+      transparent 213px
+    ),
+    radial-gradient(
+      circle at 100% 0%,
+      transparent 0 170px,
+      rgba(217, 173, 96, 0.4) 171px,
+      transparent 173px,
+      transparent 200px,
+      rgba(217, 173, 96, 0.22) 201px,
+      transparent 203px,
+      transparent 230px,
+      rgba(217, 173, 96, 0.12) 231px,
+      transparent 233px
+    ),
+    radial-gradient(
+      ellipse at 80% 20%,
+      rgba(133, 176, 240, 0.18),
+      transparent 45%
+    ),
+    linear-gradient(
+      135deg,
+      #f4f9ff 0%,
+      #eaf3ff 50%,
+      #dceaff 100%
+    );
+}
+
+/* ==========================================
+   CONSISTENT BOX SIZING
+========================================== */
+
+.about-products-section *,
+.about-products-section *::before,
+.about-products-section *::after {
+  box-sizing: border-box;
+}
+
+/* ==========================================
+   GOLDEN SECTION DIVIDER
+========================================== */
+
+.about-products-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+
+  width: min(70%, 900px);
+  height: 2px;
+
+  transform: translateX(-50%);
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(217, 173, 96, 0.8),
+    transparent
+  );
+
+  pointer-events: none;
+}
+
+/* ==========================================
+   MAIN WHITE CONTAINER
+========================================== */
+
+.about-products-container {
+  position: relative;
+  z-index: 1;
+
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1.65fr)
+    minmax(0, 0.85fr);
+
+  align-items: center;
+  gap: 35px;
+
+  width: 100%;
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 45px 45px;
+
+  background: linear-gradient(
+    145deg,
+    #ffffff 0%,
+    #fbfdff 65%,
+    #f7faff 100%
+  );
+
+  border: 1px solid rgba(195, 211, 235, 0.9);
+  border-radius: 20px;
+
+  box-shadow:
+    0 15px 38px rgba(25, 60, 120, 0.1),
+    0 4px 12px rgba(25, 60, 120, 0.04);
+
+  overflow: hidden;
+
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease,
+    border-color 0.4s ease;
+}
+
+/* Golden accent line on top of card */
+
+.about-products-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+
+  width: 38%;
+  height: 3px;
+
+  transform: translateX(-50%);
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #d9ad60,
+    transparent
+  );
+
+  pointer-events: none;
+}
+
+/* ==========================================
+   SUBTLE 3D HOVER EFFECT
+========================================== */
+
+.about-products-container:hover {
+  transform: perspective(1200px)
+    translateY(-5px);
+
+  border-color: rgba(217, 173, 96, 0.6);
+
+  box-shadow:
+    0 24px 48px rgba(25, 60, 120, 0.15),
+    0 6px 16px rgba(25, 60, 120, 0.05);
+}
+
+/* ==========================================
+   LEFT SIDE - TEXT CONTENT
+========================================== */
+
+.about-products-content {
+  width: 100%;
+  min-width: 0;
+  text-align: center;
+}
+
+/* Heading */
+
+.about-products-content h2 {
+  margin: 0 0 22px;
+
+  color: #142b55;
+  font-size: clamp(24px, 2.4vw, 34px);
+  font-weight: 800;
+  line-height: 1.25;
+  text-align: center;
+}
+
+/* Paragraphs */
+
+.about-products-content p {
+  margin: 0 0 20px;
+
+  color: #475b78;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.8;
+  text-align: center;
+}
+
+.about-products-content p:last-child {
+  margin-bottom: 0;
+}
+
+/* ==========================================
+   RIGHT SIDE - SKILLS DIAGRAM
+========================================== */
+
+.about-products-visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  min-width: 0;
+
+  perspective: 1000px;
+}
+
+/* Diagram image */
+
+.about-products-image {
+  display: block;
+
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+
+  object-fit: contain;
+
+  border: none;
+  border-radius: 16px;
+  box-shadow: none;
+
+  transition: transform 0.4s ease;
+}
+
+/* Image hover */
+
+.about-products-image:hover {
+  transform:
+    rotateY(-5deg)
+    rotateX(3deg)
+    scale(1.025);
+}
+
+/* ==========================================
+   MEDIUM DESKTOP
+========================================== */
+
+@media (max-width: 1200px) {
+  .about-products-section {
+    padding: 45px 25px 55px;
+  }
+
+  .about-products-container {
+    grid-template-columns:
+      minmax(0, 1.4fr)
+      minmax(0, 0.9fr);
+
+    gap: 25px;
+    padding: 35px;
+  }
+
+  .about-products-content h2 {
+    font-size: 28px;
+  }
+
+  .about-products-content p {
+    font-size: 14px;
+    line-height: 1.75;
+  }
+
+  .about-products-image {
+    max-width: 350px;
+  }
+}
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media (max-width: 900px) {
+  .about-products-container {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    padding: 35px 30px;
+  }
+
+  .about-products-content h2 {
+    font-size: 26px;
+  }
+
+  .about-products-content p {
+    font-size: 14px;
+  }
+
+  .about-products-image {
+    max-width: 380px;
+  }
+}
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 600px) {
+  .about-products-section {
+    padding: 35px 15px 45px;
+  }
+
+  .about-products-container {
+    padding: 28px 20px;
+    gap: 22px;
+
+    border-radius: 20px;
+  }
+
+  .about-products-content h2 {
+    font-size: 23px;
+    margin-bottom: 18px;
+  }
+
+  .about-products-content p {
+    font-size: 13px;
+    line-height: 1.75;
+    margin-bottom: 17px;
+  }
+
+  .about-products-image {
+    max-width: 100%;
+  }
+
+  .about-products-container:hover,
+  .about-products-image:hover {
+    transform: none;
+  }
+}
+
+/* ==========================================
+   SMALL MOBILE
+========================================== */
+
+@media (max-width: 400px) {
+  .about-products-section {
+    padding: 30px 12px 40px;
+  }
+
+  .about-products-container {
+    padding: 25px 16px;
+  }
+
+  .about-products-content h2 {
+    font-size: 21px;
+  }
+
+  .about-products-content p {
+    font-size: 13px;
+  }
+}
+
+/* ==========================================
+   REDUCED MOTION
+========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .about-products-container,
+  .about-products-image {
+    transition: none;
+  }
+
+  .about-products-container:hover,
+  .about-products-image:hover {
+    transform: none;
+  }
+}

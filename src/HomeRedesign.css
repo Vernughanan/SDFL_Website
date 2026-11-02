@@ -1,0 +1,32 @@
+/* SDFL Blue Horizon — homepage only. Other routes remain unchanged. */
+.home-page { --sdfl-navy:#091d42; --sdfl-blue:#17458a; --sdfl-gold:#e9ae49; overflow:hidden; background:#edf4fc; }
+.home-page .hero-section { background:radial-gradient(ellipse at 85% 0%,#2856a1 0%,#102e63 45%,#071a39 100%); padding:54px 24px 70px; position:relative; }
+.home-page .hero-section::before { content:""; position:absolute; inset:0; opacity:.25; background-image:radial-gradient(circle at 13% 20%,#6e9ef7 1px,transparent 2px); background-size:32px 32px; pointer-events:none; mask-image:linear-gradient(90deg,transparent,#000); }
+.home-page .hero-container { max-width:1440px; min-height:430px; border-radius:28px; overflow:hidden; box-shadow:0 30px 70px rgba(0,9,33,.28); }
+.home-page .hero-content { background:linear-gradient(110deg,#0a2553 0%,#173e7b 100%); }
+.home-page .hero-content h1 { letter-spacing:-1.5px; }
+.home-page .advertisement-section { background:linear-gradient(180deg,#071a39 0%,#102f64 68%,#eaf2fc 68%,#eaf2fc 100%); padding:12px 32px 65px; }
+.home-page .advertisement-container { max-width:1400px; border-radius:22px; border:5px solid rgba(255,255,255,.9); box-shadow:0 25px 60px rgba(12,37,77,.22); }
+.home-page .services-section { background:linear-gradient(180deg,#eaf2fc,#f7faff); padding:62px 30px 82px; }
+.home-page .services-heading { margin-bottom:38px; }
+.home-page .services-heading::before { content:"WHAT WE OFFER"; display:block; color:#b7802e; font-size:12px; letter-spacing:3px; font-weight:800; margin-bottom:14px; }
+.home-page .services-heading h2 { color:#0a2856; letter-spacing:-1.3px; }
+.home-page .services-heading h2 span { color:#2761c6; }
+.home-page .services-heading p { color:#526581; }
+.home-page .services-grid { gap:22px; }
+.home-page .service-card { background:#fff; border:1px solid #dbe7f8; border-radius:22px; box-shadow:0 12px 30px rgba(18,55,110,.08); transform:none; }
+.home-page .service-card::before { content:""; position:absolute; top:0; left:24px; right:24px; height:3px; background:linear-gradient(90deg,#1b56b3,#e9ae49); border-radius:0 0 4px 4px; }
+.home-page .service-card:hover { transform:translateY(-8px); box-shadow:0 22px 45px rgba(18,55,110,.15); }
+.home-page .why-sdfl-section { background:linear-gradient(135deg,#0a2149,#153c78); padding:76px 30px; position:relative; }
+.home-page .why-sdfl-section::before { content:""; position:absolute; width:450px; height:450px; right:-180px; top:-210px; border:1px solid rgba(233,174,73,.3); border-radius:50%; box-shadow:0 0 0 70px rgba(255,255,255,.025),0 0 0 145px rgba(255,255,255,.02); pointer-events:none; }
+.home-page .why-sdfl-container { position:relative; border-radius:28px; box-shadow:0 25px 60px rgba(0,0,0,.18); padding:48px; }
+.home-page .why-sdfl-content h2 { color:#173e7b; }
+.home-page .feedback-section { background:linear-gradient(180deg,#f0f6ff,#e5effb); padding:76px 30px 90px; }
+.home-page .feedback-heading h2 { color:#0a2856; }
+.home-page .feedback-heading h2 span { color:#2761c6; }
+.home-page .feedback-heading p { color:#526581; }
+.home-page .feedback-card { border:1px solid #d9e6f7; box-shadow:0 12px 32px rgba(17,54,107,.09); }
+.home-page .feedback-card:hover { box-shadow:0 20px 45px rgba(17,54,107,.16); }
+@media(max-width:900px){.home-page .hero-section{padding:30px 18px 45px}.home-page .advertisement-section{padding:12px 18px 42px}.home-page .services-section,.home-page .why-sdfl-section,.home-page .feedback-section{padding:52px 20px}.home-page .why-sdfl-container{padding:30px}}
+@media(max-width:600px){.home-page .hero-section{padding:18px 12px 34px}.home-page .hero-container{border-radius:17px;min-height:unset}.home-page .advertisement-section{padding:8px 12px 34px}.home-page .advertisement-container{border-width:3px;border-radius:14px}.home-page .services-section,.home-page .why-sdfl-section,.home-page .feedback-section{padding:42px 14px}.home-page .services-heading::before{font-size:10px}.home-page .why-sdfl-container{padding:24px 18px}}
+@media(prefers-reduced-motion:reduce){.home-page .service-card,.home-page .feedback-card{transition:none}}
