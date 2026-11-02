@@ -13,6 +13,7 @@ import hiranPhoto from "../../assets/staff/P.A.D. Hiran.png";
 import surajiPhoto from "../../assets/staff/S.D. Wadduwage.png";
 import MadubhashiniPhoto from "../../assets/staff/Ms.MadubhashiniSaddhamangala.jpeg"
 import KaveeshaPhoto from "../../assets/staff/Ms.KaveeshaKumarasiri.jpeg"
+import tildaPhoto from "../../assets/staff/Ms.TildaDeAlwis.jpeg"
 
 // ==========================================
 // STAFF INFORMATION
@@ -25,7 +26,7 @@ const staffMembers = [
     role: "General Manager",
     email: "generalmanager.sdfl@gmail.com",
     phone: "Unfortunately Unavailable",
-    image: null,
+    image: tildaPhoto,
   },
   {
     id: 2,
