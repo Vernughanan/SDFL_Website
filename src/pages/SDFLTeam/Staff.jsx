@@ -38,6 +38,14 @@ const staffMembers = [
   },
   {
     id: 3,
+    name: "Ms. Madubhashini Saddhamangala",
+    role: "Administrative Officer",
+    email: "sumedhamadhu@yahoo.com",
+    phone: "Unfortunately Unavailable",
+    image: MadubhashiniPhoto,
+  },
+  {
+    id: 4,
     name: "Ms. Sadhna Gunawardane",
     role: "Programme Officer (Division 01)",
     email: "sadhee19@gmail.com",
@@ -45,7 +53,7 @@ const staffMembers = [
     image: sadhnaPhoto,
   },
   {
-    id: 4,
+    id: 5,
     name: "Mr. Gayan Muthukumarane",
     role: "Programme Coordinator (Division 01)",
     email: "gayanskillsdevelopment@gmail.com",
@@ -53,21 +61,14 @@ const staffMembers = [
     image: gayanPhoto,
   },
   {
-    id: 5,
+    id: 6,
     name: "Ms. Suraji Wadduwage",
     role: "Programme Officer (Division 02)",
     email: "division2sdfl@gmail.com",
     phone: "Unfortunately Unavailable",
     image: surajiPhoto,
   },
-  {
-    id: 6,
-    name: "Ms. Madubhashini Saddhamangala",
-    role: "Administrative Officer",
-    email: "sumedhamadhu@yahoo.com",
-    phone: "Unfortunately Unavailable",
-    image: MadubhashiniPhoto,
-  },
+  
   {
     id: 7,
     name: "Ms. Dhanushka Paththinige",

@@ -1,6 +1,6 @@
 
 import { Link, useParams } from "react-router-dom";
-import { boardMembers } from "./BoardMembers.jsx";
+import { boardMembers } from "../../data/boardMembers.js";
 import "./SDFLTeam.css";
 
 export default function BoardProfile() {

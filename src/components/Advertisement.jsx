@@ -1,5 +1,4 @@
 
-import React from "react";
 import advertisement1 from "../assets/advertisement.png";
 import advertisement2 from "../assets/about-advertisement.png";
 

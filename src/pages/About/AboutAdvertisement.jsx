@@ -1,5 +1,4 @@
 
-import React from "react";
 import "./AboutAdvertisement.css";
 
 import aboutAdvertisement from "../../assets/about-advertisement.png";

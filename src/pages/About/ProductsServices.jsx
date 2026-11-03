@@ -1,5 +1,4 @@
 
-import React from "react";
 import "./ProductsServices.css";
 
 import skillsCategories from "../../assets/skills-categories.png";
