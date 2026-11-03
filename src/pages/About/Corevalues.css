@@ -1,7 +1,7 @@
 
 /* ==========================================
    SDFL CORE VALUES SECTION
-   LIGHT BLUE + ELEGANT GOLD THEME
+   ORIGINAL DESKTOP + MOBILE REDESIGN
 ========================================== */
 
 .core-values-section {
@@ -54,7 +54,7 @@
     );
 }
 
-/* Ensure consistent box sizing */
+/* Consistent box sizing */
 
 .core-values-section *,
 .core-values-section *::before,
@@ -62,7 +62,7 @@
   box-sizing: border-box;
 }
 
-/* Thin golden separator at the top */
+/* Golden separator at top */
 
 .core-values-section::before {
   content: "";
@@ -85,7 +85,7 @@
   pointer-events: none;
 }
 
-/* Decorative golden line near the bottom */
+/* Golden separator at bottom */
 
 .core-values-section::after {
   content: "";
@@ -132,7 +132,6 @@
 
 .core-values-eyebrow {
   display: inline-block;
-
   margin-bottom: 14px;
 
   color: #315cfa;
@@ -165,7 +164,7 @@
 }
 
 /* ==========================================
-   FIVE-CARD GRID
+   ORIGINAL DESKTOP GRID
 ========================================== */
 
 .core-values-grid {
@@ -177,7 +176,7 @@
 }
 
 /* ==========================================
-   WHITE 3D VALUE CARDS
+   ORIGINAL DESKTOP CARDS
 ========================================== */
 
 .core-value-card {
@@ -216,7 +215,7 @@
     border-color 0.4s ease;
 }
 
-/* Thin golden accent at the top of each card */
+/* Original golden accent */
 
 .core-value-card::before {
   content: "";
@@ -240,6 +239,8 @@
   pointer-events: none;
 }
 
+/* Original desktop hover */
+
 .core-value-card:hover {
   transform:
     translateY(-10px)
@@ -254,7 +255,7 @@
 }
 
 /* ==========================================
-   CARD NUMBER
+   CARD NUMBERS
 ========================================== */
 
 .core-value-number {
@@ -268,7 +269,7 @@
 }
 
 /* ==========================================
-   ICONS
+   ORIGINAL ICONS
 ========================================== */
 
 .core-value-icon {
@@ -295,10 +296,7 @@
   transform: scale(1.12) rotate(-5deg);
 }
 
-/* ==========================================
-   ICON COLORS
-   Original colors preserved
-========================================== */
+/* Icon colors */
 
 .core-value-card.blue .core-value-icon {
   background: #eaf0ff;
@@ -326,7 +324,7 @@
 }
 
 /* ==========================================
-   CARD CONTENT
+   ORIGINAL CARD CONTENT
 ========================================== */
 
 .core-value-card h3 {
@@ -338,7 +336,10 @@
   line-height: 1.35;
 }
 
-.core-value-card p {
+/* Desktop descriptions always visible */
+
+.core-value-card p.core-value-desktop-description {
+  display: block;
   flex-grow: 1;
 
   margin: 0;
@@ -348,9 +349,15 @@
   line-height: 1.7;
 }
 
+/* Mobile-only elements hidden on desktop */
+
+.core-value-mobile-description,
+.core-values-section .core-value-card button.sdfl-core-expand-button {
+  display: none;
+}
+
 /* ==========================================
-   COLORED ACCENT LINES
-   Original colors preserved
+   ORIGINAL COLORED ACCENT LINES
 ========================================== */
 
 .core-value-accent {
@@ -389,7 +396,7 @@
 }
 
 /* ==========================================
-   BOTTOM TEXT
+   ORIGINAL BOTTOM TEXT
 ========================================== */
 
 .core-values-bottom {
@@ -424,7 +431,7 @@
 }
 
 /* ==========================================
-   MEDIUM DESKTOP
+   ORIGINAL MEDIUM DESKTOP
 ========================================== */
 
 @media (max-width: 1100px) {
@@ -434,16 +441,15 @@
 }
 
 /* ==========================================
-   TABLET
+   ORIGINAL TABLET
 ========================================== */
 
-@media (max-width: 768px) {
+@media (min-width: 768px) and (max-width: 1100px) {
   .core-values-section {
     padding: 55px 20px;
   }
 
   .core-values-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 18px;
   }
 
@@ -457,74 +463,7 @@
 }
 
 /* ==========================================
-   MOBILE
-========================================== */
-
-@media (max-width: 480px) {
-  .core-values-section {
-    padding: 45px 15px;
-  }
-
-  .core-values-heading {
-    margin-bottom: 30px;
-  }
-
-  .core-values-heading h2 {
-    font-size: 30px;
-  }
-
-  .core-values-heading p {
-    font-size: 14px;
-  }
-
-  .core-values-grid {
-    grid-template-columns: 1fr;
-    gap: 18px;
-  }
-
-  .core-value-card {
-    min-height: 230px;
-    padding: 25px 22px;
-  }
-
-  .core-value-card:hover {
-    transform: none;
-  }
-
-  .core-values-bottom {
-    gap: 10px;
-  }
-
-  .core-values-bottom span {
-    width: 25px;
-  }
-
-  .core-values-bottom p {
-    font-size: 11px;
-    letter-spacing: 0.3px;
-  }
-}
-
-/* ==========================================
-   REDUCED MOTION
-========================================== */
-
-@media (prefers-reduced-motion: reduce) {
-  .core-value-card,
-  .core-value-icon,
-  .core-value-accent {
-    transition: none;
-  }
-
-  .core-value-card:hover,
-  .core-value-card:hover .core-value-icon {
-    transform: none;
-  }
-}
-
-/* ==========================================
-   SDFL CORE VALUES
-   LIGHT BLUE BACKGROUND FIX
+   ORIGINAL ABOUT PAGE BACKGROUND FIX
 ========================================== */
 
 .about-page .core-values-section,
@@ -561,149 +500,14 @@
     ) !important;
 }
 
-/* Keep the content above decorative effects */
-
-.core-values-container {
-  position: relative;
-  z-index: 1;
-}
-
-/* Golden separator */
-
-.core-values-section::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 50%;
-
-  width: 70%;
-  max-width: 900px;
-  height: 2px;
-
-  transform: translateX(-50%);
-
-  background: linear-gradient(
-    90deg,
-    transparent,
-    #d9ad60,
-    transparent
-  );
-
-  pointer-events: none;
-}
-
 /* ==========================================
-   CORE VALUES — FINAL BLUE & GOLD OVERRIDE
+   ORIGINAL FINAL BLUE & GOLD OVERRIDE
 ========================================== */
 
 main.about-page section.core-values-section {
   position: relative;
   isolation: isolate;
   overflow: hidden;
-
-  background-color: #eaf3ff !important;
-
-  background-image:
-    radial-gradient(
-      circle at left top,
-      transparent 0 150px,
-      rgba(217, 173, 96, 0.5) 151px,
-      transparent 153px,
-      transparent 180px,
-      rgba(217, 173, 96, 0.28) 181px,
-      transparent 183px
-    ),
-    radial-gradient(
-      circle at right bottom,
-      transparent 0 170px,
-      rgba(217, 173, 96, 0.45) 171px,
-      transparent 173px,
-      transparent 200px,
-      rgba(217, 173, 96, 0.25) 201px,
-      transparent 203px
-    ),
-    linear-gradient(
-      135deg,
-      #f4f9ff 0%,
-      #eaf3ff 50%,
-      #dceaff 100%
-    ) !important;
-}
-
-/* Ensure cards remain white */
-
-main.about-page .core-values-section .core-value-card {
-  background: linear-gradient(
-    145deg,
-    #ffffff,
-    #f7faff
-  );
-
-  border: 1px solid #d9e5f5;
-  border-radius: 20px;
-
-  box-shadow:
-    0 12px 30px rgba(25, 60, 120, 0.1),
-    0 3px 8px rgba(25, 60, 120, 0.04);
-}
-
-/* Keep hover effect */
-
-main.about-page .core-values-section .core-value-card:hover {
-  transform: translateY(-8px);
-
-  box-shadow:
-    0 20px 40px rgba(25, 60, 120, 0.15);
-}
-
-/* Gold line above each card */
-
-main.about-page .core-values-section .core-value-card::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 50%;
-
-  width: 38%;
-  height: 3px;
-
-  transform: translateX(-50%);
-
-  background: linear-gradient(
-    90deg,
-    transparent,
-    #d9ad60,
-    transparent
-  );
-}
-
-/* Keep content above decorative background */
-
-main.about-page .core-values-container {
-  position: relative;
-  z-index: 1;
-}
-
-@media (max-width: 480px) {
-  main.about-page .core-values-section .core-value-card:hover {
-    transform: none;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  main.about-page .core-values-section .core-value-card:hover {
-    transform: none;
-  }
-}
-
-/* ==========================================
-   FINAL SDFL CORE VALUES BACKGROUND
-   SOFT LIGHT BLUE + GOLDEN CURVES
-========================================== */
-
-main.about-page section.core-values-section {
-  position: relative;
-  isolation: isolate;
 
   background-color: #eaf3ff !important;
 
@@ -732,4 +536,418 @@ main.about-page section.core-values-section {
       #eaf3ff 50%,
       #dceaff 100%
     ) !important;
+}
+
+/* Original About page card appearance */
+
+main.about-page .core-values-section .core-value-card {
+  background: linear-gradient(
+    145deg,
+    #ffffff,
+    #f7faff
+  );
+
+  border: 1px solid #d9e5f5;
+  border-radius: 20px;
+
+  box-shadow:
+    0 12px 30px rgba(25, 60, 120, 0.1),
+    0 3px 8px rgba(25, 60, 120, 0.04);
+}
+
+/* Original About page hover */
+
+main.about-page .core-values-section .core-value-card:hover {
+  transform: translateY(-8px);
+
+  box-shadow:
+    0 20px 40px rgba(25, 60, 120, 0.15);
+}
+
+/* ==========================================
+   MOBILE-ONLY REDESIGN
+   MAX WIDTH: 767px
+========================================== */
+
+@media (max-width: 767px) {
+
+  /* Section */
+
+  main.about-page section.core-values-section,
+  .core-values-section {
+    padding: 48px 16px 55px;
+  }
+
+  /* Heading */
+
+  .core-values-heading {
+    text-align: center;
+    margin-bottom: 32px;
+  }
+
+  .core-values-eyebrow {
+    font-size: 11px;
+    letter-spacing: 2.5px;
+    margin-bottom: 12px;
+  }
+
+  .core-values-heading h2 {
+    font-size: clamp(26px, 6.5vw, 34px);
+    line-height: 1.25;
+    margin-bottom: 14px;
+  }
+
+  .core-values-heading p {
+    max-width: 390px;
+    margin: 0 auto;
+
+    font-size: 13px;
+    line-height: 1.65;
+  }
+
+  /* Two-column grid */
+
+  .core-values-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+
+    perspective: none;
+    align-items: stretch;
+  }
+
+  /* Mobile cards */
+
+  main.about-page .core-values-section .core-value-card,
+  .core-values-section .core-value-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+
+    min-width: 0;
+    min-height: 235px;
+    height: 100%;
+
+    padding: 24px 12px 20px;
+
+    text-align: center;
+    border-radius: 22px;
+
+    transform: none;
+  }
+
+  /* Center the fifth card */
+
+  .core-values-grid > .core-value-card:last-child {
+    grid-column: 1 / -1;
+    justify-self: center;
+
+    width: calc((100% - 16px) / 2);
+  }
+
+  /* Card number */
+
+  .core-value-number {
+    top: 12px;
+    right: 13px;
+    font-size: 11px;
+  }
+
+  /* Icon */
+
+  .core-value-icon {
+    width: 68px;
+    height: 68px;
+
+    margin: 2px 0 20px;
+    border-radius: 20px;
+  }
+
+  .core-value-icon svg {
+    width: 34px;
+    height: 34px;
+  }
+
+  /* Title */
+
+  .core-value-card h3 {
+    margin: 0 0 12px;
+
+    font-size: 16px;
+    font-weight: 800;
+    line-height: 1.3;
+  }
+
+  /* Hide original desktop description */
+
+  .core-value-card p.core-value-desktop-description {
+    display: none;
+  }
+
+  /* Expandable mobile description */
+
+  .core-value-mobile-description {
+    display: block;
+    width: 100%;
+    margin-bottom: 8px;
+  }
+
+  .core-value-mobile-description[hidden] {
+    display: none !important;
+  }
+
+  .core-value-mobile-description p {
+    margin: 0;
+
+    color: #536783;
+    font-size: 11.5px;
+    line-height: 1.55;
+  }
+
+  /* ========================================
+     MOBILE LEARN MORE BUTTON
+     ISOLATED FROM GLOBAL BUTTON CSS
+  ======================================== */
+
+  .core-values-section .core-value-card button.sdfl-core-expand-button {
+    all: unset;
+    box-sizing: border-box;
+
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+
+    width: auto;
+    min-width: 0;
+    max-width: 100%;
+
+    height: auto;
+    min-height: 0;
+
+    margin: auto 0 0;
+    padding: 10px 3px;
+
+    background: transparent;
+    border: 0;
+    border-radius: 6px;
+    box-shadow: none;
+
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1.2;
+
+    text-align: center;
+    white-space: nowrap;
+    cursor: pointer;
+  }
+
+  /* Button colors */
+
+  .core-value-card.blue .sdfl-core-expand-button {
+    color: #315cfa;
+  }
+
+  .core-value-card.orange .sdfl-core-expand-button {
+    color: #e49a31;
+  }
+
+  .core-value-card.purple .sdfl-core-expand-button {
+    color: #7c4db2;
+  }
+
+  .core-value-card.teal .sdfl-core-expand-button {
+    color: #298f78;
+  }
+
+  .core-value-card.green .sdfl-core-expand-button {
+    color: #438f52;
+  }
+
+  /* Button hover */
+
+  .core-values-section .core-value-card button.sdfl-core-expand-button:hover {
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+    opacity: 0.8;
+    transform: none;
+  }
+
+  /* Keyboard accessibility */
+
+  .core-values-section .core-value-card button.sdfl-core-expand-button:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 3px;
+  }
+
+  /* Button text */
+
+  .core-values-section .core-value-card button.sdfl-core-expand-button span {
+    display: inline;
+
+    width: auto;
+    height: auto;
+
+    margin: 0;
+    padding: 0;
+
+    color: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+  }
+
+  /* Small arrow */
+
+  .core-values-section .core-value-card button.sdfl-core-expand-button svg.sdfl-core-expand-arrow {
+    display: inline-block;
+    position: static;
+
+    width: 15px !important;
+    height: 15px !important;
+
+    min-width: 15px;
+    min-height: 15px;
+
+    max-width: 15px;
+    max-height: 15px;
+
+    margin: 0;
+    padding: 0;
+
+    flex: 0 0 15px;
+
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+
+    background: none;
+    border: none;
+    box-shadow: none;
+
+    transform: none;
+    transition: transform 0.25s ease;
+  }
+
+  /* Rotate arrow when expanded */
+
+  .core-values-section .core-value-card.expanded button.sdfl-core-expand-button svg.sdfl-core-expand-arrow {
+    transform: rotate(180deg);
+  }
+
+  /* Colored accent */
+
+  .core-value-accent {
+    width: 50px;
+    height: 4px;
+
+    margin-top: 12px;
+    flex-shrink: 0;
+  }
+
+  /* Disable mobile card movement */
+
+  main.about-page .core-values-section .core-value-card:hover,
+  .core-values-section .core-value-card:hover {
+    transform: none;
+  }
+
+  .core-value-card:hover .core-value-icon {
+    transform: none;
+  }
+
+  .core-value-card:hover .core-value-accent {
+    width: 50px;
+  }
+
+  /* Bottom text */
+
+  .core-values-bottom {
+    margin-top: 32px;
+    gap: 10px;
+  }
+
+  .core-values-bottom span {
+    width: 28px;
+  }
+
+  .core-values-bottom p {
+    font-size: 11px;
+    letter-spacing: 0.3px;
+  }
+}
+
+/* ==========================================
+   SMALL MOBILE SCREENS
+   MAX WIDTH: 360px
+========================================== */
+
+@media (max-width: 360px) {
+
+  main.about-page section.core-values-section,
+  .core-values-section {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .core-values-grid {
+    gap: 12px;
+  }
+
+  main.about-page .core-values-section .core-value-card,
+  .core-values-section .core-value-card {
+    min-height: 225px;
+    padding: 22px 9px 18px;
+  }
+
+  .core-values-grid > .core-value-card:last-child {
+    width: calc((100% - 12px) / 2);
+  }
+
+  .core-value-icon {
+    width: 58px;
+    height: 58px;
+    margin-bottom: 16px;
+  }
+
+  .core-value-icon svg {
+    width: 30px;
+    height: 30px;
+  }
+
+  .core-value-card h3 {
+    font-size: 14px;
+  }
+
+  .core-value-mobile-description p {
+    font-size: 10.5px;
+  }
+
+  .core-values-section .core-value-card button.sdfl-core-expand-button {
+    font-size: 11px;
+  }
+}
+
+/* ==========================================
+   REDUCED MOTION
+========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .core-value-card,
+  .core-value-icon,
+  .core-value-accent,
+  .sdfl-core-expand-arrow {
+    transition: none;
+  }
+
+  .core-value-card:hover,
+  main.about-page .core-values-section .core-value-card:hover,
+  .core-value-card:hover .core-value-icon {
+    transform: none;
+  }
 }
