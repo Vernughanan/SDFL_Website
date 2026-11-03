@@ -1,6 +1,7 @@
 
 /* ==========================================
-   SDFL FEEDBACK SECTION - FIGMA DESIGN
+   SDFL FEEDBACK SECTION
+   DESKTOP GRID + MOBILE AUTO SLIDER
    ========================================== */
 
 .feedback-section {
@@ -9,12 +10,16 @@
   padding: 35px 35px 55px;
 }
 
-/* MAIN CONTAINER */
-
 .feedback-container {
   width: 100%;
   max-width: 1400px;
   margin: 0 auto;
+}
+
+.feedback-section *,
+.feedback-section *::before,
+.feedback-section *::after {
+  box-sizing: border-box;
 }
 
 /* ==========================================
@@ -50,7 +55,7 @@
 }
 
 /* ==========================================
-   FEEDBACK CARDS GRID
+   DESKTOP FEEDBACK GRID
    ========================================== */
 
 .feedback-grid {
@@ -61,7 +66,7 @@
 }
 
 /* ==========================================
-   FEEDBACK CARD
+   FEEDBACK CARDS
    ========================================== */
 
 .feedback-card {
@@ -83,8 +88,6 @@
     transform 0.3s ease,
     box-shadow 0.3s ease;
 }
-
-/* SUBTLE 3D HOVER EFFECT */
 
 .feedback-card:hover {
   transform: translateY(-7px);
@@ -183,6 +186,106 @@
 }
 
 /* ==========================================
+   DESKTOP PAGINATION
+   ========================================== */
+
+.feedback-pagination {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  margin-top: 42px;
+}
+
+.feedback-pagination-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+}
+
+.feedback-page-arrow {
+  width: 54px;
+  height: 54px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #dbe5fa;
+  border-radius: 50%;
+
+  background: #ffffff;
+  color: #3158c9;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.feedback-page-arrow:hover:not(:disabled) {
+  background: #3158c9;
+  color: #ffffff;
+  border-color: #3158c9;
+  transform: translateY(-2px);
+}
+
+.feedback-page-arrow:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.feedback-page-dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+}
+
+.feedback-page-dot {
+  width: 11px;
+  height: 11px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+
+  background: #c5d0e3;
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.feedback-page-dot.active {
+  background: #3158c9;
+  transform: scale(1.12);
+}
+
+.feedback-page-dot:hover {
+  background: #3158c9;
+}
+
+.feedback-page-count {
+  margin: 0;
+  color: #7183a3;
+  font-size: 14px;
+  text-align: center;
+}
+
+/* ==========================================
+   MOBILE SLIDER HIDDEN ON DESKTOP
+   ========================================== */
+
+.feedback-mobile {
+  display: none;
+}
+
+/* ==========================================
    MEDIUM DESKTOP
    ========================================== */
 
@@ -224,7 +327,7 @@
 }
 
 /* ==========================================
-   MOBILE
+   MOBILE - ONE CARD AUTO SLIDER
    ========================================== */
 
 @media (max-width: 600px) {
@@ -244,21 +347,77 @@
     font-size: 14px;
   }
 
-  .feedback-grid {
-    grid-template-columns: 1fr;
-    gap: 25px;
-    padding: 5px 5px 18px;
+  /* Hide desktop grid and pagination */
+
+  .feedback-desktop {
+    display: none;
   }
 
-  .feedback-card {
-    min-height: 250px;
+  /* Show mobile slider */
+
+  .feedback-mobile {
+    display: block;
+    width: 100%;
+    min-width: 0;
+  }
+
+  /* Slider viewport */
+
+  .feedback-mobile-viewport {
+    width: 100%;
+    overflow: hidden;
+    padding: 5px 5px 24px;
+    touch-action: pan-y;
+  }
+
+  /* Horizontal sliding track */
+
+  .feedback-mobile-track {
+    display: flex;
+    width: 100%;
+
+    transition: transform 0.55s ease-in-out;
+    will-change: transform;
+  }
+
+  /* Exactly one slide per screen */
+
+  .feedback-mobile-slide {
+    flex: 0 0 100%;
+    width: 100%;
+    min-width: 0;
+
+    display: flex;
+    padding: 0 10px 0 0;
+  }
+
+  /* Mobile feedback card */
+
+  .feedback-mobile-slide .feedback-card {
+    width: 100%;
+    min-height: 300px;
+    height: auto;
+
     padding: 22px;
     border-radius: 20px;
+
+    box-shadow:
+      7px 9px 0 rgba(0, 0, 0, 0.12),
+      10px 13px 14px rgba(0, 0, 0, 0.08);
+  }
+
+  .feedback-mobile-slide .feedback-card:hover {
+    transform: none;
   }
 
   .feedback-avatar {
     width: 50px;
     height: 50px;
+  }
+
+  .feedback-profile {
+    gap: 12px;
+    margin-bottom: 22px;
   }
 
   .feedback-person h3 {
@@ -267,6 +426,101 @@
 
   .feedback-message {
     font-size: 14px;
+    line-height: 1.7;
+  }
+
+  /* Mobile navigation */
+
+  .feedback-mobile-navigation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 20px;
+    margin-top: 14px;
+  }
+
+  .feedback-mobile-arrow {
+    width: 40px;
+    height: 40px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+    border: 1px solid #dbe5fa;
+    border-radius: 50%;
+
+    background: #ffffff;
+    color: #3158c9;
+
+    cursor: pointer;
+  }
+
+  .feedback-mobile-arrow:active {
+    background: #3158c9;
+    color: #ffffff;
+  }
+
+  .feedback-mobile-dots {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .feedback-mobile-dot {
+    width: 9px;
+    height: 9px;
+
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+
+    background: #aebdd6;
+    cursor: pointer;
+
+    transition:
+      background 0.25s ease,
+      transform 0.25s ease;
+  }
+
+  .feedback-mobile-dot.active {
+    background: #3158c9;
+    transform: scale(1.2);
+  }
+
+  .feedback-mobile-count {
+    margin: 12px 0 0;
+
+    color: #7183a3;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    text-align: center;
+  }
+}
+
+/* ==========================================
+   SMALL MOBILE
+   ========================================== */
+
+@media (max-width: 380px) {
+  .feedback-section {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .feedback-mobile-slide .feedback-card {
+    padding: 19px;
+  }
+
+  .feedback-mobile-navigation {
+    gap: 13px;
+  }
+
+  .feedback-mobile-dots {
+    gap: 8px;
   }
 }
 
@@ -275,103 +529,12 @@
    ========================================== */
 
 @media (prefers-reduced-motion: reduce) {
-  .feedback-card {
+  .feedback-card,
+  .feedback-mobile-track {
     transition: none;
   }
 
   .feedback-card:hover {
     transform: none;
-  }
-}
-
-/* Feedback pagination */
-.feedback-pagination {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 14px;
-  margin-top: 42px;
-}
-
-.feedback-pagination-controls {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 24px;
-}
-
-.feedback-page-arrow {
-  width: 54px;
-  height: 54px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid #dbe5fa;
-  border-radius: 50%;
-  background: #ffffff;
-  color: #3158c9;
-  cursor: pointer;
-  transition: background 0.2s ease, color 0.2s ease,
-    border-color 0.2s ease, transform 0.2s ease;
-}
-
-.feedback-page-arrow:hover:not(:disabled) {
-  background: #3158c9;
-  color: #ffffff;
-  border-color: #3158c9;
-  transform: translateY(-2px);
-}
-
-.feedback-page-arrow:disabled {
-  opacity: 0.4;
-  cursor: not-allowed;
-}
-
-.feedback-page-dots {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 14px;
-}
-
-.feedback-page-dot {
-  width: 11px;
-  height: 11px;
-  padding: 0;
-  border: none;
-  border-radius: 50%;
-  background: #c5d0e3;
-  cursor: pointer;
-  transition: background 0.2s ease, transform 0.2s ease;
-}
-
-.feedback-page-dot.active {
-  background: #3158c9;
-  transform: scale(1.12);
-}
-
-.feedback-page-dot:hover {
-  background: #3158c9;
-}
-
-.feedback-page-count {
-  margin: 0;
-  color: #7183a3;
-  font-size: 14px;
-  text-align: center;
-}
-
-@media (max-width: 600px) {
-  .feedback-pagination {
-    margin-top: 28px;
-  }
-
-  .feedback-pagination-controls {
-    gap: 18px;
-  }
-
-  .feedback-page-arrow {
-    width: 44px;
-    height: 44px;
   }
 }

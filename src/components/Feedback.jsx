@@ -1,10 +1,16 @@
 
-import { useState } from "react";
-import { UserRound, ChevronLeft, ChevronRight } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
+import {
+  UserRound,
+  ChevronLeft,
+  ChevronRight,
+} from "lucide-react";
+
 import "./Feedback.css";
 
 // Demo testimonials for layout preview.
 // Replace with approved, genuine feedback before publishing.
+
 const feedbacks = [
   {
     name: "Learner 01",
@@ -44,127 +50,379 @@ const feedbacks = [
 ];
 
 const ITEMS_PER_PAGE = 3;
+const AUTO_SLIDE_DELAY = 5000;
+const MOBILE_BREAKPOINT = 600;
+
+function FeedbackCard({ item }) {
+  return (
+    <article className="feedback-card">
+      <div className="feedback-profile">
+        <div className="feedback-avatar">
+          {item.image ? (
+            <img src={item.image} alt={item.name} />
+          ) : (
+            <UserRound
+              size={29}
+              strokeWidth={1.8}
+              aria-hidden="true"
+            />
+          )}
+        </div>
+
+        <div className="feedback-person">
+          <h3>{item.name}</h3>
+          <p>{item.role}</p>
+        </div>
+      </div>
+
+      <div className="feedback-content">
+        <p className="feedback-message">
+          "{item.feedback}"
+        </p>
+      </div>
+
+      <div className="feedback-bottom">
+        <span>Sample feedback — design preview</span>
+      </div>
+    </article>
+  );
+}
 
 function Feedback() {
+  // DESKTOP PAGINATION
   const [currentPage, setCurrentPage] = useState(0);
 
-  const totalPages = Math.ceil(feedbacks.length / ITEMS_PER_PAGE);
+  // MOBILE SLIDER
+  const [mobileIndex, setMobileIndex] = useState(0);
+  const [isMobile, setIsMobile] = useState(
+    () =>
+      typeof window !== "undefined" &&
+      window.matchMedia(
+        `(max-width: ${MOBILE_BREAKPOINT}px)`
+      ).matches
+  );
+
+  const [isPaused, setIsPaused] = useState(false);
+
+  const touchStartX = useRef(null);
+
+  const totalPages = Math.ceil(
+    feedbacks.length / ITEMS_PER_PAGE
+  );
 
   const visibleFeedbacks = feedbacks.slice(
     currentPage * ITEMS_PER_PAGE,
     currentPage * ITEMS_PER_PAGE + ITEMS_PER_PAGE
   );
 
-  const firstItem = currentPage * ITEMS_PER_PAGE + 1;
+  const firstItem =
+    currentPage * ITEMS_PER_PAGE + 1;
+
   const lastItem = Math.min(
     (currentPage + 1) * ITEMS_PER_PAGE,
     feedbacks.length
   );
 
+  // DETECT MOBILE SCREEN SIZE
+  useEffect(() => {
+    const mediaQuery = window.matchMedia(
+      `(max-width: ${MOBILE_BREAKPOINT}px)`
+    );
+
+    const updateScreenSize = () => {
+      setIsMobile(mediaQuery.matches);
+    };
+
+    updateScreenSize();
+
+    mediaQuery.addEventListener(
+      "change",
+      updateScreenSize
+    );
+
+    return () => {
+      mediaQuery.removeEventListener(
+        "change",
+        updateScreenSize
+      );
+    };
+  }, []);
+
+  // AUTOMATIC MOBILE SLIDER
+  useEffect(() => {
+    if (!isMobile || isPaused) {
+      return;
+    }
+
+    const reducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    );
+
+    if (reducedMotion.matches) {
+      return;
+    }
+
+    const interval = window.setInterval(() => {
+      setMobileIndex((index) =>
+        (index + 1) % feedbacks.length
+      );
+    }, AUTO_SLIDE_DELAY);
+
+    return () => {
+      window.clearInterval(interval);
+    };
+  }, [isMobile, isPaused]);
+
+  // DESKTOP CONTROLS
   const goToPrevious = () => {
-    setCurrentPage((page) => Math.max(0, page - 1));
+    setCurrentPage((page) =>
+      Math.max(0, page - 1)
+    );
   };
 
   const goToNext = () => {
-    setCurrentPage((page) => Math.min(totalPages - 1, page + 1));
+    setCurrentPage((page) =>
+      Math.min(totalPages - 1, page + 1)
+    );
+  };
+
+  // MOBILE CONTROLS
+  const goToMobilePrevious = () => {
+    setMobileIndex((index) =>
+      (index - 1 + feedbacks.length) %
+      feedbacks.length
+    );
+  };
+
+  const goToMobileNext = () => {
+    setMobileIndex((index) =>
+      (index + 1) % feedbacks.length
+    );
+  };
+
+  // TOUCH SWIPE SUPPORT
+  const handleTouchStart = (event) => {
+    touchStartX.current =
+      event.touches[0].clientX;
+    setIsPaused(true);
+  };
+
+  const handleTouchEnd = (event) => {
+    if (touchStartX.current === null) {
+      return;
+    }
+
+    const touchEndX =
+      event.changedTouches[0].clientX;
+
+    const difference =
+      touchStartX.current - touchEndX;
+
+    if (Math.abs(difference) > 50) {
+      if (difference > 0) {
+        goToMobileNext();
+      } else {
+        goToMobilePrevious();
+      }
+    }
+
+    touchStartX.current = null;
+    setIsPaused(false);
   };
 
   return (
-    <section className="feedback-section" id="feedback">
+    <section
+      className="feedback-section"
+      id="feedback"
+    >
       <div className="feedback-container">
+
+        {/* SECTION HEADING */}
+
         <div className="feedback-heading">
           <h2>
             Trusted by{" "}
-            <span>Learners and Industry Partners</span>
+            <span>
+              Learners and Industry Partners
+            </span>
           </h2>
 
           <p>
-            See what our trainees and partners have to say
-            about Skill Development Fund Limited.
+            See what our trainees and partners
+            have to say about Skill Development
+            Fund Limited.
           </p>
         </div>
 
-        <div className="feedback-grid">
-          {visibleFeedbacks.map((item) => (
-            <article className="feedback-card" key={item.name}>
-              <div className="feedback-profile">
-                <div className="feedback-avatar">
-                  {item.image ? (
-                    <img src={item.image} alt={item.name} />
-                  ) : (
-                    <UserRound
-                      size={29}
-                      strokeWidth={1.8}
-                      aria-hidden="true"
+        {/* DESKTOP AND TABLET FEEDBACK */}
+
+        <div className="feedback-desktop">
+          <div className="feedback-grid">
+            {visibleFeedbacks.map((item) => (
+              <FeedbackCard
+                key={item.name}
+                item={item}
+              />
+            ))}
+          </div>
+
+          {totalPages > 1 && (
+            <div className="feedback-pagination">
+              <div className="feedback-pagination-controls">
+
+                <button
+                  type="button"
+                  className="feedback-page-arrow"
+                  onClick={goToPrevious}
+                  disabled={currentPage === 0}
+                  aria-label="Previous feedback"
+                >
+                  <ChevronLeft size={22} />
+                </button>
+
+                <div className="feedback-page-dots">
+                  {Array.from({
+                    length: totalPages,
+                  }).map((_, index) => (
+                    <button
+                      key={index}
+                      type="button"
+                      className={`feedback-page-dot ${
+                        currentPage === index
+                          ? "active"
+                          : ""
+                      }`}
+                      onClick={() =>
+                        setCurrentPage(index)
+                      }
+                      aria-label={`Go to feedback page ${
+                        index + 1
+                      }`}
+                      aria-current={
+                        currentPage === index
+                          ? "page"
+                          : undefined
+                      }
                     />
-                  )}
+                  ))}
                 </div>
 
-                <div className="feedback-person">
-                  <h3>{item.name}</h3>
-                  <p>{item.role}</p>
-                </div>
+                <button
+                  type="button"
+                  className="feedback-page-arrow"
+                  onClick={goToNext}
+                  disabled={
+                    currentPage === totalPages - 1
+                  }
+                  aria-label="Next feedback"
+                >
+                  <ChevronRight size={22} />
+                </button>
               </div>
 
-              <div className="feedback-content">
-                <p className="feedback-message">
-                  "{item.feedback}"
-                </p>
-              </div>
-
-              <div className="feedback-bottom">
-                <span>Sample feedback — design preview</span>
-              </div>
-            </article>
-          ))}
+              <p className="feedback-page-count">
+                {firstItem}–{lastItem} of{" "}
+                {feedbacks.length} feedback entries
+              </p>
+            </div>
+          )}
         </div>
 
-        {totalPages > 1 && (
-          <div className="feedback-pagination">
-            <div className="feedback-pagination-controls">
-              <button
-                type="button"
-                className="feedback-page-arrow"
-                onClick={goToPrevious}
-                disabled={currentPage === 0}
-                aria-label="Previous feedback"
-              >
-                <ChevronLeft size={22} />
-              </button>
+        {/* MOBILE AUTO SLIDER */}
 
-              <div className="feedback-page-dots">
-                {Array.from({ length: totalPages }).map((_, index) => (
-                  <button
-                    key={index}
-                    type="button"
-                    className={`feedback-page-dot ${
-                      currentPage === index ? "active" : ""
-                    }`}
-                    onClick={() => setCurrentPage(index)}
-                    aria-label={`Go to feedback page ${index + 1}`}
-                    aria-current={
-                      currentPage === index ? "page" : undefined
-                    }
-                  />
-                ))}
-              </div>
+        <div className="feedback-mobile">
 
-              <button
-                type="button"
-                className="feedback-page-arrow"
-                onClick={goToNext}
-                disabled={currentPage === totalPages - 1}
-                aria-label="Next feedback"
-              >
-                <ChevronRight size={22} />
-              </button>
+          <div
+            className="feedback-mobile-viewport"
+            onTouchStart={handleTouchStart}
+            onTouchEnd={handleTouchEnd}
+            onTouchCancel={() => {
+              touchStartX.current = null;
+              setIsPaused(false);
+            }}
+            onMouseEnter={() => setIsPaused(true)}
+            onMouseLeave={() => setIsPaused(false)}
+            aria-label="Feedback testimonials"
+            aria-roledescription="carousel"
+          >
+            <div
+              className="feedback-mobile-track"
+              style={{
+                transform: `translateX(-${
+                  mobileIndex * 100
+                }%)`,
+              }}
+            >
+              {feedbacks.map((item, index) => (
+                <div
+                  className="feedback-mobile-slide"
+                  key={item.name}
+                  aria-hidden={
+                    mobileIndex !== index
+                  }
+                  inert={
+                    mobileIndex !== index
+                  }
+                >
+                  <FeedbackCard item={item} />
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* MOBILE SLIDER NAVIGATION */}
+
+          <div className="feedback-mobile-navigation">
+            <button
+              type="button"
+              className="feedback-mobile-arrow"
+              onClick={goToMobilePrevious}
+              aria-label="Previous testimonial"
+            >
+              <ChevronLeft size={20} />
+            </button>
+
+            <div className="feedback-mobile-dots">
+              {feedbacks.map((item, index) => (
+                <button
+                  key={item.name}
+                  type="button"
+                  className={`feedback-mobile-dot ${
+                    mobileIndex === index
+                      ? "active"
+                      : ""
+                  }`}
+                  onClick={() =>
+                    setMobileIndex(index)
+                  }
+                  aria-label={`Show testimonial ${
+                    index + 1
+                  }`}
+                  aria-current={
+                    mobileIndex === index
+                      ? "true"
+                      : undefined
+                  }
+                />
+              ))}
             </div>
 
-            <p className="feedback-page-count">
-              {firstItem}–{lastItem} of {feedbacks.length} feedback entries
-            </p>
+            <button
+              type="button"
+              className="feedback-mobile-arrow"
+              onClick={goToMobileNext}
+              aria-label="Next testimonial"
+            >
+              <ChevronRight size={20} />
+            </button>
           </div>
-        )}
+
+          <p className="feedback-mobile-count">
+            {mobileIndex + 1} of{" "}
+            {feedbacks.length} feedback entries
+          </p>
+
+        </div>
       </div>
     </section>
   );
