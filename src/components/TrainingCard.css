@@ -384,3 +384,97 @@
     font-size: 13px;
   }
 }
+
+/* ==========================================
+   COURSE DETAILS - BACK BUTTON
+   ========================================== */
+
+.training-details-page {
+  width: 100%;
+}
+
+/* Back button container */
+
+.training-back-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 30px auto 0;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+/* Back button */
+
+.training-back-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  padding: 11px 20px;
+
+  background-color: #ffffff;
+  color: #17365d;
+
+  border: 1.5px solid #17365d;
+  border-radius: 8px;
+
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.training-back-button:hover {
+  background-color: #17365d;
+  color: #ffffff;
+  transform: translateX(-3px);
+}
+
+.training-back-button:focus-visible {
+  outline: 3px solid #93c5fd;
+  outline-offset: 3px;
+}
+
+/* Reduce space below the back button */
+
+.training-details-page .training-details {
+  margin-top: 20px;
+}
+
+/* Mobile responsive */
+
+@media (max-width: 768px) {
+  .training-back-container {
+    margin-top: 20px;
+    padding: 0 15px;
+  }
+
+  .training-back-button {
+    padding: 10px 16px;
+    font-size: 14px;
+    gap: 8px;
+  }
+
+  .training-details-page .training-details {
+    margin-top: 10px;
+  }
+}
+
+/* Reduced motion */
+
+@media (prefers-reduced-motion: reduce) {
+  .training-back-button {
+    transition: none;
+  }
+
+  .training-back-button:hover {
+    transform: none;
+  }
+}

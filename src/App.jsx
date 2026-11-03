@@ -65,6 +65,7 @@ function Home() {
 function App() {
   return (
     <BrowserRouter>
+    <ScrollToTop />
 
       {/* Main Navigation */}
       <Navbar />
