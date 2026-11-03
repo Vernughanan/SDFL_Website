@@ -72,14 +72,14 @@ const TrainingDetails = () => {
           {/* COURSE INFORMATION */}
 
           <div className="details-content">
-            <h1>
+            <h2>
               {programme.title} ({programme.category})
-            </h1>
+            </h2>
 
             {/* OBJECTIVES */}
 
             <div className="details-section">
-              <h2>Programme Objectives</h2>
+              <h3>Programme Objectives</h3>
 
               <ul>
                 {programme.objectives.map(
@@ -95,7 +95,7 @@ const TrainingDetails = () => {
             {/* CONTENT */}
 
             <div className="details-section">
-              <h2>Programme Content</h2>
+              <h3>Programme Content</h3>
 
               <ul>
                 {programme.content.map(
@@ -109,14 +109,14 @@ const TrainingDetails = () => {
             {/* FOR WHOM */}
 
             <div className="details-section">
-              <h2>For Whom</h2>
+              <h3>For Whom</h3>
               <p>{programme.For_Whom}</p>
             </div>
 
             {/* METHODOLOGY */}
 
             <div className="details-section">
-              <h2>Methodology</h2>
+              <h3>Methodology</h3>
 
               <ul>
                 {programme.methodology.map(
@@ -130,7 +130,7 @@ const TrainingDetails = () => {
             {/* DURATION */}
 
             <div className="details-section">
-              <h2>Duration</h2>
+              <h3>Duration</h3>
               <p>{programme.duration}</p>
             </div>
           </div>
