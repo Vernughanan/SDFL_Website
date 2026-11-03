@@ -50,7 +50,6 @@
 .sdfl-home-services-decor-top {
   top: -270px;
   left: -250px;
-
   width: 550px;
   height: 550px;
 
@@ -69,7 +68,6 @@
 .sdfl-home-services-decor-bottom {
   right: -270px;
   bottom: -390px;
-
   width: 610px;
   height: 610px;
 
@@ -99,7 +97,7 @@
 }
 
 /* ==========================================
-   HEADING
+   SECTION HEADING
    ========================================== */
 
 .sdfl-home-services-heading {
@@ -134,7 +132,7 @@
 }
 
 /* ==========================================
-   FOUR-COLUMN GRID
+   DESKTOP FOUR-COLUMN GRID
    ========================================== */
 
 .sdfl-home-services-grid {
@@ -150,7 +148,7 @@
 }
 
 /* ==========================================
-   INDIVIDUAL SERVICE CARD
+   SERVICE CARD
    ========================================== */
 
 .sdfl-home-service-card {
@@ -160,6 +158,8 @@
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
+
+  grid-column: auto;
 
   width: 100%;
   min-width: 0;
@@ -229,7 +229,7 @@
 }
 
 /* ==========================================
-   ICON BACKGROUND
+   SERVICE ICON
    ========================================== */
 
 .sdfl-home-service-icon {
@@ -266,7 +266,7 @@
 }
 
 /* ==========================================
-   CARD TITLE
+   SERVICE TITLE
    ========================================== */
 
 .sdfl-home-service-card h3 {
@@ -282,10 +282,10 @@
 }
 
 /* ==========================================
-   CARD DESCRIPTION
+   DESKTOP DESCRIPTION
    ========================================== */
 
-.sdfl-home-service-card p {
+.sdfl-home-service-description {
   width: 100%;
   max-width: 310px;
 
@@ -299,7 +299,19 @@
 }
 
 /* ==========================================
-   COLORED BOTTOM ACCENT
+   MOBILE ELEMENTS HIDDEN ON DESKTOP
+   ========================================== */
+
+.sdfl-home-service-mobile-details {
+  display: none;
+}
+
+.sdfl-home-service-toggle {
+  display: none;
+}
+
+/* ==========================================
+   COLORED BOTTOM LINE
    ========================================== */
 
 .sdfl-home-service-accent {
@@ -318,32 +330,34 @@
 }
 
 /* ==========================================
-   HOVER EFFECTS
+   DESKTOP HOVER EFFECTS
    ========================================== */
 
-.sdfl-home-service-card:hover {
-  transform: translateY(-7px);
+@media (min-width: 601px) and (hover: hover) {
+  .sdfl-home-service-card:hover {
+    transform: translateY(-7px);
 
-  border-color: rgba(62, 111, 196, 0.3);
+    border-color: rgba(62, 111, 196, 0.3);
 
-  box-shadow:
-    0 18px 36px rgba(22, 61, 120, 0.13),
-    0 6px 0 rgba(22, 61, 120, 0.035);
-}
+    box-shadow:
+      0 18px 36px rgba(22, 61, 120, 0.13),
+      0 6px 0 rgba(22, 61, 120, 0.035);
+  }
 
-.sdfl-home-service-card:hover::before {
-  width: 75%;
-}
+  .sdfl-home-service-card:hover::before {
+    width: 75%;
+  }
 
-.sdfl-home-service-card:hover .sdfl-home-service-icon {
-  transform: translateY(-4px);
+  .sdfl-home-service-card:hover .sdfl-home-service-icon {
+    transform: translateY(-4px);
 
-  box-shadow:
-    0 10px 20px rgba(22, 61, 120, 0.08);
-}
+    box-shadow:
+      0 10px 20px rgba(22, 61, 120, 0.08);
+  }
 
-.sdfl-home-service-card:hover .sdfl-home-service-accent {
-  width: 100px;
+  .sdfl-home-service-card:hover .sdfl-home-service-accent {
+    width: 100px;
+  }
 }
 
 /* ==========================================
@@ -415,7 +429,7 @@
     font-size: 18px;
   }
 
-  .sdfl-home-service-card p {
+  .sdfl-home-service-description {
     font-size: 13px;
   }
 }
@@ -447,7 +461,7 @@
     font-size: 19px;
   }
 
-  .sdfl-home-service-card p {
+  .sdfl-home-service-description {
     font-size: 14px;
   }
 
@@ -457,106 +471,335 @@
 }
 
 /* ==========================================
-   MOBILE
+   MOBILE - EXPAND INSIDE SAME SQUARE
    ========================================== */
 
 @media (max-width: 600px) {
   .sdfl-home-services {
-    padding: 42px 18px;
+    padding: 34px 14px 32px;
   }
 
+  /* HEADING */
+
   .sdfl-home-services-heading {
-    margin-bottom: 26px;
+    margin-bottom: 24px;
   }
 
   .sdfl-home-services-heading h2 {
-    font-size: 27px;
-    line-height: 1.3;
+    font-size: 25px;
+    line-height: 1.28;
     letter-spacing: -0.5px;
+    margin-bottom: 10px;
   }
 
   .sdfl-home-services-heading p {
-    font-size: 14px;
+    font-size: 12px;
     line-height: 1.6;
+    max-width: 340px;
   }
+
+  /* KEEP TWO COLUMNS AT ALL TIMES */
 
   .sdfl-home-services-grid {
-    grid-template-columns: 1fr;
-    gap: 18px;
-    padding-top: 4px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 12px;
+    align-items: stretch;
+
+    width: 100%;
+    margin: 0;
+    padding: 0;
   }
 
-  .sdfl-home-service-card {
-    min-height: 270px;
-    padding: 28px 22px 25px;
-    border-radius: 20px;
+  /* COMPACT CARDS */
+
+  .sdfl-home-services-grid > .sdfl-home-service-card {
+    grid-column: auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+
+    width: 100%;
+    min-width: 0;
+    min-height: 185px;
+    height: 100%;
+
+    margin: 0;
+    padding: 20px 10px 17px;
+
+    border-radius: 17px;
+    text-align: center;
+
+    box-shadow:
+      0 6px 16px rgba(22, 61, 120, 0.07),
+      0 3px 0 rgba(22, 61, 120, 0.025);
   }
+
+  /* EXPANDED CARD - SAME COLUMN */
+
+  .sdfl-home-services-grid >
+  .sdfl-home-service-card.sdfl-home-service-expanded {
+    grid-column: auto;
+
+    width: 100%;
+    min-width: 0;
+    min-height: 250px;
+    height: 100%;
+
+    padding: 20px 10px 18px;
+
+    border-color: var(--sdfl-service-color);
+
+    box-shadow:
+      0 8px 22px rgba(22, 61, 120, 0.12);
+  }
+
+  /* HIDE NUMBERS */
 
   .sdfl-home-service-number {
-    top: 18px;
-    right: 20px;
-    font-size: 15px;
+    display: none;
   }
 
+  /* ICON */
+
   .sdfl-home-service-icon {
-    width: 70px;
-    height: 70px;
-    margin-bottom: 19px;
-    border-radius: 21px;
+    width: 54px;
+    height: 54px;
+
+    margin: 0 0 14px;
+    border-radius: 16px;
   }
 
   .sdfl-home-service-icon svg {
-    width: 34px;
-    height: 34px;
+    width: 29px;
+    height: 29px;
   }
+
+  /* TITLE */
 
   .sdfl-home-service-card h3 {
-    font-size: 19px;
-    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    min-height: 40px;
+
+    margin: 0 0 12px;
+
+    color: #102650;
+    font-size: 13px;
+    font-weight: 800;
+    line-height: 1.35;
+    letter-spacing: -0.2px;
+    text-align: center;
+
+    overflow-wrap: break-word;
   }
 
-  .sdfl-home-service-card p {
-    max-width: 350px;
-    margin-bottom: 22px;
+  .sdfl-home-service-expanded h3 {
+    min-height: 0;
+    margin-bottom: 10px;
     font-size: 13px;
   }
 
-  .sdfl-home-services-tagline {
-    gap: 12px;
-    margin-top: 28px;
+  /* HIDE DESKTOP DESCRIPTION */
+
+  .sdfl-home-service-description {
+    display: none;
   }
 
-  .sdfl-home-services-tagline p {
-    font-size: 12px;
-    letter-spacing: 0.4px;
+  /* MOBILE DESCRIPTION */
+
+  .sdfl-home-service-mobile-details {
+    display: grid;
+    grid-template-rows: 0fr;
+
+    width: 100%;
+    min-width: 0;
+    opacity: 0;
+
+    transition:
+      grid-template-rows 0.3s ease,
+      opacity 0.3s ease;
   }
 
-  .sdfl-home-services-tagline-line {
-    width: 25px;
+  .sdfl-home-service-mobile-details p {
+    min-height: 0;
+    overflow: hidden;
+
+    width: 100%;
+    margin: 0;
+
+    color: #506584;
+    font-size: 11px;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: center;
+    overflow-wrap: anywhere;
+  }
+
+  /* SHOW DESCRIPTION INSIDE SAME CARD */
+
+  .sdfl-home-service-expanded
+  .sdfl-home-service-mobile-details {
+    grid-template-rows: 1fr;
+    opacity: 1;
+    margin-bottom: 12px;
+  }
+
+  /* LEARN MORE / SHOW LESS BUTTON */
+
+  .sdfl-home-service-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 5px;
     flex-shrink: 0;
+
+    min-height: 28px;
+    margin: 0 auto 12px;
+    padding: 4px 6px;
+
+    background: transparent;
+    border: none;
+    border-radius: 8px;
+
+    color: var(--sdfl-service-color);
+
+    font-family: inherit;
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 1.3;
+
+    cursor: pointer;
   }
-}
 
-/* ==========================================
-   SMALL MOBILE
-   ========================================== */
-
-@media (max-width: 380px) {
-  .sdfl-home-services {
-    padding: 38px 14px;
+  .sdfl-home-service-toggle svg {
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
   }
 
-  .sdfl-home-service-card {
-    min-height: 260px;
-    padding: 26px 18px 23px;
+  .sdfl-home-service-expanded
+  .sdfl-home-service-toggle svg {
+    transform: rotate(180deg);
   }
 
-  .sdfl-home-service-card h3 {
-    font-size: 18px;
+  .sdfl-home-service-toggle:focus-visible {
+    outline: 2px solid var(--sdfl-service-color);
+    outline-offset: 3px;
+  }
+
+  /* COLORED BOTTOM LINE */
+
+  .sdfl-home-service-accent {
+    width: 40px;
+    height: 3px;
+    flex-shrink: 0;
+
+    margin: auto auto 0;
+  }
+
+  .sdfl-home-service-expanded
+  .sdfl-home-service-accent {
+    width: 50px;
+  }
+
+  /* TAGLINE */
+
+  .sdfl-home-services-tagline {
+    gap: 10px;
+    margin-top: 24px;
   }
 
   .sdfl-home-services-tagline p {
     font-size: 11px;
+    line-height: 1.5;
+    letter-spacing: 0.2px;
+  }
+
+  .sdfl-home-services-tagline-line {
+    width: 22px;
+    flex-shrink: 0;
+  }
+
+  /* DECORATIVE CIRCLES */
+
+  .sdfl-home-services-decor-top {
+    top: -320px;
+    left: -350px;
+  }
+
+  .sdfl-home-services-decor-bottom {
+    right: -390px;
+    bottom: -420px;
+  }
+}
+
+/* ==========================================
+   VERY SMALL MOBILE
+   ========================================== */
+
+@media (max-width: 380px) {
+  .sdfl-home-services {
+    padding: 30px 12px;
+  }
+
+  .sdfl-home-services-heading h2 {
+    font-size: 23px;
+  }
+
+  .sdfl-home-services-grid {
+    gap: 10px;
+  }
+
+  .sdfl-home-services-grid > .sdfl-home-service-card {
+    min-height: 180px;
+    padding: 18px 8px 15px;
+    border-radius: 15px;
+  }
+
+  /* KEEP EXPANDED CARD IN ONE COLUMN */
+
+  .sdfl-home-services-grid >
+  .sdfl-home-service-card.sdfl-home-service-expanded {
+    grid-column: auto;
+    min-height: 250px;
+    padding: 18px 8px 16px;
+  }
+
+  .sdfl-home-service-icon {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 12px;
+  }
+
+  .sdfl-home-service-icon svg {
+    width: 27px;
+    height: 27px;
+  }
+
+  .sdfl-home-service-card h3 {
+    font-size: 12px;
+    min-height: 42px;
+  }
+
+  .sdfl-home-service-expanded h3 {
+    font-size: 12px;
+    min-height: 0;
+  }
+
+  .sdfl-home-service-mobile-details p {
+    font-size: 10px;
+    line-height: 1.5;
+  }
+
+  .sdfl-home-services-tagline p {
+    font-size: 10px;
   }
 }
 
@@ -568,7 +811,9 @@
   .sdfl-home-service-card,
   .sdfl-home-service-card::before,
   .sdfl-home-service-icon,
-  .sdfl-home-service-accent {
+  .sdfl-home-service-accent,
+  .sdfl-home-service-mobile-details,
+  .sdfl-home-service-toggle svg {
     transition: none;
   }
 

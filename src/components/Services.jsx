@@ -1,9 +1,12 @@
 
+import { useState } from "react";
+
 import {
   GraduationCap,
   FileText,
   ChartNoAxesColumnIncreasing,
   UsersRound,
+  ChevronDown,
 } from "lucide-react";
 
 import "./Services.css";
@@ -56,6 +59,14 @@ const services = [
 // ==========================================
 
 function Services() {
+  const [expandedService, setExpandedService] = useState(null);
+
+  const toggleService = (number) => {
+    setExpandedService((current) =>
+      current === number ? null : number
+    );
+  };
+
   return (
     <section
       className="sdfl-home-services"
@@ -75,7 +86,6 @@ function Services() {
       />
 
       <div className="sdfl-home-services-container">
-
         {/* SECTION HEADING */}
 
         <div className="sdfl-home-services-heading">
@@ -96,16 +106,23 @@ function Services() {
           {services.map((service) => {
             const IconComponent = service.icon;
 
+            const isExpanded =
+              expandedService === service.number;
+
             return (
               <article
-                className="sdfl-home-service-card"
                 key={service.number}
+                className={`sdfl-home-service-card ${
+                  isExpanded
+                    ? "sdfl-home-service-expanded"
+                    : ""
+                }`}
                 style={{
                   "--sdfl-service-color": service.color,
                   "--sdfl-service-bg": service.background,
                 }}
               >
-                {/* CARD NUMBER */}
+                {/* DESKTOP CARD NUMBER */}
 
                 <span
                   className="sdfl-home-service-number"
@@ -114,7 +131,7 @@ function Services() {
                   {service.number}
                 </span>
 
-                {/* ICON */}
+                {/* SERVICE ICON */}
 
                 <div className="sdfl-home-service-icon">
                   <IconComponent
@@ -124,13 +141,47 @@ function Services() {
                   />
                 </div>
 
-                {/* TITLE */}
+                {/* SERVICE TITLE */}
 
                 <h3>{service.title}</h3>
 
-                {/* DESCRIPTION */}
+                {/* DESKTOP DESCRIPTION */}
 
-                <p>{service.description}</p>
+                <p className="sdfl-home-service-description">
+                  {service.description}
+                </p>
+
+                {/* MOBILE EXPANDABLE DESCRIPTION */}
+
+                <div
+                  id={`sdfl-service-details-${service.number}`}
+                  className="sdfl-home-service-mobile-details"
+                  aria-hidden={!isExpanded}
+                >
+                  <p>{service.description}</p>
+                </div>
+
+                {/* MOBILE LEARN MORE BUTTON */}
+
+                <button
+                  type="button"
+                  className="sdfl-home-service-toggle"
+                  onClick={() =>
+                    toggleService(service.number)
+                  }
+                  aria-expanded={isExpanded}
+                  aria-controls={`sdfl-service-details-${service.number}`}
+                >
+                  <span>
+                    {isExpanded ? "Show Less" : "Learn More"}
+                  </span>
+
+                  <ChevronDown
+                    size={15}
+                    strokeWidth={2.5}
+                    aria-hidden="true"
+                  />
+                </button>
 
                 {/* COLORED BOTTOM LINE */}
 
@@ -160,7 +211,6 @@ function Services() {
             aria-hidden="true"
           />
         </div>
-
       </div>
     </section>
   );
