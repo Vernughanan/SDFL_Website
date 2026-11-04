@@ -1,7 +1,7 @@
 
 /* ==========================================
    SDFL ANNUAL REPORTS PAGE
-   Navy Blue & Gold Theme
+   NAVY BLUE & GOLD THEME
    ========================================== */
 
 .annual-reports-page {
@@ -11,7 +11,7 @@
   width: 100%;
   min-height: 75vh;
 
-  padding: 45px 35px 110px;
+  padding: 45px 35px 90px;
 
   background: linear-gradient(
     135deg,
@@ -30,7 +30,9 @@
   box-sizing: border-box;
 }
 
-/* SUBTLE BACKGROUND DECORATION */
+/* ==========================================
+   BACKGROUND DECORATION
+   ========================================== */
 
 .annual-reports-page::before {
   content: "";
@@ -73,7 +75,7 @@
 }
 
 /* ==========================================
-   CONTAINER
+   MAIN CONTAINER
    ========================================== */
 
 .annual-reports-container {
@@ -82,11 +84,12 @@
 
   width: 100%;
   max-width: 1500px;
+
   margin: 0 auto;
 }
 
 /* ==========================================
-   BACK BUTTON
+   BACK TO ABOUT BUTTON
    ========================================== */
 
 .annual-reports-navigation {
@@ -113,7 +116,8 @@
   font-weight: 700;
   text-decoration: none;
 
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
+  box-shadow:
+    0 5px 15px rgba(0, 0, 0, 0.12);
 
   transition:
     transform 0.25s ease,
@@ -133,6 +137,7 @@
 .annual-reports-heading {
   max-width: 750px;
   margin: 0 auto 48px;
+
   text-align: center;
 }
 
@@ -173,7 +178,9 @@
 
 .annual-reports-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
 
   gap: 25px;
   align-items: stretch;
@@ -187,6 +194,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+
   gap: 20px;
 
   min-width: 0;
@@ -197,7 +205,8 @@
   border: 1px solid #e0e8f5;
   border-radius: 16px;
 
-  box-shadow: 10px 10px 0 rgba(9, 22, 48, 0.28);
+  box-shadow:
+    10px 10px 0 rgba(9, 22, 48, 0.28);
 
   transition:
     transform 0.3s ease,
@@ -207,7 +216,8 @@
 .annual-report-card:hover {
   transform: translateY(-5px);
 
-  box-shadow: 10px 15px 0 rgba(9, 22, 48, 0.25);
+  box-shadow:
+    10px 15px 0 rgba(9, 22, 48, 0.25);
 }
 
 /* ==========================================
@@ -217,10 +227,14 @@
 .annual-report-info {
   display: flex;
   align-items: center;
-  gap: 17px;
 
+  gap: 17px;
   min-width: 0;
 }
+
+/* ==========================================
+   PDF ICON
+   ========================================== */
 
 .annual-report-icon {
   position: relative;
@@ -230,6 +244,7 @@
   justify-content: center;
 
   flex: 0 0 65px;
+
   width: 65px;
   height: 65px;
 
@@ -254,6 +269,10 @@
   font-weight: 800;
 }
 
+/* ==========================================
+   REPORT TITLE
+   ========================================== */
+
 .annual-report-details {
   min-width: 0;
 }
@@ -272,49 +291,80 @@
   margin: 0;
 
   color: #657895;
-
   font-size: 14px;
 }
 
 /* ==========================================
-   DOWNLOAD BUTTON
+   VIEW REPORT BUTTON
    ========================================== */
 
-.annual-report-download {
+.annual-report-view-button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 9px;
 
+  gap: 9px;
   flex-shrink: 0;
 
-  min-height: 42px;
-  padding: 11px 18px;
+  min-height: 44px;
+  padding: 12px 19px;
 
   background: #304b91;
   color: #ffffff;
 
+  border: 1px solid transparent;
   border-radius: 9px;
 
+  font-family: inherit;
   font-size: 13px;
   font-weight: 700;
   text-decoration: none;
+  white-space: nowrap;
+
+  cursor: pointer;
 
   transition:
     background 0.25s ease,
-    transform 0.25s ease;
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
 }
 
-.annual-report-download:hover {
+.annual-report-view-button:hover {
   background: #203a79;
   color: #ffffff;
+
   transform: translateY(-2px);
+
+  box-shadow:
+    0 5px 14px rgba(32, 58, 121, 0.22);
 }
 
-.annual-report-download:focus-visible,
+.annual-report-view-button svg {
+  flex-shrink: 0;
+}
+
+/* ==========================================
+   FOCUS ACCESSIBILITY
+   ========================================== */
+
+.annual-report-view-button:focus-visible,
 .annual-reports-back:focus-visible {
   outline: 3px solid #e7b75d;
   outline-offset: 4px;
+}
+
+/* ==========================================
+   FOOTER NOTE
+   ========================================== */
+
+.annual-reports-note {
+  margin: 42px auto 0;
+
+  color: #c9d7ef;
+
+  font-size: 13px;
+  line-height: 1.6;
+  text-align: center;
 }
 
 /* ==========================================
@@ -364,6 +414,8 @@
     letter-spacing: 3px;
   }
 
+  /* MOBILE CARD LAYOUT */
+
   .annual-report-card {
     flex-direction: column;
     align-items: stretch;
@@ -380,13 +432,50 @@
     font-size: 17px;
   }
 
-  .annual-report-download {
+  /* FULL WIDTH BUTTON */
+
+  .annual-report-view-button {
     width: 100%;
+    min-height: 46px;
   }
 
   .annual-reports-back {
     font-size: 13px;
     padding: 10px 16px;
+  }
+
+  .annual-reports-note {
+    margin-top: 35px;
+    font-size: 12px;
+  }
+}
+
+/* ==========================================
+   VERY SMALL MOBILE
+   ========================================== */
+
+@media (max-width: 380px) {
+  .annual-reports-page {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .annual-report-card {
+    padding: 17px;
+  }
+
+  .annual-report-icon {
+    flex-basis: 56px;
+    width: 56px;
+    height: 56px;
+  }
+
+  .annual-report-details h2 {
+    font-size: 15px;
+  }
+
+  .annual-report-details p {
+    font-size: 12px;
   }
 }
 
@@ -396,62 +485,14 @@
 
 @media (prefers-reduced-motion: reduce) {
   .annual-report-card,
-  .annual-report-download,
+  .annual-report-view-button,
   .annual-reports-back {
     transition: none;
   }
 
   .annual-report-card:hover,
-  .annual-report-download:hover,
+  .annual-report-view-button:hover,
   .annual-reports-back:hover {
     transform: none;
-  }
-}
-
-/* ANNUAL REPORT ACTION BUTTONS */
-
-.annual-report-actions {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.annual-report-view {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-
-  min-height: 42px;
-  padding: 11px 18px;
-
-  background: #ffffff;
-  color: #142b55;
-
-  border: 1px solid #b8c7e2;
-  border-radius: 9px;
-
-  font-size: 13px;
-  font-weight: 700;
-  text-decoration: none;
-
-  transition: background 0.25s ease;
-}
-
-.annual-report-view:hover {
-  background: #eaf3ff;
-  color: #142b55;
-}
-
-@media (max-width: 600px) {
-  .annual-report-actions {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .annual-report-view,
-  .annual-report-download {
-    width: 100%;
   }
 }
