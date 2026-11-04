@@ -27,12 +27,14 @@
   min-height: 170px;
   padding: 35px 25px 42px;
   overflow: hidden;
+
   background: linear-gradient(
     110deg,
     #102750,
     #193b70,
     #102750
   );
+
   text-align: center;
 }
 
@@ -71,6 +73,8 @@
   line-height: 1.7;
 }
 
+/* HERO WAVE */
+
 .services-hero-wave {
   position: absolute;
   bottom: -55px;
@@ -80,10 +84,11 @@
   border-radius: 50% 50% 0 0;
   background: rgba(70, 116, 184, 0.25);
   transform: rotate(-2deg);
+  pointer-events: none;
 }
 
 /* ==========================================
-   MAIN SECTION
+   MAIN LIGHT BLUE SECTION
 ========================================== */
 
 .services-main {
@@ -92,6 +97,62 @@
   margin: 0 auto;
   padding: 28px 35px 75px;
 }
+
+/* ==========================================
+   BACK TO WHAT WE OFFER BUTTON
+========================================== */
+
+.services-main-navigation {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  justify-content: flex-start;
+
+  width: 100%;
+  margin: 0 0 15px;
+}
+
+.services-main-back {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  min-height: 44px;
+  padding: 11px 22px;
+
+  background: #ffffff;
+  color: #142b55;
+
+  border: 1px solid #dce6f7;
+  border-radius: 30px;
+
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease;
+}
+
+.services-main-back:hover {
+  background: #fff5df;
+  color: #142b55;
+  transform: translateX(-4px);
+}
+
+.services-main-back:focus-visible {
+  outline: 3px solid #e7b75d;
+  outline-offset: 4px;
+}
+
+/* ==========================================
+   SERVICES HEADING
+========================================== */
 
 .services-heading {
   text-align: center;
@@ -128,13 +189,16 @@
   gap: 22px;
 }
 
-/* First three cards */
+/* ==========================================
+   SERVICE CARDS
+========================================== */
 
 .service-card {
   grid-column: span 2;
   min-width: 0;
   min-height: 375px;
   padding: 20px 24px 17px;
+
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -155,12 +219,13 @@
 
 .service-card:hover {
   transform: translateY(-5px);
+
   box-shadow:
     0 8px 0 rgba(21, 45, 83, 0.05),
     0 17px 30px rgba(26, 48, 85, 0.13);
 }
 
-/* Last two centered */
+/* LAST TWO CARDS CENTERED */
 
 .service-card:nth-child(4) {
   grid-column: 2 / span 2;
@@ -177,9 +242,11 @@
 .service-card-icon {
   width: 72px;
   height: 72px;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
   margin-bottom: 7px;
 
   border-radius: 50%;
@@ -206,11 +273,13 @@
 
 .service-card h3 {
   min-height: 48px;
+
   display: flex;
   align-items: center;
   justify-content: center;
 
   margin: 0;
+
   color: #142f5c;
   font-size: 18px;
   font-weight: 800;
@@ -250,8 +319,10 @@
 
 .service-check {
   flex-shrink: 0;
+
   width: 19px;
   height: 19px;
+
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -271,6 +342,7 @@
 .service-details-button {
   width: 100%;
   min-height: 42px;
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -338,6 +410,7 @@
 
 .service-detail-card {
   padding: 40px 45px;
+
   background: #ffffff;
   border: 1px solid #e4eaf4;
   border-radius: 16px;
@@ -350,9 +423,11 @@
 .service-detail-icon {
   width: 75px;
   height: 75px;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
   margin-bottom: 18px;
 
   background: #eaf0ff;
@@ -426,6 +501,7 @@
 .service-detail-footer {
   margin-top: 30px;
   padding: 22px;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -445,10 +521,12 @@
 .service-contact-button {
   flex-shrink: 0;
   padding: 12px 22px;
+
   background: #193d78;
   color: #ffffff;
   text-decoration: none;
   border-radius: 7px;
+
   font-size: 13px;
   font-weight: 700;
 }
@@ -464,10 +542,12 @@
 
 .service-not-found {
   min-height: 60vh;
+
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
   padding: 30px;
   text-align: center;
 }
@@ -520,6 +600,15 @@
     padding: 25px 17px 50px;
   }
 
+  .services-main-navigation {
+    margin-bottom: 20px;
+  }
+
+  .services-main-back {
+    padding: 10px 16px;
+    font-size: 13px;
+  }
+
   .services-heading h2 {
     font-size: 23px;
   }
@@ -568,12 +657,14 @@
 
 @media (prefers-reduced-motion: reduce) {
   .service-card,
-  .service-details-button {
+  .service-details-button,
+  .services-main-back {
     transition: none;
   }
 
   .service-card:hover,
-  .service-details-button:hover {
+  .service-details-button:hover,
+  .services-main-back:hover {
     transform: none;
   }
 }

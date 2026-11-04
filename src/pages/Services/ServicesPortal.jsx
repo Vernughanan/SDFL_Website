@@ -1,5 +1,6 @@
 
 import { Link, useParams } from "react-router-dom";
+import { ArrowLeft } from "lucide-react";
 import "./ServicesPortal.css";
 
 // ==========================================
@@ -126,7 +127,7 @@ function ServiceIcon({ type }) {
     case "consultancy":
       return (
         <svg {...common}>
-          <path d="m2 12 4-4 5 2 2-2 9 7-4 4-5-3-3 2-4-2-4-4z" />
+          <path d="m2 12 4-4 5 2 2-2 9 7-4 4-5-3-3 2-4-4z" />
           <path d="m6 8 3-3 5 2 3-2 5 5" />
           <path d="m9 14 3 3m0-5 4 4m-1-7 4 4" />
         </svg>
@@ -150,6 +151,10 @@ function ServiceIcon({ type }) {
 function ServicesList() {
   return (
     <>
+      {/* =====================================
+          NAVY BLUE HERO SECTION
+      ===================================== */}
+
       <section className="services-hero">
         <div className="services-hero-content">
           <span className="services-eyebrow">
@@ -170,15 +175,42 @@ function ServicesList() {
         <div className="services-hero-wave" />
       </section>
 
+      {/* =====================================
+          LIGHT BLUE SERVICES SECTION
+      ===================================== */}
+
       <section className="services-main">
+
+        {/* BACK TO WHAT WE OFFER BUTTON */}
+
+        <div className="services-main-navigation">
+          <Link
+            to="/what-we-offer"
+            className="services-main-back"
+          >
+            <ArrowLeft
+              size={18}
+              aria-hidden="true"
+            />
+
+            Back to What We Offer
+          </Link>
+        </div>
+
+        {/* SERVICES HEADING */}
+
         <div className="services-heading">
           <span>WHAT WE PROVIDE</span>
+
           <h2>Our Services</h2>
+
           <p>
             Discover the services offered by Skills Development
             Fund Limited.
           </p>
         </div>
+
+        {/* SERVICES GRID */}
 
         <div className="services-grid">
           {services.map((service) => (
@@ -201,8 +233,14 @@ function ServicesList() {
               <ul className="service-items">
                 {service.items.map((item, index) => (
                   <li key={index}>
-                    <span className="service-check">✓</span>
-                    <span>{service.number.replace(/^0/, "")}.{index + 1} {item}</span>
+                    <span className="service-check">
+                      ✓
+                    </span>
+
+                    <span>
+                      {service.number.replace(/^0/, "")}.
+                      {index + 1} {item}
+                    </span>
                   </li>
                 ))}
               </ul>
@@ -237,8 +275,14 @@ function ServiceDetails() {
     return (
       <section className="service-not-found">
         <h2>Service Not Found</h2>
-        <p>The requested service could not be found.</p>
-        <Link to="/services">Back to Services</Link>
+
+        <p>
+          The requested service could not be found.
+        </p>
+
+        <Link to="/services">
+          Back to Services
+        </Link>
       </section>
     );
   }
@@ -247,12 +291,20 @@ function ServiceDetails() {
     <main className="service-detail-page">
       <div className="service-detail-container">
 
-        <Link to="/services" className="service-back-button">
+        {/* BACK TO SERVICES */}
+
+        <Link
+          to="/services"
+          className="service-back-button"
+        >
           <span aria-hidden="true">←</span>
           Back to Services
         </Link>
 
+        {/* SERVICE DETAIL CARD */}
+
         <div className="service-detail-card">
+
           <div className="service-detail-icon">
             <ServiceIcon type={service.icon} />
           </div>
@@ -273,12 +325,20 @@ function ServiceDetails() {
 
           <div className="service-detail-list">
             {service.items.map((item, index) => (
-              <div className="service-detail-item" key={index}>
-                <span className="service-check">✓</span>
+              <div
+                className="service-detail-item"
+                key={index}
+              >
+                <span className="service-check">
+                  ✓
+                </span>
+
                 <p>{item}</p>
               </div>
             ))}
           </div>
+
+          {/* CONTACT SECTION */}
 
           <div className="service-detail-footer">
             <p>
@@ -286,10 +346,14 @@ function ServiceDetails() {
               please contact Skills Development Fund Limited.
             </p>
 
-            <Link to="/contact" className="service-contact-button">
+            <Link
+              to="/contact"
+              className="service-contact-button"
+            >
               Contact Us →
             </Link>
           </div>
+
         </div>
       </div>
     </main>

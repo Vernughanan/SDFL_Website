@@ -15,10 +15,10 @@ export default function Careers() {
 
         {/* BACK NAVIGATION */}
         <div className="careers-navigation">
-          <Link to="/" className="careers-back">
-            <ArrowLeft size={18} aria-hidden="true" />
-            Back to Home
-          </Link>
+            <Link to="/what-we-offer" className="careers-back">
+                <ArrowLeft size={18} aria-hidden="true" />
+                Back to What We Offer
+            </Link>
         </div>
 
         {/* PAGE HEADING */}
