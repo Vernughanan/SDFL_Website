@@ -2712,17 +2712,12 @@ export const programmes = [
     ],
     "category": "Consultation and Policy Development",
     "title": "Consultation and Policy Development",
-    "duration": "Flexible / Course Based",
-    "objectives": [
-      
-    ],
+    "duration": "Flexible",
     "content": [
-      
+      "Skills Development Fund Limited (SDFL) provides professional consultancy services to assist organizations in enhancing performance, strengthening human capital, and achieving strategic business objectives. Drawing on extensive industry expertise and practical experience, SDFL delivers customized solutions tailored to the unique needs of each organization.",
+      "Our consultancy portfolio includes training needs analysis, competency framework development, organizational development, workforce planning, performance management systems, skills assessments, capacity-building initiatives, and corporate plan development. We work closely with clients to identify organizational challenges, formulate effective strategies, and implement sustainable solutions that drive growth and operational excellence.",
+      "Through a client-centric approach and commitment to quality, SDFL supports organizations in building resilient, high-performing, and future-ready workplaces. Partner with SDFL to benefit from expert guidance, strategic planning, and practical solutions that create lasting organizational value and success.",
     ],
-    "methodology": [
-      
-    ],
-    "For_Whom": "All categories of public and private sector employees "
   },
   {
     "id": 95,
@@ -2732,18 +2727,13 @@ export const programmes = [
     ],
     "category": "Examination",
     "title": "Recruitment & Efficiency Bar Examinations",
-    "duration": "Flexible / Course Based",
-    "objectives": [
-      
-    ],
     "content": [
-      
+      "Skills Development Fund Limited (SDFL) provides professional examination administration services for organizations seeking reliable and efficient assessment solutions. With extensive experience in managing examinations, SDFL ensures the highest standards of confidentiality, accuracy, and integrity throughout the entire examination process.",
+      "Our services include candidate registration, examination coordination, invigilation, venue management, result processing, and administrative support. Examinations can be conducted at client locations or designated examination centers, ensuring flexibility and convenience.",
+      "Supported by qualified personnel and established quality assurance procedures, SDFL delivers seamless examination services that meet institutional and industry requirements. Through our commitment to excellence, we help organizations assess competencies effectively and maintain the credibility of their certification and qualification processes.",
+      "Partner with SDFL for trusted, professional, and end-to-end examination management solutions.",
     ],
-    "methodology": [
-      
-    ],
-    "For_Whom": "All categories of public and private sector employees and anyone"
-  },
+     },
   {
     "id": 96,
     "images": [
@@ -2753,16 +2743,12 @@ export const programmes = [
     "category": "OutStation 1",
     "title": "All Programs OutStation1 (Southern,Uva, Sabaragamuwa, Eastern)",
     "duration": "Flexible / Course Based",
-    "objectives": [
-      
-    ],
     "content": [
-      
+    "The Skills Development Fund Limited (SDFL) offers customized outstation training programmes designed to bring learning directly to organizations across Sri Lanka. These programmes provide a convenient and cost-effective solution for public & Private sector organizations seeking to enhance employee knowledge, skills, and productivity without the need for staff to travel.",
+      "Delivered by experienced industry professionals, SDFL's outstation training programmes can be tailored to meet specific organizational requirements in areas such as leadership, management, customer service, finance, human resources, digital skills, and workplace effectiveness. By conducting training at the client’s preferred location, SDFL ensures greater participation, practical learning, and immediate workplace application.",
+      "Partner with SDFL to develop a skilled, competent, and future-ready workforce through high-quality training solutions delivered at your doorstep."
     ],
-    "methodology": [
-      
-    ],
-    "For_Whom": "All categories of public and private sector employees and anyone."
+    
   },
   {
     "id": 97,
@@ -2773,16 +2759,12 @@ export const programmes = [
     "category": "OutStation 2",
     "title": "All Programs OutStation2 (Central, North Central, North Western, Northern Provinces",
     "duration": "Flexible / Course Based",
-    "objectives": [
-      
-    ],
+    
     "content": [
-      
-    ],
-    "methodology": [
-      
-    ],
-    "For_Whom": "All categories of public and private sector employees and anyone"
-  },
+      "The Skills Development Fund Limited (SDFL) offers customized outstation training programmes designed to bring learning directly to organizations across Sri Lanka. These programmes provide a convenient and cost-effective solution for public & Private sector organizations seeking to enhance employee knowledge, skills, and productivity without the need for staff to travel.",
+      "Delivered by experienced industry professionals, SDFL's outstation training programmes can be tailored to meet specific organizational requirements in areas such as leadership, management, customer service, finance, human resources, digital skills, and workplace effectiveness. By conducting training at the client’s preferred location, SDFL ensures greater participation, practical learning, and immediate workplace application.",
+      "Partner with SDFL to develop a skilled, competent, and future-ready workforce through high-quality training solutions delivered at your doorstep."
+    ]
+  }
   
 ];

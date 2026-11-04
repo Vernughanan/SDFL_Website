@@ -1,4 +1,3 @@
-
 import {
   useParams,
   useNavigate,
@@ -26,15 +25,11 @@ const TrainingDetails = () => {
 
   const handleBack = () => {
     navigate(returnTo);
-
-    // Scroll to the top after navigation.
-    // The listing page also scrolls to top on mount.
   };
 
   return (
     <div className="training-details-page">
       {/* BACK BUTTON */}
-
       <div className="training-back-container">
         <button
           type="button"
@@ -46,7 +41,6 @@ const TrainingDetails = () => {
             strokeWidth={2.2}
             aria-hidden="true"
           />
-
           <span>Back to Courses</span>
         </button>
       </div>
@@ -58,81 +52,76 @@ const TrainingDetails = () => {
       ) : (
         <div className="training-details">
           {/* COURSE IMAGES */}
-
-          <div className="details-images">
-            {programme.images.map((image, index) => (
-              <img
-                key={index}
-                src={image}
-                alt={`${programme.title} - ${index + 1}`}
-              />
-            ))}
-          </div>
+          {programme.images?.length > 0 && (
+            <div className="details-images">
+              {programme.images.map((image, index) => (
+                <img
+                  key={index}
+                  src={image}
+                  alt={`${programme.title} ${index + 1}`}
+                />
+              ))}
+            </div>
+          )}
 
           {/* COURSE INFORMATION */}
-
           <div className="details-content">
             <h2>
-              {programme.title} ({programme.category})
+              {programme.title}{" "}
+              {programme.category ? `(${programme.category})` : ""}
             </h2>
 
-            {/* OBJECTIVES */}
+            {/* OBJECTIVES (Renders only if present) */}
+            {programme.objectives?.length > 0 && (
+              <div className="details-section">
+                <h3>Programme Objectives</h3>
+                <ul>
+                  {programme.objectives.map((objective, index) => (
+                    <li key={index}>{objective}</li>
+                  ))}
+                </ul>
+              </div>
+            )}
 
-            <div className="details-section">
-              <h3>Programme Objectives</h3>
-
-              <ul>
-                {programme.objectives.map(
-                  (objective, index) => (
-                    <li key={index}>
-                      {objective}
-                    </li>
-                  )
-                )}
-              </ul>
-            </div>
-
-            {/* CONTENT */}
-
-            <div className="details-section">
-              <h3>Programme Content</h3>
-
-              <ul>
-                {programme.content.map(
-                  (topic, index) => (
+            {/* CONTENT (Renders string array or paragraph list) */}
+            {programme.content?.length > 0 && (
+              <div className="details-section">
+                <h3>Programme Content</h3>
+                <ul>
+                  {programme.content.map((topic, index) => (
                     <li key={index}>{topic}</li>
-                  )
-                )}
-              </ul>
-            </div>
+                  ))}
+                </ul>
+              </div>
+            )}
 
-            {/* FOR WHOM */}
+            {/* FOR WHOM (Renders only if present) */}
+            {programme.For_Whom && (
+              <div className="details-section">
+                <h3>For Whom</h3>
+                <p>{programme.For_Whom}</p>
+              </div>
+            )}
 
-            <div className="details-section">
-              <h3>For Whom</h3>
-              <p>{programme.For_Whom}</p>
-            </div>
-
-            {/* METHODOLOGY */}
-
-            <div className="details-section">
-              <h3>Methodology</h3>
-
-              <ul>
-                {programme.methodology.map(
-                  (method, index) => (
+            {/* METHODOLOGY (Renders only if present) */}
+            {programme.methodology?.length > 0 && (
+              <div className="details-section">
+                <h3>Methodology</h3>
+                <ul>
+                  {programme.methodology.map((method, index) => (
                     <li key={index}>{method}</li>
-                  )
-                )}
-              </ul>
-            </div>
+                  ))}
+                </ul>
+              </div>
+            )}
 
-            {/* DURATION */}
-
-            <div className="details-section">
-              <h3>Duration</h3>
-              <p>{programme.duration}</p>
-            </div>
+            {/* DURATION (Renders only if present) */}
+            {programme.duration && (
+              <div className="details-section">
+                <h3>Duration</h3>
+                <p>{programme.duration}</p>
+              </div>
+            )}
           </div>
         </div>
       )}
