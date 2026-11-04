@@ -1,3 +1,8 @@
+
+/* ==========================================
+   TRAINING CARDS
+========================================== */
+
 .training-card {
   background-color: #ffffff;
   border: 1px solid #e2e8f0;
@@ -26,7 +31,7 @@
 
 .training-card button {
   background-color: #17365d;
-  color: white;
+  color: #ffffff;
   border: none;
   padding: 10px 16px;
   border-radius: 6px;
@@ -52,36 +57,370 @@
 }
 
 .training-card img {
-    object-fit: cover;
-    width: 100%;
-    height: 200px;
+  object-fit: cover;
+  width: 100%;
+  height: 200px;
 }
 
-.training-category{
-    text-align: center;
-    font-size: 14px;
-    font-weight: bold;
-    color: #2563eb;
+.training-category {
+  text-align: center;
+  font-size: 14px;
+  font-weight: bold;
+  color: #2563eb;
 }
 
-.training-card-content{
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    flex: 1;
+.training-card-content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
 }
 
-.training-duration{
-    font-size: 14px;
-    color: #64748b;
-    margin: 0;
+.training-duration {
+  font-size: 14px;
+  color: #64748b;
+  margin: 0;
 }
+
+/* ==========================================
+   TRAINING PROGRAMMES PAGE
+========================================== */
+
+.training-programmes-page {
+  min-height: 70vh;
+  padding-bottom: 50px;
+  background: #ffffff;
+}
+
+.training-programmes-header {
+  text-align: center;
+  padding: 55px 20px 15px;
+}
+
+.training-programmes-header h1 {
+  margin: 0 0 14px;
+  color: #17365d;
+  font-size: clamp(30px, 4vw, 44px);
+  font-weight: 800;
+}
+
+.training-programmes-header p {
+  margin: 0 auto;
+  max-width: 650px;
+  color: #64748b;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+/* ==========================================
+   SEARCH BAR + FILTERS
+========================================== */
+
+.training-filters {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  max-width: 1200px;
+  margin: 30px auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+  scroll-margin-top: 100px;
+}
+
+/* ==========================================
+   BACK BUTTON - WHAT WE OFFER
+========================================== */
+
+.training-programmes-back {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  flex-shrink: 0;
+
+  padding: 14px 18px;
+
+  background-color: #17365d;
+  color: #ffffff;
+
+  border: 1px solid #17365d;
+  border-radius: 10px;
+
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.training-programmes-back:hover {
+  background-color: #2563eb;
+  color: #ffffff;
+}
+
+.training-programmes-back:focus-visible {
+  outline: 3px solid #93c5fd;
+  outline-offset: 3px;
+}
+
+.training-programmes-back svg {
+  flex-shrink: 0;
+}
+
+/* ==========================================
+   SEARCH BOX
+========================================== */
+
+.search-box {
+  position: relative;
+  flex: 1;
+  min-width: 0;
+  max-width: 650px;
+}
+
+.search-icon {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #64748b;
+  pointer-events: none;
+}
+
+.search-box input {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+
+  padding: 14px 16px 14px 46px;
+
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+
+  outline: none;
+  font-size: 15px;
+  background: #ffffff;
+
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
+}
+
+.search-box input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+/* ==========================================
+   CATEGORY FILTER
+========================================== */
+
+.category-filter {
+  flex-shrink: 0;
+}
+
+.category-filter select {
+  min-width: 180px;
+  padding: 14px 16px;
+
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+
+  outline: none;
+  background: #ffffff;
+  color: #334155;
+
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.category-filter select:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+/* ==========================================
+   CLEAR FILTERS BUTTON
+========================================== */
+
+.clear-filters {
+  padding: 14px 18px;
+
+  border: 1px solid #17365d;
+  border-radius: 10px;
+
+  background: #ffffff;
+  color: #17365d;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+  white-space: nowrap;
+
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.clear-filters:hover {
+  background: #17365d;
+  color: #ffffff;
+}
+
+/* ==========================================
+   NO RESULTS
+========================================== */
+
+.no-results {
+  text-align: center;
+  padding: 45px 20px;
+  color: #64748b;
+  font-size: 16px;
+}
+
+.training-empty-state {
+  max-width: 1200px;
+  margin: 30px auto;
+  padding: 70px 20px;
+  text-align: center;
+  background: #f8fafc;
+  border-radius: 12px;
+}
+
+.training-empty-state h2 {
+  color: #17365d;
+  font-size: 24px;
+}
+
+.training-empty-state p {
+  color: #64748b;
+  margin-bottom: 20px;
+}
+
+/* ==========================================
+   ORIGINAL NUMBERED PAGINATION
+========================================== */
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  gap: 24px;
+  margin: 45px auto 20px;
+  padding: 0 20px;
+}
+
+/* Previous and Next */
+
+.pagination-btn {
+  padding: 13px 30px;
+
+  background-color: #20375d;
+  color: #ffffff;
+
+  border: none;
+  border-radius: 10px;
+
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: background-color 0.2s ease;
+}
+
+.pagination-btn:hover:not(:disabled) {
+  background-color: #2563eb;
+}
+
+.pagination-btn:disabled {
+  background-color: #dbe2ed;
+  color: #9aa8be;
+  cursor: not-allowed;
+}
+
+/* Numbered buttons */
+
+.pagination-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 48px;
+  height: 48px;
+  padding: 8px 12px;
+
+  background-color: #ffffff;
+  color: #000000;
+
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.pagination-number:hover:not(.active) {
+  background-color: #e8efff;
+  border-color: #93c5fd;
+}
+
+/* Active page */
+
+.pagination-number.active {
+  background-color: #3464e8;
+  border-color: #3464e8;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+/* Ellipsis */
+
+.pagination-ellipsis {
+  color: #64748b;
+  font-size: 18px;
+  padding: 0 2px;
+}
+
+/* Programme count */
+
+.programme-count {
+  text-align: center;
+  color: #64748b;
+  font-size: 15px;
+  margin: 25px 0 40px;
+}
+
+/* ==========================================
+   COURSE DETAILS PAGE
+========================================== */
 
 .training-details {
   display: grid;
   grid-template-columns: 0.8fr 1.2fr;
   gap: 35px;
+
   max-width: 1200px;
   margin: 50px auto;
   padding: 20px;
@@ -128,272 +467,13 @@
   margin-top: -65px;
 }
 
-@media (max-width: 900px) {
-  .training-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
-@media (max-width: 600px) {
-  .training-grid {
-    grid-template-columns: 1fr;
-    justify-items: center;
-  }
-
-  .training-card {
-    width: 100%;
-    max-width: 350px;
-  }
-}
-
-
-@media screen and (max-width: 768px) {
-
-  .training-details {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    margin: 20px auto;
-    padding: 15px;
-    gap: 20px;
-  }
-
-  .details-images {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    gap: 15px;
-  }
-
-  .details-images img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-  }
-
-  .details-content {
-    width: 100%;
-    margin-top: 0;
-  }
-
-  .details-content h1 {
-    font-size: 25px;
-    line-height: 1.3;
-  }
-
-  .details-section h2 {
-    font-size: 19px;
-  }
-
-}
-
-/* Training programme filters */
-
-.training-filters {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
-  max-width: 1200px;
-  margin: 30px auto;
-  padding: 0 20px;
-}
-
-.search-box {
-  position: relative;
-  flex: 1;
-  max-width: 650px;
-}
-
-.search-icon {
-  position: absolute;
-  left: 16px;
-  top: 50%;
-  transform: translateY(-50%);
-  color: #64748b;
-}
-
-.search-box input {
-  width: 100%;
-  padding: 14px 16px 14px 46px;
-  border: 1px solid #cbd5e1;
-  border-radius: 10px;
-  outline: none;
-  font-size: 15px;
-  background: #ffffff;
-  transition: border-color 0.2s, box-shadow 0.2s;
-}
-
-.search-box input:focus {
-  border-color: #2563eb;
-  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
-}
-
-.category-filter select {
-  min-width: 200px;
-  padding: 14px 16px;
-  border: 1px solid #cbd5e1;
-  border-radius: 10px;
-  outline: none;
-  background: #ffffff;
-  color: #334155;
-  font-size: 15px;
-  cursor: pointer;
-}
-
-.category-filter select:focus {
-  border-color: #2563eb;
-  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
-}
-
-.pagination {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  margin-top: 2rem;
-}
-
-.pagination-btn,
-.pagination-number {
-  padding: 8px 14px;
-  border: 1px solid #d1d5db;
-  background-color: #ffffff;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-.pagination-number.active {
-  background-color: #2563eb; /* Primary theme color */
-  color: #ffffff;
-  border-color: #2563eb;
-  font-weight: bold;
-}
-
-.pagination-btn:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-}
-
-.pagination-ellipsis {
-  padding: 0 4px;
-  color: #6b7280;
-}
-
-/* Mobile responsive layout */
-
-@media (max-width: 600px) {
-  .training-filters {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 12px;
-    padding: 0 20px;
-  }
-
-  .search-box {
-    max-width: none;
-  }
-
-  .category-filter select {
-    width: 100%;
-  }
-}
-
-.clear-filters {
-  padding: 14px 18px;
-  border: 1px solid #17365d;
-  border-radius: 10px;
-  background: #ffffff;
-  color: #17365d;
-  font-size: 14px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: 0.2s ease;
-}
-
-.clear-filters:hover {
-  background: #17365d;
-  color: #ffffff;
-}
-
-@media (max-width: 600px) {
-  .clear-filters {
-    width: 100%;
-  }
-}
-
-/* Pagination */
-
-.pagination {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-  margin: 45px auto 20px;
-}
-
-.pagination-btn {
-  padding: 11px 24px;
-  background-color: #17365d;
-  color: #ffffff;
-  border: none;
-  border-radius: 8px;
-  font-size: 14px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: 0.2s ease;
-}
-
-.pagination-btn:hover:not(:disabled) {
-  background-color: #2563eb;
-}
-
-.pagination-btn:disabled {
-  background-color: #cbd5e1;
-  color: #64748b;
-  cursor: not-allowed;
-}
-
-.page-info {
-  color: #334155;
-  font-size: 15px;
-  font-weight: 600;
-}
-
-.programme-count {
-  text-align: center;
-  color: #64748b;
-  font-size: 14px;
-  margin: 15px 0 40px;
-}
-
-/* Mobile pagination */
-
-@media (max-width: 600px) {
-  .pagination {
-    gap: 12px;
-    margin-top: 30px;
-  }
-
-  .pagination-btn {
-    padding: 10px 16px;
-  }
-
-  .page-info {
-    font-size: 13px;
-  }
-}
-
 /* ==========================================
-   COURSE DETAILS - BACK BUTTON
-   ========================================== */
+   COURSE DETAILS BACK BUTTON
+========================================== */
 
 .training-details-page {
   width: 100%;
 }
-
-/* Back button container */
 
 .training-back-container {
   width: 100%;
@@ -402,8 +482,6 @@
   padding: 0 20px;
   box-sizing: border-box;
 }
-
-/* Back button */
 
 .training-back-button {
   display: inline-flex;
@@ -442,15 +520,81 @@
   outline-offset: 3px;
 }
 
-/* Reduce space below the back button */
-
 .training-details-page .training-details {
   margin-top: 20px;
 }
 
-/* Mobile responsive */
+/* ==========================================
+   TABLET RESPONSIVE
+========================================== */
+
+@media (max-width: 1000px) {
+  .training-filters {
+    flex-wrap: wrap;
+  }
+
+  .search-box {
+    flex: 1 1 50%;
+    max-width: none;
+  }
+
+  .category-filter {
+    flex: 1;
+  }
+
+  .category-filter select {
+    width: 100%;
+  }
+}
+
+@media (max-width: 900px) {
+  .training-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* ==========================================
+   COURSE DETAILS - MOBILE/TABLET
+========================================== */
 
 @media (max-width: 768px) {
+  .training-details {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 20px auto;
+    padding: 15px;
+    gap: 20px;
+    box-sizing: border-box;
+  }
+
+  .details-images {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 15px;
+  }
+
+  .details-images img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+
+  .details-content {
+    width: 100%;
+    margin-top: 0;
+  }
+
+  .details-content h1 {
+    font-size: 25px;
+    line-height: 1.3;
+  }
+
+  .details-section h2 {
+    font-size: 19px;
+  }
+
   .training-back-container {
     margin-top: 20px;
     padding: 0 15px;
@@ -467,10 +611,113 @@
   }
 }
 
-/* Reduced motion */
+/* ==========================================
+   MOBILE RESPONSIVE
+========================================== */
+
+@media (max-width: 600px) {
+  /* Training cards */
+
+  .training-grid {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+
+  .training-card {
+    width: 100%;
+    max-width: 350px;
+  }
+
+  /* Header */
+
+  .training-programmes-header {
+    padding: 35px 20px 10px;
+  }
+
+  .training-programmes-header p {
+    font-size: 14px;
+  }
+
+  /* Filters */
+
+  .training-filters {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    padding: 0 20px;
+  }
+
+  /* Back button */
+
+  .training-programmes-back {
+    align-self: flex-start;
+    padding: 11px 16px;
+    font-size: 13px;
+  }
+
+  /* Search */
+
+  .search-box {
+    flex: auto;
+    width: 100%;
+    max-width: none;
+  }
+
+  /* Category */
+
+  .category-filter {
+    width: 100%;
+  }
+
+  .category-filter select {
+    width: 100%;
+  }
+
+  /* Clear filters */
+
+  .clear-filters {
+    width: 100%;
+  }
+
+  /* Pagination */
+
+  .pagination {
+    gap: 8px;
+    padding: 0 12px;
+    margin-top: 30px;
+  }
+
+  .pagination-number {
+    min-width: 36px;
+    height: 38px;
+    padding: 6px 9px;
+    font-size: 13px;
+  }
+
+  .pagination-btn {
+    padding: 10px 14px;
+    font-size: 13px;
+  }
+
+  .pagination-ellipsis {
+    font-size: 14px;
+  }
+
+  .programme-count {
+    font-size: 13px;
+    margin: 20px 0 35px;
+  }
+}
+
+/* ==========================================
+   REDUCED MOTION
+========================================== */
 
 @media (prefers-reduced-motion: reduce) {
-  .training-back-button {
+  .training-programmes-back,
+  .training-back-button,
+  .pagination-btn,
+  .pagination-number {
     transition: none;
   }
 

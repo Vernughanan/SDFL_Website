@@ -1,9 +1,13 @@
 
 import { useState, useEffect } from "react";
-import { useSearchParams } from "react-router-dom";
+import {
+  useSearchParams,
+  Link,
+} from "react-router-dom";
+
 import TrainingCard from "../../components/TrainingCard";
 import { programmes } from "../../data/programmes";
-import { Search } from "lucide-react";
+import { Search, ArrowLeft } from "lucide-react";
 
 const itemsPerPage = 12;
 
@@ -14,8 +18,9 @@ function TrainingProgrammes() {
   const [selectedCategory, setSelectedCategory] =
     useState("All");
 
-  // Read page number from the URL.
+  // Read page number from URL
   // Example: /courses?page=5
+
   const requestedPage = Number(searchParams.get("page"));
 
   const urlPage =
@@ -24,6 +29,7 @@ function TrainingProgrammes() {
       : 1;
 
   // Filter programmes
+
   const filteredProgrammes = programmes.filter((programme) => {
     const matchesSearch = programme.title
       .toLowerCase()
@@ -37,6 +43,7 @@ function TrainingProgrammes() {
   });
 
   // Pagination
+
   const totalPages = Math.ceil(
     filteredProgrammes.length / itemsPerPage
   );
@@ -53,13 +60,14 @@ function TrainingProgrammes() {
     startIndex + itemsPerPage
   );
 
-  // Scroll to top when arriving on this page,
-  // including when returning from course details.
+  // Scroll to top when arriving on page
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
-  // Update the page in the URL
+  // Update page in URL
+
   const updatePage = (page, replace = false) => {
     setSearchParams(
       (previousParams) => {
@@ -79,11 +87,14 @@ function TrainingProgrammes() {
     );
   };
 
-  // Reset pagination when search or category changes
+  // Reset pagination when search changes
+
   const handleSearchChange = (event) => {
     setSearchTerm(event.target.value);
     updatePage(1, true);
   };
+
+  // Reset pagination when category changes
 
   const handleCategoryChange = (event) => {
     setSelectedCategory(event.target.value);
@@ -91,6 +102,7 @@ function TrainingProgrammes() {
   };
 
   // Clear filters
+
   const handleClearFilters = () => {
     setSearchTerm("");
     setSelectedCategory("All");
@@ -98,6 +110,7 @@ function TrainingProgrammes() {
   };
 
   // Change pagination page
+
   const handlePageChange = (page) => {
     if (
       page < 1 ||
@@ -116,6 +129,7 @@ function TrainingProgrammes() {
   };
 
   // Generate visible pagination numbers
+
   const getPageNumbers = () => {
     const pages = [];
     const maxVisiblePages = 5;
@@ -151,9 +165,25 @@ function TrainingProgrammes() {
 
   return (
     <main>
-      {/* SEARCH AND FILTERS */}
+      {/* =====================================
+          BACK BUTTON + SEARCH + FILTERS
+      ===================================== */}
 
       <div className="training-filters">
+
+        {/* BACK TO WHAT WE OFFER */}
+
+        <Link
+          to="/what-we-offer"
+          className="training-programmes-back"
+          aria-label="Back to What We Offer"
+        >
+          <ArrowLeft size={19} />
+          <span>Back</span>
+        </Link>
+
+        {/* SEARCH BOX */}
+
         <div className="search-box">
           <Search
             size={20}
@@ -167,6 +197,8 @@ function TrainingProgrammes() {
             onChange={handleSearchChange}
           />
         </div>
+
+        {/* CATEGORY FILTER */}
 
         <div className="category-filter">
           <select
@@ -219,6 +251,8 @@ function TrainingProgrammes() {
           </select>
         </div>
 
+        {/* CLEAR FILTERS */}
+
         <button
           type="button"
           className="clear-filters"
@@ -228,7 +262,9 @@ function TrainingProgrammes() {
         </button>
       </div>
 
-      {/* TRAINING CARDS */}
+      {/* =====================================
+          TRAINING CARDS
+      ===================================== */}
 
       <div className="training-grid">
         {currentProgrammes.map((programme) => (
@@ -252,10 +288,13 @@ function TrainingProgrammes() {
         </p>
       )}
 
-      {/* PAGINATION */}
+      {/* =====================================
+          ORIGINAL PAGINATION - UNCHANGED
+      ===================================== */}
 
       {totalPages > 1 && (
         <div className="pagination">
+
           {/* PREVIOUS */}
 
           <button
@@ -348,7 +387,9 @@ function TrainingProgrammes() {
         </div>
       )}
 
-      {/* PROGRAMME COUNT */}
+      {/* =====================================
+          PROGRAMME COUNT
+      ===================================== */}
 
       {filteredProgrammes.length > 0 && (
         <p className="programme-count">
