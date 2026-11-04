@@ -29,21 +29,21 @@ function WhySDFL() {
   const statistics = [
     {
       title: "Programs Delivered",
-      value: "200+",
+      value: "3900+",
       description:
         "Total number of training programs conducted",
       color: "green",
     },
     {
       title: "Trainees Trained",
-      value: "10,000+",
+      value: "195K+",
       description:
         "Individuals who have successfully completed training.",
       color: "orange",
     },
     {
       title: "Partner Organizations",
-      value: "300+",
+      value: "420+",
       description:
         "Companies and institutions collaborating with us.",
       color: "blue",

@@ -27,17 +27,17 @@ function Hero() {
 
           <div className="hero-statistics">
             <div className="hero-stat">
-              <h3>10K+</h3>
+              <h3>195K+</h3>
               <p>Trained<br />Empowered</p>
             </div>
 
             <div className="hero-stat">
-              <h3>300+</h3>
+              <h3>420+</h3>
               <p>Industry<br />Partners</p>
             </div>
 
             <div className="hero-stat">
-              <h3>100+</h3>
+              <h3>3900+</h3>
               <p>Training<br />Programs</p>
             </div>
           </div>
