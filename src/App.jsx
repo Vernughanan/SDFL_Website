@@ -24,6 +24,8 @@ import WhatWeOffer from "./pages/WhatWeOffer/WhatWeOffer.jsx";
 //WhatWeOffer
 import TrainingDetails from "./pages/courses/TrainingDetails.jsx";
 import TrainingProgrammes from "./pages/courses/TrainingProgrammes.jsx";
+import Careers from "./pages/Careers/Careers.jsx";
+
 
 //ANNUAL REPORTS
 import ServicesPortal from "./pages/Services/ServicesPortal.jsx";
@@ -123,6 +125,13 @@ function App() {
           path="/services"
           element={<ServicesPortal />}
           />
+
+          
+        <Route 
+          path="/careers" 
+          element={<Careers />} 
+          />
+
         
       {/* Individual Service Details */}
         
