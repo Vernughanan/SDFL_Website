@@ -1,4 +1,3 @@
-
 import "./SDFLTeam.css";
 
 // ==========================================
@@ -11,9 +10,9 @@ import gayanPhoto from "../../assets/staff/H.G.L. Muthukumarana.png";
 import dhanushkaPhoto from "../../assets/staff/P.D. Paththinigamage.png";
 import hiranPhoto from "../../assets/staff/P.A.D. Hiran.png";
 import surajiPhoto from "../../assets/staff/S.D. Wadduwage.png";
-import MadubhashiniPhoto from "../../assets/staff/Ms.MadubhashiniSaddhamangala.jpeg"
-import KaveeshaPhoto from "../../assets/staff/Ms.KaveeshaKumarasiri.jpeg"
-import tildaPhoto from "../../assets/staff/Ms.TildaDeAlwis.jpeg"
+import MadubhashiniPhoto from "../../assets/staff/Ms.MadubhashiniSaddhamangala.jpeg";
+import KaveeshaPhoto from "../../assets/staff/Ms.KaveeshaKumarasiri.jpeg";
+import tildaPhoto from "../../assets/staff/Ms.TildaDeAlwis.jpeg";
 
 // ==========================================
 // STAFF INFORMATION
@@ -27,6 +26,7 @@ const staffMembers = [
     email: "generalmanager.sdfl@gmail.com",
     phone: "Unfortunately Unavailable",
     image: tildaPhoto,
+    qualifications: ["ACIPM, MPA (UOC), PGD (UOC), B.Sc. (Business Administration) (USJ)"],
   },
   {
     id: 2,
@@ -35,6 +35,7 @@ const staffMembers = [
     email: "acc.sdfl@gmail.com",
     phone: "Unfortunately Unavailable",
     image: hiranPhoto,
+    qualifications: [""],
   },
   {
     id: 3,
@@ -43,6 +44,7 @@ const staffMembers = [
     email: "sumedhamadhu@yahoo.com",
     phone: "Unfortunately Unavailable",
     image: MadubhashiniPhoto,
+    qualifications: [""],
   },
   {
     id: 4,
@@ -51,6 +53,7 @@ const staffMembers = [
     email: "sadhee19@gmail.com",
     phone: "Unfortunately Unavailable",
     image: sadhnaPhoto,
+    qualifications: ["MA (HRM)(UOC)"],
   },
   {
     id: 5,
@@ -59,6 +62,7 @@ const staffMembers = [
     email: "gayanskillsdevelopment@gmail.com",
     phone: "Unfortunately Unavailable",
     image: gayanPhoto,
+    qualifications: ["Dip (HRM)"],
   },
   {
     id: 6,
@@ -67,8 +71,8 @@ const staffMembers = [
     email: "division2sdfl@gmail.com",
     phone: "Unfortunately Unavailable",
     image: surajiPhoto,
+    qualifications: ["BA (Labour Education)"],
   },
-  
   {
     id: 7,
     name: "Ms. Dhanushka Paththinige",
@@ -76,6 +80,7 @@ const staffMembers = [
     email: "dpaththinigama1@gmail.com",
     phone: "Unfortunately Unavailable",
     image: dhanushkaPhoto,
+    qualifications: ["MA (Labour Relation & HRM)"],
   },
   {
     id: 8,
@@ -84,6 +89,7 @@ const staffMembers = [
     email: "isurisenarathsdfl@gmail.com",
     phone: "Unfortunately Unavailable",
     image: isuriPhoto,
+    qualifications: [""],
   },
   {
     id: 9,
@@ -92,6 +98,7 @@ const staffMembers = [
     email: "kaveeshasdfl@gmail.com",
     phone: "Unfortunately Unavailable",
     image: KaveeshaPhoto,
+    qualifications: ["BA (Labour Management)"],
   },
   {
     id: 10,
@@ -100,8 +107,8 @@ const staffMembers = [
     email: "udnamod98@gmail.com",
     phone: "Unfortunately Unavailable",
     image: null,
+    qualifications: ["B.Sc. Physical Science"],
   },
-  
 ];
 
 // ==========================================
@@ -177,6 +184,19 @@ export default function Staff() {
               <p className="staff-role">
                 {member.role}
               </p>
+
+              {/* QUALIFICATIONS SECTION */}
+              {member.qualifications && member.qualifications.length > 0 && (
+                <div className="staff-qualifications">
+                  <ul className="qualifications-list">
+                    {member.qualifications.map((qual, index) => (
+                      <li key={index} className="qualification-badge">
+                        {qual}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
 
               {/* CONTACT DETAILS */}
 

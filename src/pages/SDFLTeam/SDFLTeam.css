@@ -662,6 +662,28 @@
   text-decoration: underline;
 }
 
+.staff-qualifications {
+  margin: 8px 0;
+}
+
+.qualifications-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.qualification-badge {
+  font-size: 0.75rem;
+  background-color: #f0f4f8;
+  color: #334155;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 500;
+}
+
 /* ==========================================
    RESOURCE POOL SEARCH
 ========================================== */
