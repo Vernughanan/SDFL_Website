@@ -22,6 +22,12 @@ const annualReports = [
       "https://drive.google.com/file/d/18dMjLDAIqCmlHtm5QqIKo2zqNQRb-5W6/view?usp=drive_link",
   },
   {
+    year: "20232024",
+    title: "Annual Report 2023/2024",
+    pdfUrl:
+      "https://drive.google.com/file/d/15gl4j_CJ47r5XrgCbRtpQe0NMV5VgC1X/view?usp=sharing",
+  },
+  {
     year: "2022/2023",
     title: "Annual Report 2022/2023",
     pdfUrl:
