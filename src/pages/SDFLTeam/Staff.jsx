@@ -13,7 +13,8 @@ import surajiPhoto from "../../assets/staff/S.D. Wadduwage.png";
 import MadubhashiniPhoto from "../../assets/staff/Ms.MadubhashiniSaddhamangala.jpeg";
 import KaveeshaPhoto from "../../assets/staff/Ms.KaveeshaKumarasiri.jpeg";
 import tildaPhoto from "../../assets/staff/Ms.TildaDeAlwis.jpeg";
-
+import namodPhoto from "../../assets/staff/Namod.png";
+import kasunPhoto from "../../assets/staff/Kasun.png";
 // ==========================================
 // STAFF INFORMATION
 // ==========================================
@@ -75,6 +76,15 @@ const staffMembers = [
   },
   {
     id: 7,
+    name: "Mr. Kasun Wickramarathne ",
+    role: "Programme Coordinator (Division 02)",
+    email: "kasunsdfl@gmail.com",
+    phone: "Unfortunately Unavailable",
+    image: kasunPhoto,
+    qualifications: ["MPA (UOC)"],
+  },
+   {
+    id: 8,
     name: "Ms. Dhanushka Paththinige",
     role: "Programme Coordinator (Division 02)",
     email: "dpaththinigama1@gmail.com",
@@ -83,7 +93,7 @@ const staffMembers = [
     qualifications: ["MA (Labour Relation & HRM)"],
   },
   {
-    id: 8,
+    id: 9,
     name: "Ms. Isuri Anjana",
     role: "Programme Officer (Division 03)",
     email: "isurisenarathsdfl@gmail.com",
@@ -92,7 +102,7 @@ const staffMembers = [
     qualifications: [""],
   },
   {
-    id: 9,
+    id: 10,
     name: "Ms. Kaveesha Kumarasiri",
     role: "Programme Coordinator (Division 03)",
     email: "kaveeshasdfl@gmail.com",
@@ -101,12 +111,12 @@ const staffMembers = [
     qualifications: ["BA (Labour Management)"],
   },
   {
-    id: 10,
+    id: 11,
     name: "Mr. Namod Gimhana",
     role: "Management Assistant (IT & Digitalization)",
     email: "udnamod98@gmail.com",
     phone: "Unfortunately Unavailable",
-    image: null,
+    image: namodPhoto,
     qualifications: ["B.Sc. Physical Science"],
   },
 ];
