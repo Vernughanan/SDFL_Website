@@ -3,6 +3,7 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.jsx'
 import "./WebsiteBackground.css";
+import "./security/contactValidation.js";
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
