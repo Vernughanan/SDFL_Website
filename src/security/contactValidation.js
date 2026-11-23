@@ -12,6 +12,7 @@
   // ==========================================
 
   const RULES = {
+
     // ----------------------------------------
     // FULL NAME
     // ----------------------------------------
@@ -30,14 +31,14 @@
         }
 
         // Allow uppercase and lowercase letters.
-        // Allow multiple names separated by spaces.
-        // Allow apostrophes and hyphens.
-        // Numbers are not allowed.
+        // Allow first, middle and last names.
+        // Allow spaces between names.
+        // Numbers, apostrophes and hyphens are NOT allowed.
 
         if (
-          !/^[\p{L}\p{M}]+(?:[ '\u2019-][\p{L}\p{M}]+)*$/u.test(value)
+          !/^[\p{L}\p{M}]+(?: +[\p{L}\p{M}]+)*$/u.test(value)
         ) {
-          return "Name cannot contain numbers or invalid characters.";
+          return "Name can contain letters and spaces only.";
         }
 
         return "";
@@ -81,7 +82,7 @@
           return "Phone number is required.";
         }
 
-        // Allow either:
+        // Accepted formats:
         // Local: 0712345678
         // International: +94712345678
 
@@ -222,6 +223,7 @@
     const consent = form.elements.namedItem("consent");
 
     // Agreement checkbox must exist.
+
     if (!consent) {
       return false;
     }
