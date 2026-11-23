@@ -51,7 +51,7 @@
 
     email: {
       required: true,
-      maxLength: 254,
+      maxLength: 50,
 
       validate(value) {
         if (!value) {

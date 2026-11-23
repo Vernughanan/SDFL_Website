@@ -48,22 +48,27 @@ function Icon({ name, size = 22 }) {
         <path d="m3 7 9 6 9-6" />
       </>
     ),
+
     phone: (
       <path d="M6 3h4l2 5-3 2a15 15 0 0 0 5 5l2-3 5 2v4a3 3 0 0 1-3 3A15 15 0 0 1 3 6a3 3 0 0 1 3-3Z" />
     ),
+
     pin: (
       <>
         <path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z" />
         <circle cx="12" cy="10" r="2.5" />
       </>
     ),
+
     clock: (
       <>
         <circle cx="12" cy="12" r="9" />
         <path d="M12 7v5l3 2" />
       </>
     ),
+
     arrow: <path d="M5 12h14m-6-6 6 6-6 6" />,
+
     chevron: <path d="m6 9 6 6 6-6" />,
   };
 
@@ -88,15 +93,24 @@ export default function Contact() {
   const [openFaq, setOpenFaq] = useState(null);
   const [status, setStatus] = useState("");
 
+  // ==========================================
+  // CONTACT FORM STATE
+  // ==========================================
+
   const [form, setForm] = useState({
     name: "",
     email: "",
     organisation: "",
     phone: "",
     subject: "",
+    otherSubject: "",
     message: "",
     consent: false,
   });
+
+  // ==========================================
+  // UPDATE FORM
+  // ==========================================
 
   const updateForm = (event) => {
     const { name, value, type, checked } = event.target;
@@ -109,23 +123,93 @@ export default function Contact() {
     setStatus("");
   };
 
+  // ==========================================
+  // HANDLE SUBJECT CHANGE
+  // ==========================================
+
+  const handleSubjectChange = (event) => {
+    const selectedSubject = event.target.value;
+
+    setForm((previous) => ({
+      ...previous,
+      subject: selectedSubject,
+
+      // Clear custom subject when another option is selected.
+      otherSubject:
+        selectedSubject === "Other"
+          ? previous.otherSubject
+          : "",
+    }));
+
+    setStatus("");
+  };
+
+  // ==========================================
+  // SUBMIT CONTACT FORM
+  // ==========================================
+
   const submitForm = (event) => {
     event.preventDefault();
 
-    // Connect a backend or email service to send enquiries.
+    // Get final subject.
+    const finalSubject =
+      form.subject === "Other"
+        ? form.otherSubject.trim()
+        : form.subject;
+
+    // Validate custom subject.
+    if (form.subject === "Other" && !finalSubject) {
+      setStatus("Please enter your subject.");
+      return;
+    }
+
+    if (finalSubject.length > 150) {
+      setStatus("Subject cannot exceed 150 characters.");
+      return;
+    }
+
+    // Prepare enquiry information.
+    const enquiryData = {
+      name: form.name.trim(),
+      email: form.email.trim(),
+      organisation: form.organisation.trim(),
+      phone: form.phone.trim(),
+      subject: finalSubject,
+      message: form.message.trim(),
+      consent: form.consent,
+    };
+
+    // Connect your enquiry service here.
+    // This currently does not send or store the enquiry.
+
+    console.log("Contact enquiry:", enquiryData);
+
     setStatus(
       "Your form is complete. Message delivery will be enabled after the enquiry service is connected."
     );
   };
 
+  // ==========================================
+  // CHARACTER COUNTERS
+  // ==========================================
+
+  const otherSubjectCount = form.otherSubject.length;
+
+  // ==========================================
+  // MAIN PAGE
+  // ==========================================
+
   return (
     <main className="sdfl-contact">
+
       {/* ======================================
           GET IN TOUCH BANNER
       ====================================== */}
+
       <section className="contact-banner">
         <div className="contact-wrap">
           <h1>Get in Touch</h1>
+
           <p>
             Have questions about SDFL? Our team is here to
             help you succeed. Reach out and we'll respond
@@ -137,23 +221,32 @@ export default function Contact() {
       {/* ======================================
           CONTACT INFORMATION AND FORM
       ====================================== */}
+
       <section
         className="contact-top contact-wrap"
         id="contact-enquiry"
       >
         <div className="contact-left">
+
+          {/* CONTACT INFORMATION */}
+
           <div className="contact-details-panel">
             <h2>Contact Information</h2>
+
             <p className="contact-muted">
               We're happy to assist you.
             </p>
+
+            {/* EMAIL */}
 
             <div className="contact-detail">
               <div className="detail-icon blue">
                 <Icon name="mail" />
               </div>
+
               <div>
                 <h3>Email Us</h3>
+
                 {contactDetails.email ? (
                   <a href={`mailto:${contactDetails.email}`}>
                     {contactDetails.email}
@@ -164,12 +257,16 @@ export default function Contact() {
               </div>
             </div>
 
+            {/* PHONE */}
+
             <div className="contact-detail">
               <div className="detail-icon green">
                 <Icon name="phone" />
               </div>
+
               <div>
                 <h3>Call Us</h3>
+
                 {contactDetails.phone ? (
                   <a href={`tel:${contactDetails.phone}`}>
                     {contactDetails.phone}
@@ -180,20 +277,26 @@ export default function Contact() {
               </div>
             </div>
 
+            {/* ADDRESS */}
+
             <div className="contact-detail">
               <div className="detail-icon orange">
                 <Icon name="pin" />
               </div>
+
               <div>
                 <h3>Visit Our Office</h3>
                 <p>{contactDetails.address}</p>
               </div>
             </div>
 
+            {/* BUSINESS HOURS */}
+
             <div className="contact-detail">
               <div className="detail-icon navy">
                 <Icon name="clock" />
               </div>
+
               <div>
                 <h3>Business Hours</h3>
                 <p>{contactDetails.hours}</p>
@@ -201,6 +304,8 @@ export default function Contact() {
               </div>
             </div>
           </div>
+
+          {/* BUILDING IMAGE */}
 
           <a
             className="contact-building-link"
@@ -213,37 +318,58 @@ export default function Contact() {
               src={buildingImage}
               alt="SDFL office building"
             />
+
             <span>View Office Location ↗</span>
           </a>
         </div>
 
+        {/* ======================================
+            CONTACT FORM
+        ====================================== */}
+
         <div className="contact-form-panel">
           <h2>Send Us a Message</h2>
+
           <p className="contact-muted">
             Fill out the form below and our team
             will get back to you.
           </p>
 
-          <form onSubmit={submitForm}>
+          <form
+            onSubmit={submitForm}
+            noValidate
+          >
+
+            {/* NAME, EMAIL, COMPANY AND PHONE */}
+
             <div className="contact-fields-grid">
+
+              {/* FULL NAME */}
+
               <div className="contact-input-group">
                 <label htmlFor="c-name">
                   Full Name *
                 </label>
+
                 <input
                   id="c-name"
+                  type="text"
                   name="name"
                   value={form.name}
                   onChange={updateForm}
                   placeholder="Enter your full name"
+                  maxLength={50}
                   required
                 />
               </div>
+
+              {/* EMAIL */}
 
               <div className="contact-input-group">
                 <label htmlFor="c-email">
                   Email Address *
                 </label>
+
                 <input
                   id="c-email"
                   type="email"
@@ -251,64 +377,146 @@ export default function Contact() {
                   value={form.email}
                   onChange={updateForm}
                   placeholder="Enter your email address"
+                  maxLength={254}
                   required
                 />
               </div>
+
+              {/* COMPANY */}
 
               <div className="contact-input-group">
                 <label htmlFor="c-org">
                   Company / Organisation
                 </label>
+
                 <input
                   id="c-org"
+                  type="text"
                   name="organisation"
                   value={form.organisation}
                   onChange={updateForm}
                   placeholder="Organisation name"
+                  maxLength={100}
                 />
               </div>
 
+              {/* PHONE */}
+
               <div className="contact-input-group">
                 <label htmlFor="c-phone">
-                  Phone Number
+                  Phone Number *
                 </label>
+
                 <input
                   id="c-phone"
                   type="tel"
                   name="phone"
                   value={form.phone}
                   onChange={updateForm}
-                  placeholder="Your contact number"
+                  placeholder="0712345678 or +94712345678"
+                  inputMode="tel"
+                  maxLength={12}
+                  required
                 />
               </div>
+
             </div>
+
+            {/* ==================================
+                SUBJECT DROPDOWN
+            ================================== */}
 
             <div className="contact-input-group">
               <label htmlFor="c-subject">
                 Subject *
               </label>
+
               <select
                 id="c-subject"
                 name="subject"
                 value={form.subject}
-                onChange={updateForm}
+                onChange={handleSubjectChange}
                 required
               >
-                <option value="">Select a subject</option>
-                <option>General Enquiry</option>
-                <option>Training Programmes</option>
-                <option>Registration & Enrollment</option>
-                <option>Certificate Verification</option>
-                <option>Corporate Training</option>
-                <option>Partnership Opportunities</option>
-                <option>Other</option>
+                <option value="">
+                  Select a subject
+                </option>
+
+                <option value="General Enquiry">
+                  General Enquiry
+                </option>
+
+                <option value="Training Programmes">
+                  Training Programmes
+                </option>
+
+                <option value="Registration & Enrollment">
+                  Registration & Enrollment
+                </option>
+
+                <option value="Certificate Verification">
+                  Certificate Verification
+                </option>
+
+                <option value="Corporate Training">
+                  Corporate Training
+                </option>
+
+                <option value="Partnership Opportunities">
+                  Partnership Opportunities
+                </option>
+
+                <option value="Other">
+                  Other
+                </option>
               </select>
             </div>
+
+            {/* ==================================
+                CUSTOM SUBJECT INPUT
+                APPEARS ONLY WHEN OTHER SELECTED
+            ================================== */}
+
+            {form.subject === "Other" && (
+              <div className="contact-input-group custom-subject-group">
+
+                <label htmlFor="c-other-subject">
+                  Enter Your Subject *
+                </label>
+
+                <input
+                  type="text"
+                  id="c-other-subject"
+                  name="otherSubject"
+                  value={form.otherSubject}
+                  onChange={updateForm}
+                  placeholder="Please enter your subject"
+                  maxLength={150}
+                  required
+                />
+
+                <div className="subject-counter">
+                  <small>
+                    Maximum 150 characters
+                  </small>
+
+                  <small>
+                    {otherSubjectCount}/150 characters
+                  </small>
+                </div>
+
+              </div>
+            )}
+
+            {/* ==================================
+                MESSAGE
+            ================================== */}
 
             <div className="contact-input-group">
               <label htmlFor="c-message">
                 Message *
               </label>
+
               <textarea
                 id="c-message"
                 name="message"
@@ -316,9 +524,22 @@ export default function Contact() {
                 onChange={updateForm}
                 placeholder="How can we help you?"
                 rows="7"
+                maxLength={500}
                 required
               />
+
+              <div className="subject-counter">
+                <small>Maximum 500 characters</small>
+
+                <small>
+                  {form.message.length}/500 characters
+                </small>
+              </div>
             </div>
+
+            {/* ==================================
+                AGREEMENT CHECKBOX
+            ================================== */}
 
             <label className="contact-consent">
               <input
@@ -328,11 +549,16 @@ export default function Contact() {
                 onChange={updateForm}
                 required
               />
+
               <span>
                 I agree to be contacted regarding
                 my enquiry. *
               </span>
             </label>
+
+            {/* ==================================
+                SUBMIT BUTTON
+            ================================== */}
 
             <button
               type="submit"
@@ -342,29 +568,40 @@ export default function Contact() {
               Send Message
             </button>
 
+            {/* STATUS MESSAGE */}
+
             {status && (
-              <p className="contact-status" role="status">
+              <p
+                className="contact-status"
+                role="status"
+              >
                 {status}
               </p>
             )}
+
           </form>
         </div>
       </section>
 
       {/* ======================================
           FAQ + OFFICE MAP
-          SIDE-BY-SIDE LAYOUT
       ====================================== */}
+
       <section className="contact-help-section">
         <div className="contact-wrap contact-help-grid">
+
           {/* LEFT: FREQUENTLY ASKED QUESTIONS */}
+
           <div
             className="contact-faq-section"
             id="contact-faq"
           >
             <div className="contact-section-title">
               <h2>Frequently Asked Questions</h2>
-              <p>Quick answers to common questions.</p>
+
+              <p>
+                Quick answers to common questions.
+              </p>
             </div>
 
             <div className="contact-faq-list">
@@ -386,6 +623,7 @@ export default function Contact() {
                     }
                   >
                     <span>{faq.question}</span>
+
                     <span className="faq-chevron">
                       <Icon name="chevron" size={18} />
                     </span>
@@ -402,9 +640,11 @@ export default function Contact() {
           </div>
 
           {/* RIGHT: VISIT OUR OFFICE */}
+
           <div className="contact-office-section">
             <div className="contact-section-title">
               <h2>Visit Our Office</h2>
+
               <p>
                 We'd love to meet you in person.
                 Find our office on Google Maps.
@@ -431,8 +671,10 @@ export default function Contact() {
               Open in Google Maps
             </a>
           </div>
+
         </div>
       </section>
+
     </main>
   );
 }
